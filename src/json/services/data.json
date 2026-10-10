@@ -1,0 +1,1031 @@
+{
+  "website-development": {
+    "heading": {
+      "title": "Website Development",
+      "heading": "Modern Websites That Actually Perform",
+      "text": "We build fast, responsive, and conversion-focused websites—business sites, portfolios, landing pages, e-commerce stores, and custom dashboards."
+    },
+    "intro": [
+      {
+        "title": "Business & Portfolio Websites",
+        "subtitle": "Clean, credible web presence for your brand",
+        "image": {
+          "src": "/services/website-development/1.webp",
+          "alt": "Business and Portfolio Website Design"
+        },
+        "description": [
+          "Professional websites that showcase your business, services, and work with clarity.",
+          "Thoughtful layouts that highlight your strengths and make navigation easy.",
+          "Built for credibility, trust, and better first impressions."
+        ]
+      },
+      {
+        "title": "E-Commerce & Landing Pages",
+        "subtitle": "Pages built to convert visitors into customers",
+        "image": {
+          "src": "/services/website-development/2.webp",
+          "alt": "E-Commerce and Landing Page Development"
+        },
+        "description": [
+          "Conversion-focused landing pages for campaigns, launches, and lead generation.",
+          "E-commerce storefronts with smooth browsing and checkout experiences.",
+          "Optimized layouts, clear CTAs, and performance-focused builds."
+        ]
+      },
+      {
+        "title": "Dashboards & High-Performance Builds",
+        "subtitle": "Fast, scalable and mobile-friendly experiences",
+        "image": {
+          "src": "/services/website-development/3.webp",
+          "alt": "High Performance Website Dashboards"
+        },
+        "description": [
+          "Custom dashboards for analytics, admin access, and internal workflows.",
+          "Mobile-first design to ensure great experience on phones and tablets.",
+          "Clean, maintainable codebases designed for long-term scalability."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core Capabilities",
+        "icon": "mdi:web",
+        "description": [
+          "Business, portfolio, and product websites",
+          "Landing pages for campaigns and funnels",
+          "E-commerce storefronts and product catalogs",
+          "Custom dashboards and panels"
+        ]
+      },
+      {
+        "title": "Performance & Experience",
+        "icon": "mdi:lightning-bolt-outline",
+        "description": [
+          "High-performance, fast-loading pages",
+          "Mobile-friendly and responsive layouts",
+          "SEO-ready structure and clean markup",
+          "Optimized user journeys and CTAs"
+        ]
+      },
+      {
+        "title": "Scalability & Maintenance",
+        "icon": "mdi:trending-up",
+        "description": [
+          "Built to evolve with your business",
+          "Easy to update content and sections",
+          "Future-ready tech stack and architecture",
+          "Smooth integrations with tools and APIs"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Choose Techverzing for Web Development?",
+      "subtitle": "From idea to high-performing website",
+      "description": [
+        "We focus on websites that not only look modern but also load fast, convert well, and are easy to maintain.",
+        "Every project is structured around your goals—visibility, leads, sales, or brand building."
+      ],
+      "advantages": [
+        {
+          "title": "Strategy-First Approach",
+          "description": "We understand your brand, audience, and objectives before writing a single line of code."
+        },
+        {
+          "title": "Design + Dev in Sync",
+          "description": "UI/UX and development work together—not as separate steps—for smoother delivery."
+        },
+        {
+          "title": "Long-Term Friendly Builds",
+          "description": "You get a site that can grow with you instead of needing a full rebuild every year."
+        }
+      ]
+    }
+  },
+
+  "mobile-app-development": {
+    "heading": {
+      "title": "Mobile App Development",
+      "heading": "High-Performance Apps for Android, iOS & Beyond",
+      "text": "We design and develop Android, iOS, and cross-platform apps that are fast, intuitive, and ready to scale."
+    },
+    "intro": [
+      {
+        "title": "Android & iOS Apps",
+        "subtitle": "Native-feel apps your users love",
+        "image": {
+          "src": "/services/mobile-application/1.webp",
+          "alt": "Android and iOS App Development"
+        },
+        "description": [
+          "Custom mobile apps tailored to your business, product, or startup idea.",
+          "Smooth navigation, clear information hierarchy, and intuitive interactions.",
+          "Built for performance, security, and long-term stability."
+        ]
+      },
+      {
+        "title": "Cross-Platform Development",
+        "subtitle": "One codebase, multiple platforms",
+        "image": {
+          "src": "/services/mobile-application/2.webp",
+          "alt": "Cross Platform Mobile Apps"
+        },
+        "description": [
+          "Cross-platform apps that run seamlessly on both Android and iOS.",
+          "Faster development cycles with consistent UI and UX.",
+          "Ideal for startups and products that need to ship quickly and scale efficiently."
+        ]
+      },
+      {
+        "title": "App Redesign & Upgrades",
+        "subtitle": "Upgrade old apps into modern experiences",
+        "image": {
+          "src": "/services/mobile-application/3.webp",
+          "alt": "Mobile App Redesign and Upgrades"
+        },
+        "description": [
+          "Revamping outdated interfaces with fresh, modern UI.",
+          "Improving speed, security, and user retention.",
+          "Feature upgrades, refactoring, and migration to newer tech stacks."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core Services",
+        "icon": "mdi:cellphone",
+        "description": [
+          "Android app development",
+          "iOS app development",
+          "Cross-platform app builds",
+          "App redesign and revamps"
+        ]
+      },
+      {
+        "title": "Product & Experience",
+        "icon": "mdi:gesture-tap-button",
+        "description": [
+          "User-first navigation and flows",
+          "Smooth animations and transitions",
+          "Optimized for performance and battery",
+          "App Store and Play Store ready builds"
+        ]
+      },
+      {
+        "title": "Scalability & Reliability",
+        "icon": "mdi:shield-check",
+        "description": [
+          "Secure backend integrations and APIs",
+          "Notification systems and live updates",
+          "Structured architecture for scaling",
+          "Continuous improvements and updates"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Build Your App with Techverzing?",
+      "subtitle": "From MVPs to full-scale products",
+      "description": [
+        "We help you go from idea to launch with a clear roadmap, clean execution, and reliable support.",
+        "Every app is designed with performance, usability, and real-world usage in mind."
+      ],
+      "advantages": [
+        {
+          "title": "Product Thinking",
+          "description": "We don’t just code features—we help shape the product experience."
+        },
+        {
+          "title": "Transparent Development",
+          "description": "You stay in the loop with clear milestones, demos, and updates."
+        },
+        {
+          "title": "Post-Launch Support",
+          "description": "We stay with you beyond launch for fixes, improvements, and new features."
+        }
+      ]
+    }
+  },
+
+  "crm-automation": {
+    "heading": {
+      "title": "Custom CRM & Business Automation",
+      "heading": "Systems That Simplify Your Day-to-Day Operations",
+      "text": "We build custom CRMs, lead management systems, payroll tools, and workflow automation tailored to how your business actually works."
+    },
+    "intro": [
+      {
+        "title": "Custom CRM Systems",
+        "subtitle": "Organize leads, customers, and relationships in one place",
+        "image": {
+          "src": "/services/customized-software-development/1.png",
+          "alt": "Custom CRM Development"
+        },
+        "description": [
+          "CRMs designed around your sales process, not the other way around.",
+          "Track leads, deals, clients, and communication with full clarity.",
+          "Role-based access, activity logs, and meaningful reports."
+        ]
+      },
+      {
+        "title": "Lead & Business Management",
+        "subtitle": "Stay on top of leads, tasks, and follow-ups",
+        "image": {
+          "src": "/services/customized-software-development/2.webp",
+          "alt": "Lead Management Systems"
+        },
+        "description": [
+          "Lead tracking from first touch to conversion and beyond.",
+          "Automated reminders, follow-up workflows, and status updates.",
+          "Custom views for sales, support, and management teams."
+        ]
+      },
+      {
+        "title": "Employee, Payroll & Workflow Automation",
+        "subtitle": "Automate repetitive operations and save time",
+        "image": {
+          "src": "/services/customized-software-development/3.webp",
+          "alt": "Business Automation and Admin Panels"
+        },
+        "description": [
+          "Employee management, attendance tracking, and payroll calculation systems.",
+          "Custom backend and admin panels for operations and approvals.",
+          "Workflow automation to reduce manual work and errors."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core Solutions",
+        "icon": "mdi:account-cog",
+        "description": [
+          "Custom CRM dashboards and pipelines",
+          "Lead and client lifecycle management",
+          "Employee, attendance, and payroll systems",
+          "Tailored backend and admin consoles"
+        ]
+      },
+      {
+        "title": "Automation & Efficiency",
+        "icon": "mdi:cog-sync",
+        "description": [
+          "Automation of repetitive tasks and follow-ups",
+          "Business rule-driven workflows",
+          "Notifications, approvals, and escalations",
+          "Reports for performance and decision-making"
+        ]
+      },
+      {
+        "title": "Security & Reliability",
+        "icon": "mdi:shield-check",
+        "description": [
+          "Role-based access and permissions",
+          "Secure data handling and storage",
+          "Audit trails for key actions",
+          "Stable, scalable architecture"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Choose Techverzing for CRM & Automation?",
+      "subtitle": "Tools that fit your business—not generic templates",
+      "description": [
+        "We design systems that mirror your real processes, saving time and reducing chaos.",
+        "Whether you’re managing leads, employees, or operations, we help you centralize and automate."
+      ],
+      "advantages": [
+        {
+          "title": "Tailor-Made Systems",
+          "description": "Every feature and flow is driven by how your team actually works."
+        },
+        {
+          "title": "End-to-End Build",
+          "description": "From planning to deployment, everything is handled in one connected process."
+        },
+        {
+          "title": "Scalable Foundations",
+          "description": "Your system can grow from a small team to a large organization without falling apart."
+        }
+      ]
+    }
+  },
+
+  "ai-ml-solutions": {
+    "heading": {
+      "title": "AI & ML Solutions",
+      "heading": "Smarter Systems Powered by AI & Machine Learning",
+      "text": "We build AI-driven chatbots, recommendation engines, prediction systems, and custom integrations to automate and enhance your workflows."
+    },
+    "intro": [
+      {
+        "title": "AI Chatbots & Assistants",
+        "subtitle": "Automated conversations that feel human",
+        "image": {
+          "src": "/services/ai-ml-solutions/1.webp",
+          "alt": "AI Chatbot and Assistant Development"
+        },
+        "description": [
+          "Chatbots for websites, apps, and internal tools to handle FAQs, support, and lead capture.",
+          "Context-aware flows with smart routing and escalation to humans.",
+          "Integrations with CRMs, helpdesks, and internal systems."
+        ]
+      },
+      {
+        "title": "Recommendation & Prediction Systems",
+        "subtitle": "Use your data to make better decisions",
+        "image": {
+          "src": "/services/ai-ml-solutions/2.webp",
+          "alt": "AI Recommendation and Prediction Systems"
+        },
+        "description": [
+          "Recommendation engines for products, content, or services.",
+          "Prediction models for demand, churn, or customer behavior.",
+          "Dashboards and APIs to plug insights into your existing tools."
+        ]
+      },
+      {
+        "title": "Custom AI Integrations",
+        "subtitle": "Bring AI into your existing products",
+        "image": {
+          "src": "/services/ai-ml-solutions/3.webp",
+          "alt": "Custom AI Integration and Automation"
+        },
+        "description": [
+          "AI-powered automation for workflows, content, and operations.",
+          "Custom model integration using third-party APIs or your own data.",
+          "Secure, well-structured implementations tailored to your stack."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core AI Services",
+        "icon": "mdi:robot-outline",
+        "description": [
+          "AI chatbot and assistant development",
+          "Recommendation and personalization engines",
+          "Predictive analytics and scoring models",
+          "AI-powered automation flows"
+        ]
+      },
+      {
+        "title": "Integration & Architecture",
+        "icon": "mdi:source-branch",
+        "description": [
+          "APIs and webhooks for existing systems",
+          "Secure token and key management",
+          "Cloud-based deployment and scaling",
+          "Monitoring and logging of AI performance"
+        ]
+      },
+      {
+        "title": "Business Value Focus",
+        "icon": "mdi:chart-line",
+        "description": [
+          "Use cases tied to real business outcomes",
+          "Measurable impact on efficiency and ROI",
+          "Data-driven iterations and improvement",
+          "Support for experiments and pilots"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Work with Techverzing for AI & ML?",
+      "subtitle": "Practical AI, not just buzzwords",
+      "description": [
+        "We focus on AI that clearly improves experience, efficiency, or decision-making—not just demo features.",
+        "Every implementation is grounded in your data, use case, and technical reality."
+      ],
+      "advantages": [
+        {
+          "title": "Use-Case First",
+          "description": "We start from the problem and outcome, then choose the right AI approach."
+        },
+        {
+          "title": "Safe & Secure Integrations",
+          "description": "We respect data privacy, access controls, and infrastructure constraints."
+        },
+        {
+          "title": "Room to Grow",
+          "description": "Systems are built in a way that you can expand and refine models over time."
+        }
+      ]
+    }
+  },
+
+  "cloud-backend-development": {
+    "heading": {
+      "title": "Cloud & Backend Development",
+      "heading": "Secure, Scalable Backends for Modern Apps",
+      "text": "We design and implement backend systems using Firebase, AWS, and Google Cloud—covering APIs, authentication, databases, and storage."
+    },
+    "intro": [
+      {
+        "title": "Cloud Setup & Architecture",
+        "subtitle": "Right-sized infrastructure for your product",
+        "image": {
+          "src": "/services/cloud-backend-development/1.webp",
+          "alt": "Cloud Architecture and Setup"
+        },
+        "description": [
+          "Cloud environments configured on Firebase, AWS, or Google Cloud.",
+          "Structured environments for dev, staging, and production.",
+          "Security, access control, and monitoring baked in from day one."
+        ]
+      },
+      {
+        "title": "APIs, Auth & Backend Logic",
+        "subtitle": "The backbone of your web and mobile apps",
+        "image": {
+          "src": "/services/cloud-backend-development/2.webp",
+          "alt": "Backend Development and API Design"
+        },
+        "description": [
+          "REST and GraphQL APIs for web, mobile, and internal tools.",
+          "Authentication and authorization flows for users and admins.",
+          "Business logic implemented cleanly and maintainably."
+        ]
+      },
+      {
+        "title": "Databases & Cloud Storage",
+        "subtitle": "Handle data the right way from the start",
+        "image": {
+          "src": "/services/cloud-backend-development/3.webp",
+          "alt": "Database and Cloud Storage Solutions"
+        },
+        "description": [
+          "Relational and NoSQL database design and optimization.",
+          "Cloud storage for files, media, and documents.",
+          "Backup, scaling, and access control best practices."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core Backend Services",
+        "icon": "mdi:server",
+        "description": [
+          "Cloud environment setup (Firebase, AWS, GCP)",
+          "API design and implementation",
+          "Authentication and access management",
+          "Background jobs and scheduled tasks"
+        ]
+      },
+      {
+        "title": "Security & Reliability",
+        "icon": "mdi:lock-check",
+        "description": [
+          "Hardened backend and server configurations",
+          "Secure data flow between client and server",
+          "Structured logging and error handling",
+          "Scalable deployment strategies"
+        ]
+      },
+      {
+        "title": "Data & Storage",
+        "icon": "mdi:database",
+        "description": [
+          "Database structure and indexing",
+          "Cloud storage and CDN integration",
+          "Backup and recovery plans",
+          "Performance tuning and optimization"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Trust Techverzing with Your Backend?",
+      "subtitle": "A strong backend makes everything else smoother",
+      "description": [
+        "We create backend systems that are secure, understandable, and easy to extend.",
+        "Our goal is to support your current product while leaving room for the next versions."
+      ],
+      "advantages": [
+        {
+          "title": "Clean Architecture",
+          "description": "Your backend is structured for clarity, not chaos."
+        },
+        {
+          "title": "Future-Proofing",
+          "description": "We think ahead about scale, integrations, and new features."
+        },
+        {
+          "title": "End-to-End Alignment",
+          "description": "Backend decisions are made in sync with frontend, product, and business needs."
+        }
+      ]
+    }
+  },
+
+  "ui-ux-design": {
+    "heading": {
+      "title": "UI/UX Design",
+      "heading": "Interfaces That Feel Natural and Look Sharp",
+      "text": "We design user-centered interfaces, wireframes, prototypes, and visual systems for websites and mobile applications."
+    },
+    "intro": [
+      {
+        "title": "Website & App UI Design",
+        "subtitle": "Pixel-perfect designs for modern products",
+        "image": {
+          "src": "/services/ui-ux-design/1.webp",
+          "alt": "UI Design for Web and Mobile"
+        },
+        "description": [
+          "Layouts designed to communicate clearly and guide users.",
+          "Component-based UI systems that stay consistent across pages and screens.",
+          "Designs that balance aesthetics with business goals."
+        ]
+      },
+      {
+        "title": "Wireframes & Prototypes",
+        "subtitle": "Test ideas before you build them",
+        "image": {
+          "src": "/services/ui-ux-design/2.webp",
+          "alt": "Wireframes and Interactive Prototypes"
+        },
+        "description": [
+          "Low-fidelity wireframes to map flows and structure.",
+          "Interactive prototypes to validate experience before development.",
+          "Fast iteration cycles based on feedback and user testing."
+        ]
+      },
+      {
+        "title": "Brand Identity & Visual Language",
+        "subtitle": "Give your product a distinct visual voice",
+        "image": {
+          "src": "/services/ui-ux-design/3.png",
+          "alt": "Brand Identity and Visual System"
+        },
+        "description": [
+          "Color systems, typography, and component styles.",
+          "Visual guidelines for consistency across web, app, and social.",
+          "Design systems that make scaling design easier."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core Design Services",
+        "icon": "mdi:palette-outline",
+        "description": [
+          "Website UI and landing page design",
+          "Mobile app screens and flows",
+          "Design systems and style guides",
+          "Component libraries and layouts"
+        ]
+      },
+      {
+        "title": "User Experience Focus",
+        "icon": "mdi:gesture-tap",
+        "description": [
+          "Clear navigation and information hierarchy",
+          "User journeys mapped to goals and tasks",
+          "Interaction patterns users already understand",
+          "Attention to accessibility and clarity"
+        ]
+      },
+      {
+        "title": "Collaboration & Handover",
+        "icon": "mdi:handshake-outline",
+        "description": [
+          "Designs ready for development handoff",
+          "Asset exports and documentation",
+          "Collaboration with dev teams and stakeholders",
+          "Support during implementation"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Design with Techverzing?",
+      "subtitle": "Design that respects both users and developers",
+      "description": [
+        "We bridge the gap between beautiful visuals and realistic implementation.",
+        "Every screen, flow, and component is designed with real usage in mind."
+      ],
+      "advantages": [
+        {
+          "title": "Product-Driven Design",
+          "description": "We design around outcomes: signups, purchases, engagement, and clarity."
+        },
+        {
+          "title": "Dev-Friendly Files",
+          "description": "Clean structure, naming, and documentation that developers actually like."
+        },
+        {
+          "title": "Consistent Experience",
+          "description": "Your brand feels the same wherever the user sees it."
+        }
+      ]
+    }
+  },
+
+  "maintenance-support": {
+    "heading": {
+      "title": "Maintenance & Support",
+      "heading": "Keep Your Website and Apps Running Smoothly",
+      "text": "We provide ongoing support, bug fixes, performance optimization, and security updates so your product stays healthy after launch."
+    },
+    "intro": [
+      {
+        "title": "Monthly Support Plans",
+        "subtitle": "Stay covered after your project goes live",
+        "image": {
+          "src": "/services/maintenance-support/1.webp",
+          "alt": "Ongoing Support and Maintenance Plans"
+        },
+        "description": [
+          "Flexible monthly retainers based on your support needs.",
+          "Planned hours for updates, fixes, and improvements.",
+          "Clear scope, response times, and priorities."
+        ]
+      },
+      {
+        "title": "Bug Fixes & Stability",
+        "subtitle": "Fix issues before your users notice them",
+        "image": {
+          "src": "/services/maintenance-support/2.webp",
+          "alt": "Bug Fixes and Stability Improvements"
+        },
+        "description": [
+          "Quick resolution for bugs and broken flows.",
+          "Compatibility fixes for browsers, devices, and OS updates.",
+          "Refactoring and cleanup where necessary."
+        ]
+      },
+      {
+        "title": "Performance & Security",
+        "subtitle": "Make your product fast, safe, and reliable",
+        "image": {
+          "src": "/services/maintenance-support/3.webp",
+          "alt": "Performance Optimization and Security Updates"
+        },
+        "description": [
+          "Speed improvements, caching, and optimization.",
+          "Security patches, dependency updates, and monitoring.",
+          "Regular reviews to keep things running smoothly."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "What We Cover",
+        "icon": "mdi:tools",
+        "description": [
+          "Bug fixes and quick patches",
+          "Minor updates and content changes",
+          "Performance optimization",
+          "Security and dependency updates"
+        ]
+      },
+      {
+        "title": "Reliability & Peace of Mind",
+        "icon": "mdi:shield-check",
+        "description": [
+          "Reduced downtime and smoother experiences",
+          "Monitored health of key systems and flows",
+          "Preventive maintenance, not just reactive fixes",
+          "Tracking issues and improvements over time"
+        ]
+      },
+      {
+        "title": "Flexible Engagement",
+        "icon": "mdi:calendar-clock",
+        "description": [
+          "Monthly retainers or fixed-hour blocks",
+          "Support around launches and campaigns",
+          "Room for new feature add-ons",
+          "Transparent reporting and updates"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Use Techverzing for Maintenance?",
+      "subtitle": "Your tech shouldn’t slow you down",
+      "description": [
+        "We make sure your product stays fast, secure, and usable as your business grows.",
+        "Instead of scrambling to fix problems, you have a steady, reliable support structure."
+      ],
+      "advantages": [
+        {
+          "title": "Proactive Support",
+          "description": "We don’t wait for things to break—we look for what can be improved."
+        },
+        {
+          "title": "Context & Continuity",
+          "description": "The people who maintain your product also understand how it’s built."
+        },
+        {
+          "title": "Less Firefighting",
+          "description": "Regular care reduces emergencies and last-minute rush fixes."
+        }
+      ]
+    }
+  },
+
+  "digital-branding": {
+    "heading": {
+      "title": "Digital Branding",
+      "heading": "Build a Brand That Looks and Feels Consistent Everywhere",
+      "text": "We create logos, brand kits, and social creatives that give your brand a recognizable and professional identity."
+    },
+    "intro": [
+      {
+        "title": "Logo Design",
+        "subtitle": "A mark that represents your brand clearly",
+        "image": {
+          "src": "/services/digital-branding/1.webp",
+          "alt": "Logo Design for Brands"
+        },
+        "description": [
+          "Logos crafted around your story, audience, and positioning.",
+          "Multiple concepts and refinement rounds.",
+          "Designed to work across digital and print platforms."
+        ]
+      },
+      {
+        "title": "Branding Kits & Guidelines",
+        "subtitle": "Visual systems that keep everything consistent",
+        "image": {
+          "src": "/services/digital-branding/2.webp",
+          "alt": "Branding Kits and Visual Identity"
+        },
+        "description": [
+          "Color palettes, typography sets, and UI elements.",
+          "Usage guidelines for logos, spacing, and visuals.",
+          "Assets ready for web, app, and marketing use."
+        ]
+      },
+      {
+        "title": "Social Media Creatives",
+        "subtitle": "Content that looks on-brand across platforms",
+        "image": {
+          "src": "/services/digital-branding/3.webp",
+          "alt": "Social Media Creative Design"
+        },
+        "description": [
+          "Post templates, story formats, and highlight covers.",
+          "Design systems for Instagram, Facebook, LinkedIn, and more.",
+          "Creatives aligned with your campaigns and messaging."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Core Branding Services",
+        "icon": "mdi:brush-outline",
+        "description": [
+          "Logo design and refinements",
+          "Brand color and typography systems",
+          "Brand identity and usage guidelines",
+          "Digital asset creation for web and social"
+        ]
+      },
+      {
+        "title": "Platform-Ready Assets",
+        "icon": "mdi:monitor-cellphone",
+        "description": [
+          "Social media post and story templates",
+          "Profile and cover images for platforms",
+          "Ad-ready creative bases",
+          "Presentation and document branding"
+        ]
+      },
+      {
+        "title": "Consistency & Recognition",
+        "icon": "mdi:bullseye-arrow",
+        "description": [
+          "Visual language that’s easy to recognize",
+          "Unified look across all channels",
+          "Support for future brand expansions",
+          "Reusable design systems and elements"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Brand with Techverzing?",
+      "subtitle": "Looks matter—but so does clarity",
+      "description": [
+        "We don’t just make things look pretty; we design for recognition, clarity, and usability.",
+        "Your brand assets are created to work in real scenarios, not just in mockups."
+      ],
+      "advantages": [
+        {
+          "title": "Purposeful Visuals",
+          "description": "Every choice—color, font, layout—has a reason behind it."
+        },
+        {
+          "title": "Ready for Growth",
+          "description": "Your visual system can expand to new channels and formats easily."
+        },
+        {
+          "title": "Aligned with Strategy",
+          "description": "Branding supports your positioning and messaging, not separate from it."
+        }
+      ]
+    }
+  },
+
+  "seo-performance-marketing": {
+    "heading": {
+      "title": "SEO & Performance Marketing",
+      "heading": "Get Found. Load Fast. Convert Better.",
+      "text": "We combine on-page and technical SEO with performance optimization to improve visibility, rankings, traffic, and conversions."
+    },
+    "intro": [
+      {
+        "title": "On-Page & Technical SEO",
+        "subtitle": "Lay the right SEO foundation",
+        "image": {
+          "src": "/services/seo/1.png",
+          "alt": "On-page and Technical SEO"
+        },
+        "description": [
+          "On-page structure, headings, metadata, and internal linking.",
+          "Technical SEO fixes like sitemaps, indexing, and core vitals.",
+          "Clean URLs and content structures that search engines understand."
+        ]
+      },
+      {
+        "title": "Keyword & Content Optimization",
+        "subtitle": "Rank for what actually matters",
+        "image": {
+          "src": "/services/seo/2.jpg",
+          "alt": "Keyword Research and Content Optimization"
+        },
+        "description": [
+          "Keyword research tailored to your niche and intent.",
+          "Content optimization for clarity, depth, and search performance.",
+          "Better alignment between what users search and what your pages say."
+        ]
+      },
+      {
+        "title": "Speed & Performance",
+        "subtitle": "Faster websites, happier users, better rankings",
+        "image": {
+          "src": "/services/seo/3.jpg",
+          "alt": "Website Speed and Performance Optimization"
+        },
+        "description": [
+          "Speed tuning for images, scripts, and assets.",
+          "Core Web Vitals improvements (LCP, CLS, FID/FCP).",
+          "Server, caching, and frontend optimizations."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "SEO Essentials",
+        "icon": "mdi:magnify",
+        "description": [
+          "On-page SEO implementation",
+          "Technical SEO audits and fixes",
+          "Keyword research and mapping",
+          "Content structure optimization"
+        ]
+      },
+      {
+        "title": "Performance & UX",
+        "icon": "mdi:rocket-launch-outline",
+        "description": [
+          "Speed optimization and lazy loading",
+          "Mobile responsiveness and layout tuning",
+          "Improved navigation and engagement metrics",
+          "Reduced bounce rate and better session quality"
+        ]
+      },
+      {
+        "title": "Growth & Tracking",
+        "icon": "mdi:chart-areaspline",
+        "description": [
+          "Traffic and ranking tracking",
+          "Ongoing performance reviews",
+          "Recommendations for content and pages",
+          "Support for continuous SEO improvements"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Use Techverzing for SEO & Performance?",
+      "subtitle": "Technical, content, and performance under one roof",
+      "description": [
+        "We combine dev knowledge with SEO understanding—so changes are realistic and effective.",
+        "You get a site that’s not only discoverable, but also fast and pleasant to use."
+      ],
+      "advantages": [
+        {
+          "title": "End-to-End View",
+          "description": "From code to content to analytics, we look at the whole picture."
+        },
+        {
+          "title": "Practical Recommendations",
+          "description": "We suggest changes that can actually be implemented—often by us directly."
+        },
+        {
+          "title": "Long-Term Focus",
+          "description": "We aim for steady, sustainable growth rather than short-term tricks."
+        }
+      ]
+    }
+  },
+
+  "360-marketing": {
+    "heading": {
+      "title": "360° Marketing",
+      "heading": "Complete Marketing Support Across Platforms",
+      "text": "We plan and execute full-scale marketing campaigns using social media, paid ads, content strategy, creatives, and analytics."
+    },
+    "intro": [
+      {
+        "title": "Social Media Marketing",
+        "subtitle": "Stay active, relevant, and engaging",
+        "image": {
+          "src": "/services/social-media-optimization/1.jpg",
+          "alt": "Social Media Marketing for Brands"
+        },
+        "description": [
+          "Strategic presence on Instagram, Facebook, LinkedIn, YouTube and more.",
+          "Content calendars aligned with your brand and business goals.",
+          "Engagement-focused campaigns to build awareness and community."
+        ]
+      },
+      {
+        "title": "Paid Ads: Google & Meta",
+        "subtitle": "Performance-focused campaigns to drive results",
+        "image": {
+          "src": "/services/social-media-optimization/2.jpg",
+          "alt": "Google and Meta Ads Campaigns"
+        },
+        "description": [
+          "Campaigns planned around clear objectives—leads, sales, traffic, or awareness.",
+          "Ad sets, targeting, and creatives optimized for ROI.",
+          "Continuous testing and refinement of what works."
+        ]
+      },
+      {
+        "title": "Content, Creatives & Analytics",
+        "subtitle": "Plan, create, launch, measure, repeat",
+        "image": {
+          "src": "/services/social-media-optimization/3.png",
+          "alt": "Full Funnel Marketing Strategy and Analytics"
+        },
+        "description": [
+          "Content strategy and management for social, web, and campaigns.",
+          "Creative ad design that fits your brand and platform.",
+          "Analytics tracking to understand performance and refine strategy."
+        ]
+      }
+    ],
+    "highlights": [
+      {
+        "title": "Channels & Execution",
+        "icon": "mdi:earth",
+        "description": [
+          "Instagram, Facebook, LinkedIn, YouTube campaigns",
+          "Google Ads and Meta Ads funnels",
+          "Organic + paid strategy alignment",
+          "Landing pages and funnel support"
+        ]
+      },
+      {
+        "title": "Creative & Content",
+        "icon": "mdi:palette",
+        "description": [
+          "Ad creatives and campaign visuals",
+          "Content calendars and posting plans",
+          "Copywriting for ads and posts",
+          "Brand-consistent storytelling"
+        ]
+      },
+      {
+        "title": "Measurement & Optimization",
+        "icon": "mdi:chart-timeline-variant",
+        "description": [
+          "Analytics and performance dashboards",
+          "KPI tracking (CTR, CPL, ROAS, etc.)",
+          "A/B testing and iteration",
+          "Scaling what works, cutting what doesn’t"
+        ]
+      }
+    ],
+    "advantage": {
+      "title": "Why Run 360° Marketing with Techverzing?",
+      "subtitle": "One partner for strategy, execution, and optimization",
+      "description": [
+        "We connect your channels instead of treating them as isolated efforts.",
+        "From creative to performance, everything is aligned with your brand and business goals."
+      ],
+      "advantages": [
+        {
+          "title": "Unified View",
+          "description": "Your campaigns, platforms, and metrics live in one strategic picture."
+        },
+        {
+          "title": "Creative + Performance Balance",
+          "description": "We care about both how things look and how they perform."
+        },
+        {
+          "title": "Continuous Learning Loop",
+          "description": "Data from campaigns feeds into better next campaigns."
+        }
+      ]
+    }
+  }
+}

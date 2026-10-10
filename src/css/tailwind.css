@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@config '../../tailwind.config.ts';
+
+@theme {
+  --color-white: #f4f4f4;
+  --color-cream-white: #e8e6d9;
+  --color-black: #141415;
+  --color-black-slate: #0d0d0e;
+  --color-black-dull: #1e1e1f;
+  --color-primary: #202223;
+  --color-impact: #FF8C42;
+  --color-complement: #FF8C42;
+  --color-secondary: #3a3a2e;
+  --color-dull-text: #e8e6d9b3;
+  --color-dull-text-dark: rgba(32, 34, 35, 0.7);
+}
+
+@layer utilities {
+  .center {
+    @apply flex justify-center items-center;
+  }
+  .takeScreen {
+    @apply top-0 left-0 bottom-0 right-0;
+  }
+  .center_ab {
+    @apply left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .div {
+    @apply h-full w-full;
+  }
+
+  .tracking-tighter {
+    word-spacing: 3px;
+  }
+  .mrMx {
+    @apply mx-0 sm:mx-[clamp(1rem,5vw,4rem)];
+  }
+  .mrPy {
+    @apply py-[clamp(3rem,8vw,15rem)];
+  }
+  button{
+    @apply cursor-pointer
+  }
+}
+/* Base font for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-nunito;
+}
+
+/* Custom heading classes */
+.heading_0 {
+  @apply text-[clamp(3.5rem,7vw,6rem)] leading-[clamp(4rem,9vw,8rem)] tracking-normal;
+}
+.heading {
+  @apply text-[clamp(2.8rem,6vw,5rem)]
+    leading-[clamp(4rem,7vw,6rem)]
+    tracking-tight;
+}
+
+.heading_2 {
+  @apply text-[clamp(2.64rem,4.3vw,4rem)] /* 80% of h1 */
+    leading-[clamp(2.8rem,5.6vw,4.8rem)];
+}
+
+.heading_3 {
+  @apply text-[clamp(2.145rem,3.9vw,3.25rem)] /* ~65% of h1 */
+    leading-[clamp(2.5rem,4.55vw,3.9rem)]
+    tracking-tight;
+}
+
+.heading_4{
+  @apply text-[clamp(1.815rem,3.3vw,2.75rem)] /* ~55% of h1 */
+    leading-[clamp(2.4rem,3.85vw,3.3rem)]
+    tracking-tight;
+}
+
+.heading_5 {
+  @apply text-[clamp(1.485rem,2.7vw,2.25rem)] /* ~45% of h1 */
+    leading-[clamp(2rem,3.15vw,2.7rem)]
+    tracking-tight;
+}
+
+.heading_6 {
+  @apply text-[clamp(1.2rem,2.1vw,1.75rem)] /* ~35% of h1 */
+    tracking-wide;
+}
+.heading_7 {
+  @apply text-[clamp(1rem,2vw,1.5rem)] /* ~25% of h1 */
+    tracking-wide;
+}
+section {
+  @apply px-4 md:px-8 xl:px-12;
+}
+

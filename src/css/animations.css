@@ -1,0 +1,28 @@
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+
+  animation: fadeInAnimation 650ms ease-in-out forwards;
+  animation-delay: var(--ani-delay);
+}
+
+@keyframes preloaderFallback {
+  to {
+    visibility: hidden;
+  }
+}
+
+.preloader-root {
+  animation: preloaderFallback 0s linear 6s forwards;
+}
+
+

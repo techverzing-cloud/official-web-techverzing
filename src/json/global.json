@@ -1,0 +1,198 @@
+{
+  "contactInfo": {
+    "title": "Contact Info",
+    "items": [
+      { "icon": "twemoji:telephone-receiver", "text": "+91 7309367692" },
+      {
+        "icon": "mdi:email",
+        "text": "info@techverzing.com"
+      },
+            {
+        "icon": "mdi:email",
+        "text": "support@techverzing.com"
+      },
+      {
+        "icon": "mdi:map-marker",
+        "text": "New Delhi, Delhi, India"
+      }
+
+    ],
+    "socialLinks": [
+      {
+        "name": "Facebook",
+        "icon": "/global/fb.webp",
+        "href": "https://www.facebook.com/share/techverzing"
+      },
+      {
+        "name": "Instagram",
+        "icon": "/global/insta.webp",
+        "href": "https://www.instagram.com/techverzing"
+      },
+      {
+        "name": "Twitter",
+        "icon": "/global/x.webp",
+        "href": "https://x.com/techverzing"
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "/global/linkedin.webp",
+        "href": "https://www.linkedin.com/company/techverzing/"
+      },
+      {
+        "name": "Youtube",
+        "icon": "/global/yt.png",
+        "href": "https://youtube.com/@techverzing"
+      }
+    ]
+  },
+  "footer": {
+    "logo": {
+      "src": "/global/logo_wbg.png",
+      "width": 80,
+      "height": 80,
+      "alt": "Techverzing Technologies logo"
+    },
+    "description": "Where Technology Meets Business Growth.",
+    "navSections": [
+      {
+        "label": "Pages",
+        "categories": [
+          { "name": "Home", "link": "/" },
+          { "name": "About", "link": "/about" },
+          { "name": "Services", "link": "/services" },
+          { "name": "Contact", "link": "/contact" },
+          { "name": "Careers", "link": "/careers" }
+        ]
+      },
+      {
+        "label": "Systems, Web & Apps",
+        "categories": [
+          {
+            "name": "Custom CRM & Business Automation",
+            "link": "/services/crm-automation"
+          },
+          {
+            "name": "AI & ML Solutions",
+            "link": "/services/ai-ml-solutions"
+          },
+          {
+            "name": "Website Development",
+            "link": "/services/website-development"
+          },
+          {
+            "name": "Mobile App Development",
+            "link": "/services/mobile-app-development"
+          },
+          {
+            "name": "UI/UX Design",
+            "link": "/services/ui-ux-design"
+          },
+          {
+            "name": "Cloud & Backend Development",
+            "link": "/services/cloud-backend-development"
+          },
+          {
+            "name": "Maintenance & Support",
+            "link": "/services/maintenance-support"
+          }
+        ]
+      },
+      {
+        "label": "Branding & Marketing",
+        "categories": [
+          {
+            "name": "Digital Branding",
+            "link": "/services/digital-branding"
+          },
+          {
+            "name": "SEO & Performance Marketing",
+            "link": "/services/seo-performance-marketing"
+          },
+          {
+            "name": "360° Marketing",
+            "link": "/services/360-marketing"
+          }
+        ]
+      }
+    ],
+    "legal": {
+      "terms": {
+        "label": "Terms & Conditions",
+        "href": "/policies/terms-conditions"
+      },
+      "privacy": {
+        "label": "Privacy Policy",
+        "href": "/policies/privacy-policy"
+      },
+      "copyright": "2025 Techverzing Technologies. All rights reserved."
+    }
+  },
+  "menu": {
+    "sections": [
+      {
+        "label": "Systems, Web & Apps",
+        "link": "/services/website-development",
+        "categories": [
+          {
+            "name": "Custom CRM & Business Automation",
+            "link": "/services/crm-automation"
+          },
+          {
+            "name": "AI & ML Solutions",
+            "link": "/services/ai-ml-solutions"
+          },
+          {
+            "name": "Website Development",
+            "link": "/services/website-development"
+          },
+          {
+            "name": "Mobile App Development",
+            "link": "/services/mobile-app-development"
+          },
+          {
+            "name": "UI/UX Design",
+            "link": "/services/ui-ux-design"
+          },
+          {
+            "name": "Cloud & Backend Development",
+            "link": "/services/cloud-backend-development"
+          },
+          {
+            "name": "Maintenance & Support",
+            "link": "/services/maintenance-support"
+          }
+        ]
+      },
+
+      {
+        "label": "Brand & Marketing",
+        "link": "/services/360-marketing",
+        "categories": [
+          {
+            "name": "Digital Branding",
+            "link": "/services/digital-branding"
+          },
+          {
+            "name": "SEO & Performance Marketing",
+            "link": "/services/seo-performance-marketing"
+          },
+          {
+            "name": "360° Marketing",
+            "link": "/services/360-marketing"
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "text": "An idea, a project? Let’s start today.",
+      "buttonText": "Get in touch",
+      "buttonLink": "/contact"
+    },
+    "links": [
+      { "label": "Home", "path": "/" },
+      { "label": "About", "path": "/about" },
+      { "label": "Services", "path": "/services" },
+      { "label": "Contact", "path": "/contact" }
+    ]
+  }
+}

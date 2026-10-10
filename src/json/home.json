@@ -1,0 +1,187 @@
+{
+  "hero": {
+    "mainHeading": ["Powered by Innovation,", "Driven by Results."],
+    "subHeading": "We're giving back your marketing & technology solutions",
+    "wordsAnimation": [
+      "Authentic",
+      "Simple",
+      "Comprehensible",
+      "Attractive",
+      "Innovative",
+      "Engaging",
+      "Scalable",
+      "Secure",
+      "Customizable",
+      "User-Friendly",
+      "Cloud-Based",
+      "Result-Driven",
+      "Growth-Focused"
+    ],
+    "img": { "src": "/home/hero.webp", "alt": "digital marketing" }
+  },
+  "paragraph": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready",
+  "highlightWords": [
+    "10+ years of experience",
+    "agency",
+    "advertising",
+    "strategies",
+    "digital",
+    "marketing",
+    "strategy",
+    "creation",
+    "campaigns"
+  ],
+  "servicesSection": {
+    "heading": ["Your Vision,", "Our Innovation."],
+    "description": "Every business works differently, and its challenges aren’t the same. That’s why we create tailored digital marketing, IT, and software solutions built around your goals. Our focus is to help you grow faster with strategies that are clear, practical, and built for long-term results.",
+    "agencyServices": "Our in-house team covers the full spectrum of digital marketing and technology solutions, from strategy and creation to campaigns and system development"
+  },
+  "clientsSection": {
+    "heading": "What Our Clients Say About Us",
+    "saying": {
+      "quote": "Techverzing helped us scale faster with their digital marketing & IT solutions. The collaboration was seamless and results exceeded expectations",
+      "clientName": "John Smith, CEO",
+      "clientCompany": "TechWave Solutions",
+      "rating": 4.8
+    }
+  },
+  "whatWeDo": {
+    "eyebrow": "What We Do",
+    "heading": ["Your Vision,", "Our Innovation."],
+    "description": "Every business works differently, and its challenges aren't the same. That's why we create tailored digital marketing, IT, and software solutions built around your goals. Our focus is to help you grow faster with strategies that are clear, practical, and built for long-term results.",
+    "capabilities": [
+      {
+        "icon": "execution",
+        "index": "01",
+        "hash": "Execution",
+        "heading": "Build What Actually Works",
+        "description": "We design and develop websites, apps, and systems that focus on real usability, performance, and long-term value - not just visual appeal.",
+        "tags": ["Websites", "Web Apps", "Mobile Apps"]
+      },
+      {
+        "icon": "growth",
+        "index": "02",
+        "hash": "Growth",
+        "heading": "Growth-Driven Marketing",
+        "description": "Through SEO, performance marketing, branding, and 360 campaigns, we help your business attract the right audience and convert attention into measurable growth.",
+        "tags": ["SEO", "Paid Media", "360 Campaigns"]
+      },
+      {
+        "icon": "automation",
+        "index": "03",
+        "hash": "Automation",
+        "heading": "Smart Automation & AI",
+        "description": "From CRM systems and workflow automation to AI chatbots and predictive tools, we reduce manual work and scale operations intelligently.",
+        "tags": ["CRM", "Workflows", "AI Assistants"]
+      },
+      {
+        "icon": "reliability",
+        "index": "04",
+        "hash": "Reliability",
+        "heading": "Reliable & Scalable Tech",
+        "description": "Our cloud infrastructure, backend systems, security practices, and maintenance plans ensure your software stays fast, secure, and ready to grow with your business.",
+        "tags": ["Cloud", "Security", "Support"]
+      }
+    ]
+  },
+  "whoWeAre": {
+    "eyebrow": "Who We Are",
+    "heading": "Creativity, data, and engineering under one roof.",
+    "statement": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready.",
+    "img": { "src": "/global/bgimage.jpeg", "alt": "The Techverzing team collaborating" },
+    "story": [
+      {
+        "title": "Our Story",
+        "text": "Techverzing began with a passion for blending creativity and data to craft impactful digital marketing strategies for brands worldwide."
+      },
+      {
+        "title": "Mission",
+        "text": "Our mission is to deliver creative, data-driven marketing solutions that help brands grow, engage, and build meaningful connections with their audiences."
+      },
+      {
+        "title": "Vision",
+        "text": "We envision a future where every brand can harness the power of creativity and analytics to inspire, innovate, and lead in the digital space."
+      }
+    ],
+    "stats": [
+      { "value": 10, "suffix": "+", "label": "Years of experience" },
+      { "value": 250, "suffix": "+", "label": "Projects delivered" },
+      { "value": 40, "suffix": "+", "label": "Clients worldwide" },
+      { "value": 15, "suffix": "+", "label": "Industries served" }
+    ]
+  },
+  "trustedBy": {
+    "eyebrow": "Trusted By",
+    "heading": "Brands that grow with us",
+    "names": [
+      "TechWave",
+      "Lumen Commerce",
+      "Northwind",
+      "Bright & Co.",
+      "Nexora",
+      "Vertex Labs",
+      "Harborline",
+      "Quantum Retail",
+      "Meridian",
+      "Sunpeak",
+      "Orbit Comm",
+      "Cobalt Studio"
+    ],
+    "rating": {
+      "value": "4.8",
+      "outOf": "5",
+      "label": "Average client rating",
+      "reviews": "120+ verified reviews"
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "heading": "What Our Clients Say About Us",
+    "items": [
+      {
+        "quote": "Techverzing helped us scale faster with their digital marketing & IT solutions. The collaboration was seamless and results exceeded expectations.",
+        "name": "John Smith",
+        "role": "CEO",
+        "company": "TechWave Solutions",
+        "rating": 4.8
+      },
+      {
+        "quote": "From the first strategy sprint to launch, the team moved fast without cutting corners. Our conversion rate nearly doubled within a quarter.",
+        "name": "Priya Nair",
+        "role": "Founder",
+        "company": "Lumen Commerce",
+        "rating": 5.0
+      },
+      {
+        "quote": "They rebuilt our backend and automated the workflows our team used to run by hand. Support has been dependable ever since.",
+        "name": "Daniel Okafor",
+        "role": "CTO",
+        "company": "Northwind Logistics",
+        "rating": 4.9
+      },
+      {
+        "quote": "One partner for branding, SEO, and paid campaigns. The reporting is clear, the ideas are sharp, and the results speak for themselves.",
+        "name": "Sofia Alvarez",
+        "role": "Marketing Director",
+        "company": "Bright & Co.",
+        "rating": 5.0
+      }
+    ]
+  },
+  "industries": {
+    "eyebrow": "Industries We Transform",
+    "heading": "Wherever you operate, we build for your reality.",
+    "items": [
+      { "text": "E-Commerce & Retail", "link": "/services/website-development", "image": "/services/website-development/1.webp" },
+      { "text": "SaaS & Startups", "link": "/services/customized-software-development", "image": "/services/customized-software-development/2.webp" },
+      { "text": "Finance & Fintech", "link": "/services/cloud-backend-development", "image": "/services/cloud-backend-development/1.webp" },
+      { "text": "Healthcare & Wellness", "link": "/services/ai-ml-solutions", "image": "/services/ai-ml-solutions/3.webp" },
+      { "text": "Consumer Brands", "link": "/services/digital-branding", "image": "/services/digital-branding/2.webp" },
+      { "text": "Education & EdTech", "link": "/services/mobile-app-development", "image": "/services/mobile-application/1.webp" },
+      { "text": "Real Estate & Property", "link": "/services/ui-ux-design", "image": "/services/ui-ux-design/2.webp" },
+      { "text": "Travel & Hospitality", "link": "/services/360-marketing", "image": "/services/social-media-optimization/1.jpg" }
+    ]
+  },
+  "blogs": [
+  ]
+}

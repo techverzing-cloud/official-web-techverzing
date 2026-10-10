@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Website Development",
+    "slogan": "We build fast, modern, and mobile-friendly websites including business sites, portfolios, landing pages, e-commerce stores, and dashboards.",
+    "link": {
+      "label": "Website Development",
+      "url": "/services/website-development"
+    },
+    "icon": "mdi:web"
+  },
+  {
+    "title": "Mobile App Development",
+    "slogan": "Android, iOS, and cross-platform apps built for performance, scalability, and seamless user experience.",
+    "link": {
+      "label": "Mobile App Development",
+      "url": "/services/mobile-app-development"
+    },
+    "icon": "mdi:cellphone"
+  },
+  {
+    "title": "Custom CRM & Business Automation",
+    "slogan": "Powerful CRM systems, lead tracking, payroll tools, workflow automation, and custom admin dashboards.",
+    "link": { "label": "CRM & Automation", "url": "/services/crm-automation" },
+    "icon": "mdi:account-cog"
+  },
+  {
+    "title": "AI & ML Solutions",
+    "slogan": "AI chatbots, recommendation engines, predictive systems, and custom AI integrations for smarter automation.",
+    "link": {
+      "label": "AI & ML Solutions",
+      "url": "/services/ai-ml-solutions"
+    },
+    "icon": "mdi:robot-outline"
+  },
+  {
+    "title": "Cloud & Backend Development",
+    "slogan": "Secure backend systems with Firebase, AWS, and Google Cloud — APIs, auth systems, databases, and cloud storage.",
+    "link": {
+      "label": "Cloud & Backend",
+      "url": "/services/cloud-backend-development"
+    },
+    "icon": "mdi:cloud-outline"
+  },
+  {
+    "title": "UI/UX Design",
+    "slogan": "User-centered UI design, wireframes, prototypes, and visual branding for websites and mobile apps.",
+    "link": { "label": "UI/UX Design", "url": "/services/ui-ux-design" },
+    "icon": "mdi:palette-outline"
+  },
+  {
+    "title": "Maintenance & Support",
+    "slogan": "Ongoing support plans including bug fixes, performance tuning, security updates, and optimizations.",
+    "link": {
+      "label": "Maintenance & Support",
+      "url": "/services/maintenance-support"
+    },
+    "icon": "mdi:tools"
+  },
+  {
+    "title": "Digital Branding",
+    "slogan": "Complete brand identity creation including logo design, branding kits, and social media creatives.",
+    "link": {
+      "label": "Digital Branding",
+      "url": "/services/digital-branding"
+    },
+    "icon": "mdi:brush-outline"
+  },
+  {
+    "title": "SEO & Performance Marketing",
+    "slogan": "On-page and technical SEO, keyword research, website optimization, speed improvements, and traffic growth.",
+    "link": {
+      "label": "SEO & Marketing",
+      "url": "/services/seo-performance-marketing"
+    },
+    "icon": "mdi:magnify"
+  },
+  {
+    "title": "360° Marketing",
+    "slogan": "Full-scale marketing campaigns across social platforms, paid ads, content strategy, creative design, and analytics tracking.",
+    "link": { "label": "360° Marketing", "url": "/services/360-marketing" },
+    "icon": "mdi:earth"
+  }
+]

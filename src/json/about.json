@@ -1,0 +1,111 @@
+{
+  "primaryColor": "#7142e8",
+  "hero": {
+    "heading": "We blend strategy and technology to grow brands.",
+    "description": "A marketing agency with engineering at its core. We design, build, and scale digital experiences that convert.",
+    "cta": {
+      "label": "Start a Project",
+      "href": "#contact"
+    }
+  },
+  "about": {
+    "heading": "About the Company",
+    "description": "We’re a cross-disciplinary team of strategists, creatives, and engineers. Our mission is to help ambitious brands find momentum through design and code.",
+    "sections": [
+      {
+        "title": "Our Story",
+        "text": "Techverzing began with a passion for blending creativity and data to craft impactful digital marketing strategies for brands worldwide."
+      },
+      {
+        "title": "Mission",
+        "text": "Our mission is to deliver creative, data-driven marketing solutions that help brands grow, engage, and build meaningful connections with their audiences."
+      },
+      {
+        "title": "Vision",
+        "text": "We envision a future where every brand can harness the power of creativity and analytics to inspire, innovate, and lead in the digital space."
+      }
+    ]
+  },
+  "services": [
+    {
+      "category": "Marketing",
+      "icon": "mdi:bullhorn",
+      "items": [
+        {
+          "icon": "mdi:chart-line",
+          "title": "Performance Marketing",
+          "description": "ROI-driven ads across search, social, and programmatic."
+        },
+        {
+          "icon": "mdi:cellphone",
+          "title": "Content & Social",
+          "description": "Creative production and channel management at scale."
+        },
+        {
+          "icon": "mdi:bullhorn",
+          "title": "Brand Strategy",
+          "description": "Positioning, messaging, and identity systems that stand out."
+        }
+      ]
+    },
+    {
+      "category": "Tech Solutions",
+      "icon": "mdi:code-tags",
+      "items": [
+        {
+          "icon": "mdi:shield-check",
+          "title": "Cloud & Security",
+          "description": "Secure, compliant infrastructures with best practices."
+        },
+        {
+          "icon": "mdi:wrench",
+          "title": "Automation & Integrations",
+          "description": "APIs, workflows, and data pipelines that reduce toil."
+        },
+        {
+          "icon": "mdi:code-tags",
+          "title": "Web & App Development",
+          "description": "Modern, accessible web and mobile apps built to scale."
+        }
+      ]
+    }
+  ],
+  "team": [
+    {
+      "name": "Ava Thomas",
+      "title": "Founder & CEO",
+      "img": ""
+    },
+    {
+      "name": "Noah Patel",
+      "title": "Head of Technology",
+      "img": ""
+    },
+    {
+      "name": "Maya Chen",
+      "title": "Creative Director",
+      "img": ""
+    },
+    {
+      "name": "Liam Rodriguez",
+      "title": "Growth Marketing Lead",
+      "img": ""
+    }
+  ],
+  "cta": {
+    "heading": "Ready to build what matters?",
+    "description": "Let’s talk about your goals and map the fastest path from idea to impact.",
+    "buttons": [
+      {
+        "label": "Contact Us",
+        "href": "/contact",
+        "style": "primary"
+      },
+      {
+        "label": "View Services",
+        "href": "/services",
+        "style": "outline"
+      }
+    ]
+  }
+}
