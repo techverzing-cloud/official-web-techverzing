@@ -14,17 +14,93 @@
     "sections": [
       {
         "title": "Our Story",
-        "text": "Techverzing began with a passion for blending creativity and data to craft impactful digital marketing strategies for brands worldwide."
+        "text": "Techverzing began with a passion for blending creativity and data to craft impactful digital marketing strategies for brands worldwide.",
+        "cta": { "label": "About the team", "href": "/about" }
       },
       {
         "title": "Mission",
-        "text": "Our mission is to deliver creative, data-driven marketing solutions that help brands grow, engage, and build meaningful connections with their audiences."
+        "text": "Our mission is to deliver creative, data-driven marketing solutions that help brands grow, engage, and build meaningful connections with their audiences.",
+        "cta": { "label": "See our services", "href": "/services" }
       },
       {
         "title": "Vision",
-        "text": "We envision a future where every brand can harness the power of creativity and analytics to inspire, innovate, and lead in the digital space."
+        "text": "We envision a future where every brand can harness the power of creativity and analytics to inspire, innovate, and lead in the digital space.",
+        "cta": { "label": "Start a project", "href": "/contact" }
       }
     ]
+  },
+  "whyWeExist": {
+    "eyebrow": "Why We Exist",
+    "heading": ["Creativity and code,", "on the same team."],
+    "description": "Techverzing exists because strategy, design, and engineering work better together than apart. We put strategists, creatives, and engineers in one room so ideas don't stall in handoffs — they ship, get measured, and come back sharper.",
+    "hint": "Hover the deck",
+    "cards": [
+      { "src": "/services/ui-ux-design/1.webp", "alt": "Interface and design work" },
+      { "src": "/services/website-development/1.webp", "alt": "Web platform build" },
+      { "src": "/services/seo/1.png", "alt": "Search and performance campaign" },
+      { "src": "/services/mobile-application/1.webp", "alt": "Mobile product build" },
+      { "src": "/services/digital-branding/1.webp", "alt": "Brand identity work" },
+      { "src": "/services/ai-ml-solutions/1.webp", "alt": "AI and machine learning build" },
+      { "src": "/services/customized-software-development/1.webp", "alt": "Custom software build" }
+    ]
+  },
+  "howWeWork": {
+    "eyebrow": "How We Work",
+    "heading": [
+      "A clear process.",
+      "A shared vision.",
+      "Better outcomes."
+    ],
+    "description": "From the first conversation to the final deployment, we follow a structured yet flexible process that keeps you informed, involved, and confident at every stage.",
+    "steps": [
+      {
+        "index": "01",
+        "title": "Discover",
+        "text": "We understand your business, challenges, users, and goals.",
+        "deliverables": ["Brief", "Audit", "Goals"],
+        "image": ""
+      },
+      {
+        "index": "02",
+        "title": "Strategize",
+        "text": "We define the scope, technical approach, priorities, and roadmap.",
+        "deliverables": ["Scope", "Roadmap", "KPIs"],
+        "image": ""
+      },
+      {
+        "index": "03",
+        "title": "Design",
+        "text": "We shape intuitive experiences and plan the system architecture.",
+        "deliverables": ["Wireframes", "UI System", "Architecture"],
+        "image": ""
+      },
+      {
+        "index": "04",
+        "title": "Develop",
+        "text": "We build in iterations, review code, and share regular progress.",
+        "deliverables": ["Sprints", "Code Review", "Staging"],
+        "image": ""
+      },
+      {
+        "index": "05",
+        "title": "Validate",
+        "text": "We test functionality, performance, and quality against agreed requirements.",
+        "deliverables": ["QA", "Performance", "Security"],
+        "image": ""
+      },
+      {
+        "index": "06",
+        "title": "Launch & Evolve",
+        "text": "We deploy, monitor, maintain, and improve your solution.",
+        "deliverables": ["Deploy", "Monitoring", "Iterate"],
+        "image": ""
+      }
+    ]
+  },
+  "servicesSection": {
+    "eyebrow": "Services Overview",
+    "heading": ["Marketing and technology,", "under one roof."],
+    "description": "From performance marketing to custom software, every capability ships through the same cross-disciplinary team — strategy, design, and engineering working as one."
   },
   "services": [
     {

@@ -14,6 +14,7 @@ export default function ClientProviders() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({ autoRaf: false });
+    (window as Window & { __lenis?: Lenis }).__lenis = lenis;
 
     lenis.on("scroll", ScrollTrigger.update);
     const raf = (time: number) => lenis.raf(time * 1000);
@@ -25,6 +26,7 @@ export default function ClientProviders() {
     return () => {
       gsap.ticker.remove(raf);
       lenis.destroy();
+      (window as Window & { __lenis?: Lenis }).__lenis = undefined;
     };
   }, []);
 
