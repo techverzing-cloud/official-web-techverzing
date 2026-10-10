@@ -6,6 +6,7 @@ import Footer from "@/components/global/Footer";
 import ClientProviders from "@/components/global/ClientProviders";
 import JsonLd from "@/components/global/JsonLd";
 import Preloader from "@/components/global/Preloader";
+import { ENABLE_PRELOADER } from "@/lib/config";
 import { siteConfig } from "@/lib/seo";
 import "../../css/globals.css";
 import "../../css/tailwind.css";
@@ -90,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-preloading={ENABLE_PRELOADER ? "true" : undefined}>
       <head>
         <meta
           name="google-site-verification"

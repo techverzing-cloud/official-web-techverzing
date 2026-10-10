@@ -81,26 +81,47 @@ const MacWindow = () => {
           );
         });
 
-        gsap.to(".mac-spin", {
-          rotate: 360,
-          repeat: -1,
-          ease: "none",
-          duration: 0.9,
-        });
-        gsap.to(".mac-cursor", {
-          opacity: 0,
-          repeat: -1,
-          yoyo: true,
-          duration: 0.5,
-          ease: "steps(1)",
-        });
-        gsap.to(".mac-live", { opacity: 0.25, repeat: -1, yoyo: true, duration: 0.9 });
-        gsap.to(".mac-shine", {
-          xPercent: 240,
-          repeat: -1,
-          duration: 2.2,
-          ease: "power1.inOut",
-          stagger: 0.25,
+        // Ambient motion lives in one timeline so it can be paused out of view.
+        const ambient = gsap.timeline({ paused: true });
+        ambient
+          .to(
+            ".mac-spin",
+            { rotate: 360, repeat: -1, ease: "none", duration: 0.9 },
+            0
+          )
+          .to(
+            ".mac-cursor",
+            {
+              opacity: 0,
+              repeat: -1,
+              yoyo: true,
+              duration: 0.5,
+              ease: "steps(1)",
+            },
+            0
+          )
+          .to(
+            ".mac-live",
+            { opacity: 0.25, repeat: -1, yoyo: true, duration: 0.9 },
+            0
+          )
+          .to(
+            ".mac-shine",
+            {
+              xPercent: 240,
+              repeat: -1,
+              duration: 2.2,
+              ease: "power1.inOut",
+              stagger: 0.25,
+            },
+            0
+          );
+
+        ScrollTrigger.create({
+          trigger: root.current,
+          start: "top bottom",
+          end: "bottom top",
+          onToggle: (self) => (self.isActive ? ambient.play() : ambient.pause()),
         });
       });
 

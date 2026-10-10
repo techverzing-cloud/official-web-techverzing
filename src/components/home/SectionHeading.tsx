@@ -21,7 +21,7 @@ const SectionHeading = ({
     <div className={className}>
       <span
         className={`inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] ${
-          dark ? "text-cream-white/60" : "text-dull-text-dark"
+          dark ? "text-cream-white/70" : "text-dull-text-dark"
         }`}
       >
         <span className="h-px w-8 bg-impact" />

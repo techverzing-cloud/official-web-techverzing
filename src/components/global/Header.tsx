@@ -34,7 +34,7 @@ const items: CardNavItem[] = [
 const Header = () => {
   return (
     <CardNav
-      logo="/global/logo.png"
+      logo="/global/logo_wbg.png"
       logoAlt="Techverzing Technologies"
       items={items}
       baseColor="#202223"

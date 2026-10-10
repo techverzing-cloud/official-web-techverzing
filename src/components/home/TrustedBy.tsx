@@ -18,7 +18,7 @@ const TrustedBy = () => {
           heading={trustedBy.heading}
         />
 
-        <div className="flex w-max items-center gap-4 rounded-full border border-black/10 bg-white px-5 py-3">
+        <div className="flex w-full items-center gap-4 rounded-full border border-black/10 bg-white px-5 py-3 sm:w-max">
           <Icon icon="mdi:star" className="text-impact" width={24} />
           <div className="flex items-baseline gap-1 font-nunito">
             <span className="text-2xl font-bold text-black-slate">

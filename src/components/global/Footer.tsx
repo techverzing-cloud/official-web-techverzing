@@ -1,96 +1,219 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import global from "@/json/global.json";
-import { Icon } from "@iconify/react/dist/iconify.js";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const { footer, contactInfo } = global;
+
 export default function Footer() {
-  const { socialLinks } = contactInfo;
+  const footerRef = useRef<HTMLElement>(null);
+  const wordmarkRef = useRef<HTMLDivElement>(null);
+  const columnRefs = useRef<(HTMLElement | null)[]>([]);
+  const socialRefs = useRef<(HTMLElement | null)[]>([]);
 
-  const contactItems = contactInfo.items.map((item) => {
-    let type: "phone" | "email" | "address" = "phone";
+  useGSAP(
+    (context) => {
+      const footerEl = footerRef.current;
+      if (!footerEl) return;
 
-    if (item.text.includes("@")) type = "email";
-    else if (item.text.toLowerCase().includes("address")) type = "address";
+      const columns = columnRefs.current.filter(Boolean) as HTMLElement[];
+      const socialIcons = socialRefs.current.filter(Boolean) as HTMLElement[];
 
-    return { type, value: item.text, icon: item.icon };
-  });
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      if (!prefersReducedMotion) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: footerEl,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        });
+
+        tl.fromTo(
+          columns,
+          { y: 30, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "power3.out",
+            stagger: 0.08,
+          }
+        ).fromTo(
+          socialIcons,
+          { y: 20, opacity: 0, scale: 0.9 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(1.3)",
+            stagger: 0.06,
+          },
+          "-=0.3"
+        );
+      } else {
+        gsap.set(columns, { y: 0, opacity: 1 });
+        gsap.set(socialIcons, { y: 0, opacity: 1, scale: 1 });
+      }
+
+      const wordmarkEl = wordmarkRef.current;
+      if (wordmarkEl && !prefersReducedMotion) {
+        gsap.fromTo(
+          wordmarkEl,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: wordmarkEl,
+              start: "top 95%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      } else if (wordmarkEl) {
+        gsap.set(wordmarkEl, { y: 0, opacity: 1 });
+      }
+
+      const linkEls = footerEl.querySelectorAll<HTMLAnchorElement>(
+        ".footer-nav-link, .footer-social-link"
+      );
+      linkEls.forEach((link) => {
+        const handleMouseEnter = () => {
+          gsap.to(link, {
+            x: link.classList.contains("footer-social-link") ? 0 : 4,
+            scale: link.classList.contains("footer-social-link") ? 1.08 : 1,
+            duration: 0.2,
+            ease: "power2.out",
+          });
+        };
+
+        const handleMouseLeave = () => {
+          gsap.to(link, {
+            x: 0,
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        };
+
+        const handleMouseDown = () => {
+          gsap.to(link, {
+            scale: link.classList.contains("footer-social-link") ? 0.92 : 0.98,
+            duration: 0.1,
+            ease: "power2.out",
+          });
+        };
+
+        const handleMouseUp = () => {
+          gsap.to(link, {
+            scale: link.classList.contains("footer-social-link") ? 1.08 : 1,
+            duration: 0.2,
+            ease: "back.out(1.5)",
+          });
+        };
+
+        link.addEventListener("mouseenter", handleMouseEnter);
+        link.addEventListener("mouseleave", handleMouseLeave);
+        link.addEventListener("mousedown", handleMouseDown);
+        link.addEventListener("mouseup", handleMouseUp);
+        link.addEventListener("mouseleave", handleMouseUp);
+
+        return () => {
+          link.removeEventListener("mouseenter", handleMouseEnter);
+          link.removeEventListener("mouseleave", handleMouseLeave);
+          link.removeEventListener("mousedown", handleMouseDown);
+          link.removeEventListener("mouseup", handleMouseUp);
+        };
+      });
+    },
+    { scope: footerRef }
+  );
 
   return (
-    <footer className="bg-primary" data-dark-bg>
-      <div className="max-w-screen-2xl px-4 pt-16 pb-6 mx-auto sm:px-6 lg:px-8 lg:pt-24">
-        {/* TOP SECTION */}
-        <div className="flex flex-col gap-10 lg:flex-row px-10">
-          {/* LOGO + DESCRIPTION + SOCIAL */}
-          <div className="max-w-sm mx-auto lg:mx-0">
-            <div className="flex justify-center sm:justify-center items-end gap-2 px-2 text-cream-white">
-              <Image
-                src={footer.logo.src}
-                width={footer.logo.width}
-                height={footer.logo.height}
-                alt={footer.logo.alt}
-                className="h-12 w-12 object-contain"
-              />
-              <p className="heading_5 tracking-wide font-stretch-110% font-semibold mb-0.5">
-                Techverzing Technologies
+    <footer
+      ref={footerRef}
+      className="relative bg-primary data-dark-bg"
+      data-dark-bg
+      role="contentinfo"
+    >
+      <div
+        className="absolute inset-0 -z-10 bg-[radial-gradient(115%_85%_at_50%_45%,rgba(32,34,35,0.8)_0%,rgba(32,34,35,0.4)_50%,transparent_78%)]"
+        aria-hidden="true"
+      />
+      <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-12 xl:px-16">
+        <div className="pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14 lg:gap-16">
+            <div
+              ref={(el) => { columnRefs.current[0] = el; }}
+              className="lg:pr-8"
+            >
+              <p className="text-cream-white/70 text-base md:text-lg leading-relaxed max-w-xs">
+                {footer.description}
               </p>
+
+              <div className="mt-8 flex gap-3 list-none" role="list" aria-label="Social links">
+                {contactInfo.socialLinks.map((link, idx) => (
+                  <li key={idx} role="listitem">
+                    <Link
+                      ref={(el) => { socialRefs.current[idx] = el; }}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.name}
+                      className="footer-social-link group relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] transition-all duration-200 ease-out hover:border-white/20 hover:bg-white/[0.06] hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-impact focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+                      data-cursor-hover
+                    >
+                      <Image
+                        src={link.icon}
+                        alt={link.name}
+                        width={24}
+                        height={24}
+                        className="w-5 h-5 object-contain text-cream-white/80 group-hover:text-cream-white transition-colors duration-200"
+                      />
+                    </Link>
+                  </li>
+                ))}
+              </div>
             </div>
 
-            <p className="max-w-md mx-auto mt-6 leading-relaxed text-center text-sm text-gray-400 sm:text-left">
-              {footer.description}
-            </p>
-            <p className="max-w-md mx-auto mt-4 leading-relaxed text-center text-sm text-gray-400 sm:text-left">
-              Techverzing Technologies is a digital marketing and IT solutions
-              agency from New Delhi, India providing web development, mobile
-              apps, CRM automation, AI/ML, SEO, and 360° marketing.
-            </p>
-
-            {/* Social Links */}
-            <ul className="flex justify-between sm:justify-center gap-8 mt-6">
-              {socialLinks.map((link, idx) => (
-                <li key={idx}>
-                  <Link
-                    href={link.href}
-                    data-cursor-hover
-                    className="text-primary transition hover:opacity-80"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      src={link.icon}
-                      alt={link.name}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 object-contain"
-                    />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* NAV SECTIONS + CONTACT */}
-          <div className=" sm:ml-20 flex flex-wrap gap-8 grow justify-center sm:justify-between text-center sm:text-left">
-            {/* NAV SECTIONS */}
-            {footer.navSections.map((section, idx) => (
+            {footer.navSections.map((section, sectionIdx) => (
               <div
-                key={idx}
-                className="flex flex-col items-center sm:items-start"
+                key={section.label}
+                ref={(el) => { columnRefs.current[sectionIdx + 1] = el; }}
+                className="md:col-span-1"
               >
-                <p className="text-sm font-semibold uppercase tracking-wide text-cream-white/90">
-                  {section.label}
-                </p>
-
-                <nav className="mt-5">
-                  <ul className="space-y-3 text-sm">
-                    {section.categories.map((item, linkIdx) => (
+                <div className="relative pb-3">
+                  <div className="absolute bottom-0 left-0 w-10 h-px bg-white/10" aria-hidden="true" />
+                  <h3 className="text-cream-white font-nunito font-semibold text-sm md:text-base tracking-wider uppercase">
+                    {section.label}
+                  </h3>
+                </div>
+                <nav className="mt-5" aria-label={`${section.label} links`}>
+                  <ul className="space-y-3 list-none" role="list">
+                    {section.categories.map((link, linkIdx) => (
                       <li key={linkIdx}>
                         <Link
-                          href={item.link}
+                          href={link.link}
+                          className="footer-nav-link group relative inline-flex items-center gap-2 text-cream-white/60 text-sm transition-all duration-200 ease-out hover:text-cream-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-impact focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm px-1 py-0.5 -mx-1 -my-0.5"
                           data-cursor-hover
-                          className="text-gray-300/70 transition hover:text-cream-white"
                         >
-                          {item.name}
+                          <span className="relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-current after:scale-x-0 after:origin-right group-hover:after:scale-x-100 group-hover:after:origin-left after:transition-transform after:duration-200 after:ease-out">
+                            {link.name}
+                          </span>
                         </Link>
                       </li>
                     ))}
@@ -98,81 +221,46 @@ export default function Footer() {
                 </nav>
               </div>
             ))}
+          </div>
 
-            {/* CONTACT COLUMN */}
-            <div className="flex flex-col items-center sm:items-start">
-              <p className="text-sm font-semibold uppercase tracking-wide text-white">
-                {contactInfo.title}
+          <div
+            ref={(el) => { wordmarkRef.current = el; }}
+            className="mt-12 md:mt-16 lg:mt-20 relative"
+            aria-hidden="true"
+          >
+            <div className="relative overflow-hidden">
+              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl leading-none select-none">
+                Techverzing
               </p>
-
-              <ul className="mt-5 space-y-3 text-sm">
-                {contactItems.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="flex items-center gap-2 justify-center sm:justify-start text-gray-300/80"
-                  >
-                    {item.type === "email" ? (
-                      
-                      <Link
-                        href={`mailto:${item.value}`}
-                        data-cursor-hover
-                        className="hover:text-cream-white transition"
-                      >
-                        {item.value}
-                      </Link>
-                        
-                  ) : item.type === "phone" ? (
-                      <Link
-                        href={`tel:${item.value}`}
-                        data-cursor-hover
-                        className="hover:text-cream-white transition"
-                      >
-                        {item.value}
-                      </Link>
-                    ) : item.type === "address" ? (
-                      <address className="not-italic">{item.value}</address>
-                    ) : (
-                      <span>{item.value}</span>
-                    )}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
 
-        {/* BOTTOM / LEGAL */}
-        <div className="pt-6 mt-12 border-t border-gray-800 text-xs">
-          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between text-center md:text-left">
-            <p className="text-gray-400 md:text-center tracking-wide">
-              Made by{" "}
-              <span className="text-[#ffc857] underline underline-offset-2">
-                Techverzing Technologies
-              </span>
-            </p>
-            <p className="text-gray-400 center gap-2 flex flex-col md:flex-row grow">
-              
-              <span className="center gap-1">
-                <Icon icon={"ic:outline-copyright"} /> 2025 Techverzing Technologies |
-              </span>
-              <span className="">All rights reserved.</span>
+        <div className="relative pt-8 md:pt-10 border-t border-white/5">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6 py-6">
+            <p className="text-cream-white/40 text-sm md:text-base tracking-wide">
+              © {new Date().getFullYear()} Techverzing Technologies. All rights reserved.
             </p>
 
-            <p className="text-gray-400 md:text-right space-x-1">
+            <nav className="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6" aria-label="Legal links">
               <Link
-                className="inline-block text-teal-400 underline underline-offset-2 transition hover:text-teal-300"
                 href={footer.legal.terms.href}
+                className="footer-nav-link text-cream-white/40 text-sm tracking-wide hover:text-cream-white transition-colors duration-200"
+                data-cursor-hover
               >
                 {footer.legal.terms.label}
               </Link>
-              <span>·</span>
+              <span className="text-white/5" aria-hidden="true">
+                ·
+              </span>
               <Link
-                className="inline-block text-teal-400 underline underline-offset-2 transition hover:text-teal-300"
                 href={footer.legal.privacy.href}
+                className="footer-nav-link text-cream-white/40 text-sm tracking-wide hover:text-cream-white transition-colors duration-200"
+                data-cursor-hover
               >
                 {footer.legal.privacy.label}
               </Link>
-            </p>
+            </nav>
           </div>
         </div>
       </div>

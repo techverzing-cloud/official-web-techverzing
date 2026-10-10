@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useRef, useEffect, useMemo } from "react";
+import { ReactNode, useRef, useEffect, useLayoutEffect, useMemo } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -13,25 +13,29 @@ interface Props {
 export const TextIn = ({ children, className }: Props) => {
   const elRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!elRef.current) return;
-
+  useLayoutEffect(() => {
     const el = elRef.current;
-    gsap.set(el, { yPercent: 100, opacity: 0 });
-    gsap.to(el, {
-      yPercent: 0,
-      opacity: 1,
-      duration: 0.8,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 98%", 
-        toggleActions: "play none none reverse",
-      },
-    });
+    if (!el) return;
+
+    const anim = gsap.fromTo(
+      el,
+      { yPercent: 100, opacity: 0 },
+      {
+        yPercent: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 98%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
 
     return () => {
-      ScrollTrigger.getById(el.id)?.kill();
+      anim.scrollTrigger?.kill();
+      anim.kill();
     };
   }, []);
 

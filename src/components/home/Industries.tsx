@@ -48,10 +48,10 @@ const Industries = () => {
         <Link
           href="/services"
           data-cursor-hover
-          className="group inline-flex w-max text-nowrap items-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-cream-white transition-colors duration-300 hover:bg-impact hover:text-primary"
+          className="group inline-flex w-max text-nowrap items-center gap-3 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-cream-white transition-[color,background-color,transform] duration-200 ease-out hover:bg-impact hover:text-primary active:scale-[0.98]"
         >
           Explore all services
-          <span className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1">
+          <span className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1">
             <ArrowRightIcon />
           </span>
         </Link>
@@ -59,7 +59,7 @@ const Industries = () => {
 
       <div
         ref={menuRef}
-        className="mt-12 min-h-[72vh] overflow-hidden rounded-4xl border border-black/10 md:mt-16"
+        className="mt-12 overflow-hidden rounded-4xl border border-black/10 md:mt-16 md:min-h-[72vh]"
         style={{ clipPath: "inset(0% 0% 0% 0%)" }}
       >
         <FlowingMenu

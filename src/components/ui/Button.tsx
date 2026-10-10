@@ -38,7 +38,7 @@ export default function GButton({
       style={style} // Pass style here
       className={twMerge(
         clsx(
-          "font-semibold transition-colors duration-200 focus:outline-none cursor-pointer rounded-lg",
+          "font-semibold transition-[color,background-color,border-color,transform] duration-200 ease-out cursor-pointer rounded-lg active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-impact focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
           size === "sm" && "px-3 py-1 text-sm",
           size === "md" && "px-6 py-3 text-base",
           size === "lg" && "px-8 py-4 text-lg",

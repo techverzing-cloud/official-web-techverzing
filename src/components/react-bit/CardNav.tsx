@@ -88,7 +88,8 @@ const CardNav: React.FC<CardNavProps> = ({
       containerEl.style.transition = wasTransition;
     }
 
-    return topBar + contentHeight + padding;
+    const maxHeight = window.innerHeight - 40;
+    return Math.min(topBar + contentHeight + padding, maxHeight);
   };
 
   const getCollapsedWidth = () =>
@@ -205,7 +206,7 @@ const CardNav: React.FC<CardNavProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`card-nav-container fixed left-1/2 -translate-x-1/2 z-[99] top-[1.2em] md:top-[2em] w-[90vw] md:w-[50vw] ${className}`}
+      className={`card-nav-container fixed left-1/2 -translate-x-1/2 z-[99] top-[calc(env(safe-area-inset-top,0px)+1.2em)] md:top-[calc(env(safe-area-inset-top,0px)+2em)] w-[90vw] md:w-[50vw] ${className}`}
     >
       <nav
         ref={navRef}
@@ -219,13 +220,13 @@ const CardNav: React.FC<CardNavProps> = ({
               alt={logoAlt}
               width={120}
               height={28}
-              className="h-7 w-auto"
+              className="h-14 w-auto"
               priority
             />
           </div>
 
           <div
-            className={`hamburger-menu ${isHamburgerOpen ? "open" : ""} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] pr-2`}
+            className={`hamburger-menu ${isHamburgerOpen ? "open" : ""} group h-full min-w-11 flex flex-col items-center justify-center cursor-pointer gap-[6px] pr-2`}
             onClick={toggleMenu}
             onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => {
               if (e.key === "Enter" || e.key === " ") {
@@ -256,7 +257,7 @@ const CardNav: React.FC<CardNavProps> = ({
         </div>
 
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
+          className={`card-nav-content no-scroll-bar absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 overflow-y-auto justify-start z-[1] ${
             isExpanded
               ? "visible pointer-events-auto"
               : "invisible pointer-events-none"
@@ -287,7 +288,7 @@ const CardNav: React.FC<CardNavProps> = ({
                   {item.links?.map((lnk, i) => (
                     <a
                       key={`${lnk.label}-${i}`}
-                      className={`nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px] ${
+                      className={`nav-card-link inline-flex items-center gap-[6px] py-1.5 no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px] ${
                         twoCol ? "basis-[calc(50%-0.5rem)]" : ""
                       }`}
                       href={lnk.href}

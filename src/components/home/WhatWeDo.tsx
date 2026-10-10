@@ -2,10 +2,12 @@
 
 import { useRef } from "react";
 import type { ComponentType } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import homeData from "@/json/home.json";
+import { Icon as IconifyIcon } from "@iconify/react";
 import {
   VisibilityIcon,
   GrowthIcon,
@@ -22,6 +24,9 @@ const ICONS: Record<string, ComponentType> = {
   growth: GrowthIcon,
   automation: People,
   reliability: EnergyIcon,
+  strategy: () => <IconifyIcon icon="mdi:lightbulb-on-outline" />,
+  commerce: () => <IconifyIcon icon="mdi:cart-outline" />,
+  analytics: () => <IconifyIcon icon="mdi:chart-box-outline" />,
 };
 
 const WhatWeDo = () => {
@@ -36,7 +41,7 @@ const WhatWeDo = () => {
       const mm = gsap.matchMedia();
 
       mm.add(
-        "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+        "(prefers-reduced-motion: no-preference)",
         () => {
           const track = trackRef.current!;
           const getDistance = () =>
@@ -79,7 +84,7 @@ const WhatWeDo = () => {
       );
 
       mm.add(
-        "(max-width: 767px), (prefers-reduced-motion: reduce)",
+        "(prefers-reduced-motion: reduce)",
         () => {
           gsap.utils.toArray<HTMLElement>(".wwd-card").forEach((card) => {
             gsap.from(card, {
@@ -99,8 +104,9 @@ const WhatWeDo = () => {
   return (
     <section
       ref={root}
+      id="what-we-do"
       data-light-bg
-      className="rounded-t-4xl overflow-hidden"
+      className="rounded-t-4xl overflow-hidden scroll-mt-24"
     >
       <div className="mrMx grid gap-10 pt-24 md:pt-32 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div>
@@ -108,7 +114,7 @@ const WhatWeDo = () => {
             eyebrow={whatWeDo.eyebrow}
             heading={whatWeDo.heading}
           />
-          <p className="mt-6 max-w-2xl text-dull-text-dark md:text-lg">
+          <p className="mt-6 max-w-2xl text-base text-dull-text-dark md:text-lg">
             {whatWeDo.description}
           </p>
         </div>
@@ -117,19 +123,20 @@ const WhatWeDo = () => {
 
       <div
         ref={pinRef}
-        className="mt-12 flex items-center overflow-hidden motion-safe:md:mt-16 motion-safe:md:h-screen"
+        className="mt-12 flex items-center overflow-hidden motion-safe:mt-16 motion-safe:h-screen"
       >
         <div
           ref={trackRef}
-          className="flex w-full flex-col gap-6 motion-safe:md:flex-row motion-safe:md:gap-8 motion-safe:md:will-change-transform"
+          className="flex w-full flex-col gap-6 motion-safe:flex-row motion-safe:gap-8 motion-safe:will-change-transform"
         >
           {whatWeDo.capabilities.map((cap) => {
-            const Icon = ICONS[cap.icon];
+            const Icon = ICONS[cap.icon] ?? GrowthIcon;
             return (
-              <article
+              <Link
                 key={cap.hash}
+                href="/services"
                 data-cursor-hover
-                className="wwd-card group relative flex shrink-0 flex-col justify-between overflow-hidden rounded-4xl border border-dashed border-black/15 bg-white/70 p-8 transition-transform duration-500 md:p-10 motion-safe:md:h-[62vh] motion-safe:md:w-[78vw] motion-safe:lg:w-[40vw] motion-safe:xl:w-[32vw] motion-safe:md:hover:-translate-y-2"
+                className="wwd-card group relative flex shrink-0 flex-col justify-between overflow-hidden rounded-4xl border border-dashed border-black/15 bg-white/70 p-6 transition-transform duration-200 ease-out md:p-10 motion-safe:h-[70vh] motion-safe:w-[82vw] motion-safe:md:w-[58vw] motion-safe:lg:w-[40vw] motion-safe:xl:w-[32vw] [@media(hover:hover)_and_(pointer:fine)]:md:hover:-translate-y-2"
               >
                 <span className="wwd-el pointer-events-none absolute right-6 top-2 font-nunito text-[clamp(4rem,9vw,8rem)] font-black leading-none text-black/5">
                   {cap.index}
@@ -150,7 +157,7 @@ const WhatWeDo = () => {
                   <h3 className="wwd-el heading_3 font-semibold text-black-slate">
                     {cap.heading}
                   </h3>
-                  <p className="wwd-el mt-4 max-w-md text-dull-text-dark">
+                  <p className="wwd-el mt-4 line-clamp-5 max-w-md text-dull-text-dark md:line-clamp-none">
                     {cap.description}
                   </p>
                   <ul className="wwd-el mt-6 flex flex-wrap gap-2">
@@ -164,7 +171,7 @@ const WhatWeDo = () => {
                     ))}
                   </ul>
                 </div>
-              </article>
+              </Link>
             );
           })}
         </div>

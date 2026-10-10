@@ -13,7 +13,7 @@ export default function ClientProviders() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    const lenis = new Lenis({ autoRaf: false });
+    const lenis = new Lenis({ autoRaf: false, anchors: { offset: -96 } });
 
     lenis.on("scroll", ScrollTrigger.update);
     const raf = (time: number) => lenis.raf(time * 1000);

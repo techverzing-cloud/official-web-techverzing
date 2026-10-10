@@ -66,6 +66,8 @@ const DotField = memo(({
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let visible = true;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     let resizeTimer: ReturnType<typeof setTimeout>;
 
@@ -230,12 +232,27 @@ const DotField = memo(({
 
       ctx!.fill();
 
-      rafRef.current = requestAnimationFrame(tick);
+      rafRef.current = reduce || !visible ? null : requestAnimationFrame(tick);
     }
 
     doResize();
     window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', onMouseMove, { passive: true });
+    if (!reduce) window.addEventListener('mousemove', onMouseMove, { passive: true });
+
+    const parent = canvas.parentElement;
+    const io = parent
+      ? new IntersectionObserver(
+          ([entry]) => {
+            visible = entry.isIntersecting;
+            if (visible && rafRef.current === null && !reduce) {
+              rafRef.current = requestAnimationFrame(tick);
+            }
+          },
+          { threshold: 0 }
+        )
+      : null;
+    io?.observe(parent as Element);
+
     rafRef.current = requestAnimationFrame(tick);
 
     rebuildRef.current = () => {
@@ -247,6 +264,7 @@ const DotField = memo(({
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       clearInterval(speedInterval);
       clearTimeout(resizeTimer);
+      io?.disconnect();
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onMouseMove);
     };

@@ -12,7 +12,7 @@ export const contentType = "image/png";
 
 export default async function Image() {
   const logoData = await readFile(
-    join(process.cwd(), "public/global/logo.png"),
+    join(process.cwd(), "public/global/logo_wbg.png"),
     "base64",
   );
   const logoSrc = `data:image/png;base64,${logoData}`;

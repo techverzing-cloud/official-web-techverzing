@@ -98,3 +98,17 @@ section {
   @apply px-4 md:px-8 xl:px-12;
 }
 
+.footer-wordmark {
+  -webkit-text-stroke: 1px rgba(232, 230, 217, 0.15);
+  text-stroke: 1px rgba(232, 230, 217, 0.15);
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-wordmark {
+    animation: none;
+    transition: none;
+  }
+}
+

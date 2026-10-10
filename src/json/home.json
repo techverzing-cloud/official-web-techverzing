@@ -81,6 +81,31 @@
         "heading": "Reliable & Scalable Tech",
         "description": "Our cloud infrastructure, backend systems, security practices, and maintenance plans ensure your software stays fast, secure, and ready to grow with your business.",
         "tags": ["Cloud", "Security", "Support"]
+      },
+
+      {
+        "icon": "strategy",
+        "index": "05",
+        "hash": "Strategy",
+        "heading": "Digital Strategy & Consulting",
+        "description": "We align technology, business goals, and customer needs to build clear digital roadmaps, prioritize the right investments, and turn ideas into actionable growth strategies.",
+        "tags": ["Consulting", "Roadmaps", "Planning"]
+      },
+      {
+        "icon": "commerce",
+        "index": "06",
+        "hash": "Commerce",
+        "heading": "E-Commerce & Digital Experiences",
+        "description": "We build seamless digital commerce experiences that simplify buying journeys, improve customer engagement, and help businesses turn more visitors into loyal customers.",
+        "tags": ["E-Commerce", "UX/UI", "Conversions"]
+      },
+      {
+        "icon": "analytics",
+        "index": "07",
+        "hash": "Analytics",
+        "heading": "Data & Business Intelligence",
+        "description": "We transform scattered business data into actionable insights through analytics, custom dashboards, and reporting systems that help teams make smarter, evidence-based decisions.",
+        "tags": ["Analytics", "Dashboards", "Insights"]
       }
     ]
   },
@@ -88,7 +113,10 @@
     "eyebrow": "Who We Are",
     "heading": "Creativity, data, and engineering under one roof.",
     "statement": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready.",
-    "img": { "src": "/global/bgimage.jpeg", "alt": "The Techverzing team collaborating" },
+    "img": {
+      "src": "/global/bgimage.jpeg",
+      "alt": "The Techverzing team collaborating"
+    },
     "story": [
       {
         "title": "Our Story",
@@ -172,16 +200,47 @@
     "eyebrow": "Industries We Transform",
     "heading": "Wherever you operate, we build for your reality.",
     "items": [
-      { "text": "E-Commerce & Retail", "link": "/services/website-development", "image": "/services/website-development/1.webp" },
-      { "text": "SaaS & Startups", "link": "/services/customized-software-development", "image": "/services/customized-software-development/2.webp" },
-      { "text": "Finance & Fintech", "link": "/services/cloud-backend-development", "image": "/services/cloud-backend-development/1.webp" },
-      { "text": "Healthcare & Wellness", "link": "/services/ai-ml-solutions", "image": "/services/ai-ml-solutions/3.webp" },
-      { "text": "Consumer Brands", "link": "/services/digital-branding", "image": "/services/digital-branding/2.webp" },
-      { "text": "Education & EdTech", "link": "/services/mobile-app-development", "image": "/services/mobile-application/1.webp" },
-      { "text": "Real Estate & Property", "link": "/services/ui-ux-design", "image": "/services/ui-ux-design/2.webp" },
-      { "text": "Travel & Hospitality", "link": "/services/360-marketing", "image": "/services/social-media-optimization/1.jpg" }
+      {
+        "text": "Website Development",
+        "link": "/services/website-development",
+        "image": "/services/website-development/1.webp"
+      },
+      {
+        "text": "Customized Software Development",
+        "link": "/services/customized-software-development",
+        "image": "/services/customized-software-development/2.webp"
+      },
+      {
+        "text": "Cloud & Backend Development",
+        "link": "/services/cloud-backend-development",
+        "image": "/services/cloud-backend-development/1.webp"
+      },
+      {
+        "text": "AI & ML Solutions",
+        "link": "/services/ai-ml-solutions",
+        "image": "/services/ai-ml-solutions/3.webp"
+      },
+      {
+        "text": "Digital Branding",
+        "link": "/services/digital-branding",
+        "image": "/services/digital-branding/2.webp"
+      },
+      {
+        "text": "Mobile App Development",
+        "link": "/services/mobile-app-development",
+        "image": "/services/mobile-application/1.webp"
+      },
+      {
+        "text": "UI/UX Design",
+        "link": "/services/ui-ux-design",
+        "image": "/services/ui-ux-design/2.webp"
+      },
+      {
+        "text": "360° Marketing",
+        "link": "/services/360-marketing",
+        "image": "/services/social-media-optimization/1.jpg"
+      }
     ]
   },
-  "blogs": [
-  ]
+  "blogs": []
 }

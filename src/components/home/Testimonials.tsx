@@ -22,7 +22,7 @@ const Testimonials = () => {
       const mm = gsap.matchMedia();
 
       mm.add(
-        "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
+        "(min-width: 768px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
         () => {
           const cards = gsap.utils.toArray<HTMLElement>(".tst-item");
           const dots = gsap.utils.toArray<HTMLElement>(".tst-dot");
@@ -30,7 +30,7 @@ const Testimonials = () => {
           gsap.set(cards.slice(1), {
             opacity: 0,
             yPercent: 60,
-            filter: "blur(12px)",
+                filter: "blur(6px)",
           });
 
           const setActive = (index: number) => {
@@ -72,7 +72,7 @@ const Testimonials = () => {
               {
                 opacity: 0,
                 yPercent: -60,
-                filter: "blur(12px)",
+            filter: "blur(6px)",
                 duration: 1,
               },
               i - 1
@@ -86,7 +86,7 @@ const Testimonials = () => {
       );
 
       mm.add(
-        "(max-width: 767px), (prefers-reduced-motion: reduce)",
+        "(max-width: 767px), (prefers-reduced-motion: reduce), (hover: none)",
         () => {
           gsap.utils.toArray<HTMLElement>(".tst-item").forEach((card) => {
             gsap.from(card, {
