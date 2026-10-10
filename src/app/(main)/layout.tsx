@@ -91,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-preloading={ENABLE_PRELOADER ? "true" : undefined}>
+    <html lang="en">
       <head>
         <meta
           name="google-site-verification"

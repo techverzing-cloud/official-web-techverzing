@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,10 +15,20 @@ const Preloader = () => {
   const barRef = useRef<HTMLSpanElement>(null);
   const countRef = useRef<HTMLSpanElement>(null);
   const [done, setDone] = useState(false);
+  const [shouldShow, setShouldShow] = useState(false);
+
+  useEffect(() => {
+    if (!ENABLE_PRELOADER) return;
+    const hasVisited = sessionStorage.getItem("tv_preloader_shown");
+    if (!hasVisited) {
+      setShouldShow(true);
+      sessionStorage.setItem("tv_preloader_shown", "true");
+    }
+  }, []);
 
   useGSAP(
     () => {
-      if (!ENABLE_PRELOADER) return;
+      if (!ENABLE_PRELOADER || !shouldShow) return;
       const rootEl = root.current;
       if (!rootEl) return;
 
@@ -60,9 +70,7 @@ const Preloader = () => {
               ease: "power1.inOut",
               onUpdate: () => {
                 if (countRef.current)
-                  countRef.current.textContent = Math.round(
-                    counter.v
-                  ).toString();
+                  countRef.current.textContent = Math.round(counter.v).toString();
               },
             },
             0
@@ -92,10 +100,10 @@ const Preloader = () => {
         document.documentElement.removeAttribute("data-preloading");
       };
     },
-    { scope: root, dependencies: [] }
+    { scope: root, dependencies: [shouldShow] }
   );
 
-  if (!ENABLE_PRELOADER || done) return null;
+  if (!ENABLE_PRELOADER || !shouldShow || done) return null;
 
   return (
     <div
