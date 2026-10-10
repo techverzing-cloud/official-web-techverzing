@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import rawData from "@/json/services/data.json";
+import introData from "@/json/services/intro.json";
 import { siteConfig } from "@/lib/seo";
+import ServiceHero from "@/components/services/ServiceHero";
+import ServiceIntro from "@/components/services/ServiceIntro";
+import ServiceHighlights from "@/components/services/ServiceHighlights";
+import ServiceAdvantage from "@/components/services/ServiceAdvantage";
+import ServiceCta from "@/components/services/ServiceCta";
 
 type ServicePageData = {
   heading: {
@@ -71,13 +77,33 @@ async function ServicesPage({
   const data = servicesData[param.services];
   if (!data) notFound();
 
+  const intro = introData.find(
+    (s) => s.link.url === `/services/${param.services}`
+  );
+  if (!intro) notFound();
+
   return (
-    <section
-      aria-label={data.heading.title}
-      className="flex min-h-[70vh] items-center justify-center px-6 pt-24"
-    >
-      <h1 className="heading text-cream-white">{data.heading.title}</h1>
-    </section>
+    <>
+      <ServiceHero
+        title={intro.title}
+        slogan={intro.slogan}
+        icon={intro.icon}
+      />
+      <ServiceIntro
+        heading={data.heading.heading}
+        text={data.heading.text}
+        icon={intro.icon}
+        items={data.intro}
+      />
+      <ServiceHighlights items={data.highlights} />
+      <ServiceAdvantage
+        title={data.advantage.title}
+        subtitle={data.advantage.subtitle}
+        description={data.advantage.description}
+        advantages={data.advantage.advantages}
+      />
+      <ServiceCta title={intro.title} slogan={intro.slogan} />
+    </>
   );
 }
 
