@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/seo";
+import CurtainsScope from "@/components/about/CurtainsScope";
+import WhyWeExist from "@/components/about/WhyWeExist";
+import HowWeWork from "@/components/home/HowWeWork";
+import ServicesOverview from "@/components/about/ServicesOverview";
 
 export const metadata: Metadata = {
   title: `About ${siteConfig.name} | Digital Marketing & IT Solutions Agency`,
@@ -19,11 +23,18 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section
-      aria-label="About"
-      className="flex min-h-[70vh] items-center justify-center px-6 pt-24"
-    >
-      <h1 className="heading text-cream-white">About</h1>
-    </section>
+    <>
+      {/* About the Company */}
+      <CurtainsScope />
+
+      {/* Why We Exist */}
+      <WhyWeExist />
+
+      {/* How We Work */}
+      <HowWeWork />
+
+      {/* Services Overview */}
+      <ServicesOverview />
+    </>
   );
 }

@@ -25,6 +25,7 @@ export default function ClientProviders() {
     return () => {
       gsap.ticker.remove(raf);
       lenis.destroy();
+      (window as Window & { __lenis?: Lenis }).__lenis = undefined;
     };
   }, []);
 
