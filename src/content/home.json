@@ -23,9 +23,9 @@
     "scrollLabel": "Scroll",
     "scrollTo": "#what-we-do"
   },
-  "paragraph": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready",
+  "paragraph": "With 2+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready",
   "highlightWords": [
-    "10+ years of experience",
+    "2+ years of experience",
     "agency",
     "advertising",
     "strategies",
@@ -116,7 +116,7 @@
   "whoWeAre": {
     "eyebrow": "Who We Are",
     "heading": "Creativity, data, and engineering under one roof.",
-    "statement": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready.",
+    "statement": "With 2+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready.",
     "image": {
       "src": "/shared/bgimage.jpeg",
       "alt": "The Techverzing team collaborating"
@@ -136,67 +136,64 @@
       }
     ],
     "stats": [
-      { "value": 10, "suffix": "+", "label": "Years of experience" },
-      { "value": 250, "suffix": "+", "label": "Projects delivered" },
-      { "value": 40, "suffix": "+", "label": "Clients worldwide" },
-      { "value": 15, "suffix": "+", "label": "Industries served" }
+      { "value": 2, "suffix": "+", "label": "Years of experience" },
+      { "value": 25, "suffix": "+", "label": "Projects delivered" },
+      { "value": 20, "suffix": "+", "label": "Clients worldwide" },
+      { "value": 10, "suffix": "+", "label": "Industries served" }
     ]
   },
   "trustedBy": {
     "eyebrow": "Trusted By",
     "heading": "Brands that grow with us",
     "names": [
-      "TechWave",
-      "Lumen Commerce",
-      "Northwind",
-      "Bright & Co.",
-      "Nexora",
-      "Vertex Labs",
-      "Harborline",
-      "Quantum Retail",
-      "Meridian",
-      "Sunpeak",
-      "Orbit Comm",
-      "Cobalt Studio"
+      "GM Consolidated",
+      "A.R. Industries",
+      "Rao Industries",
+      "Giri Lal Prem Chand Sarees Pvt. Ltd.",
+      "Arunima Fashions",
+      "ImpactraCRM"
     ],
     "rating": {
-      "value": "4.8",
+      "value": "4.9",
       "outOf": "5",
       "label": "Average client rating",
-      "reviews": "120+ verified reviews"
+      "reviews": "12+ verified reviews"
     }
   },
+
   "testimonials": {
     "eyebrow": "Testimonials",
     "heading": "What Our Clients Say About Us",
     "items": [
       {
-        "quote": "Techverzing helped us scale faster with their digital marketing & IT solutions. The collaboration was seamless and results exceeded expectations.",
-        "name": "John Smith",
-        "role": "CEO",
-        "company": "TechWave Solutions",
+        "quote": "We needed a proper website and someone who would actually pick up the phone. Techverzing did both. Delivered on time and fixed small issues the same day.",
+        "company": "GM Consolidated",
         "rating": 4.8
       },
       {
-        "quote": "From the first strategy sprint to launch, the team moved fast without cutting corners. Our conversion rate nearly doubled within a quarter.",
-        "name": "Priya Nair",
-        "role": "Founder",
-        "company": "Lumen Commerce",
-        "rating": 5.0
-      },
-      {
-        "quote": "They rebuilt our backend and automated the workflows our team used to run by hand. Support has been dependable ever since.",
-        "name": "Daniel Okafor",
-        "role": "CTO",
-        "company": "Northwind Logistics",
+        "quote": "Our enquiries used to get lost between calls and WhatsApp. Now every lead is in one place and my team follows up on time. Simple to use, which is what we wanted.",
+        "company": "A.R. Industries",
         "rating": 4.9
       },
       {
-        "quote": "One partner for branding, SEO, and paid campaigns. The reporting is clear, the ideas are sharp, and the results speak for themselves.",
-        "name": "Sofia Alvarez",
-        "role": "Marketing Director",
-        "company": "Bright & Co.",
+        "quote": "They took the time to understand how our business runs before suggesting anything. No unnecessary features, no confusing tech talk. Just what we needed.",
+        "company": "Rao Industries",
+        "rating": 4.7
+      },
+      {
+        "quote": "Our sarees now look as good online as they do in the shop. Customers can browse the collection easily, and we get more enquiries from outside the city.",
+        "company": "Giri Lal Prem Chand Sarees Pvt. Ltd.",
         "rating": 5.0
+      },
+      {
+        "quote": "They understood our brand and our audience. The new look feels like us, and our social media finally looks consistent. Communication was clear throughout.",
+        "company": "Arunima Fashions",
+        "rating": 4.9
+      },
+      {
+        "quote": "Good developers who ask the right questions. They handled the backend work well, and when we hit a problem after launch, they sorted it out quickly.",
+        "company": "ImpactraCRM",
+        "rating": 4.8
       }
     ]
   },

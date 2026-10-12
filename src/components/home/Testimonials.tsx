@@ -156,11 +156,7 @@ const Testimonials = () => {
                 </div>
                 <p className="text-sm">
                   <span className="font-semibold text-white">
-                    {item.name}
-                  </span>
-                  <span className="text-dull-text">
-                    {" "}
-                    - {item.role}, {item.company}
+                    {item.company}
                   </span>
                 </p>
               </footer>

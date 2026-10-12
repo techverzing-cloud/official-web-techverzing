@@ -121,7 +121,7 @@ import { slugger } from "../lib/util";
 ### Error Handling
 
 - Use `try/catch` blocks for async operations
-- Show user-friendly error messages via `react-hot-toast`
+- Show user-friendly error messages via **inline status messages** (preferred over `react-hot-toast` for forms)
 - Return proper HTTP status codes in API routes (200, 400, 500)
 - Handle empty/null states gracefully
 
@@ -132,20 +132,21 @@ export async function POST(req: Request) {
     // ... logic
     return NextResponse.json({ success: true, data });
   } catch (error) {
-    return NextResponse.json({ error }, { status: 500 });
+    console.error("Error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
 
-// Form Error Handling
+// Form Error Handling (inline status pattern)
 try {
   const res = await fetch("/api/send-email", { ... });
   if (res.ok) {
-    toast.success("Message sent!");
+    setStatus("success");
   } else {
-    toast.error("Failed to send. Try again.");
+    setStatus("error");
   }
 } catch {
-  toast.error("An error occurred.");
+  setStatus("error");
 } finally {
   setIsSubmitting(false);
 }
