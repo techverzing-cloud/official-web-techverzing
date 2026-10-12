@@ -61,6 +61,14 @@
   .contact-select {
     @apply cursor-pointer appearance-none pr-10;
   }
+
+  /* Signature device: outlined display type (echoes .footer-wordmark).
+   * Fill is transparent; stroke follows currentColor so it themes per surface. */
+  .text-outline {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px currentColor;
+    text-stroke: 1px currentColor;
+  }
 }
 /* Base font for headings */
 h1,

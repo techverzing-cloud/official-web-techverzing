@@ -7,7 +7,7 @@ import type { BentoCardProps } from "@/components/react-bit/MagicBento";
 
 const { servicesSection, services } = about;
 
-const TINTS = ["#171022", "#0f1420"];
+const TINTS = ["#26292a", "#1a1c1d"];
 
 const CARDS: BentoCardProps[] = services.flatMap((category, c) =>
   category.items.map((item) => ({
@@ -27,7 +27,7 @@ const ServicesOverview = () => (
         eyebrow={servicesSection.eyebrow}
         heading={servicesSection.heading}
       />
-      <p className="mt-5 max-w-2xl font-inter text-base font-normal leading-[1.7] text-dull-text text-pretty md:text-lg">
+      <p className="mt-5 max-w-[62ch] font-inter text-base font-normal leading-[1.7] text-dull-text text-pretty md:text-lg">
         {servicesSection.description}
       </p>
 
@@ -37,6 +37,7 @@ const ServicesOverview = () => (
           className="w-full max-w-none"
           textAutoHide={false}
           glowColor="255, 140, 66"
+          borderColor="rgba(232, 230, 217, 0.14)"
         />
       </div>
     </div>

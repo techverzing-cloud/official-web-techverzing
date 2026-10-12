@@ -6,7 +6,7 @@ import Footer from "@/components/global/Footer";
 import Cta from "@/components/global/Cta";
 import ClientProviders from "@/components/global/ClientProviders";
 import JsonLd from "@/components/global/JsonLd";
-import Preloader from "@/components/global/Preloader";
+import PreloaderWrapper from "@/components/global/PreloaderWrapper";
 import WhatsAppButton from "@/components/global/WhatsAppButton";
 import { ENABLE_PRELOADER } from "@/lib/config";
 import { siteConfig } from "@/lib/seo";
@@ -120,7 +120,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${inter.variable} ${spaceMono.variable} ${lexend.variable} antialiased min-h-screen font-space-mono`}
       >
-        <Preloader />
+        <PreloaderWrapper />
 
         <header>
           <Header />

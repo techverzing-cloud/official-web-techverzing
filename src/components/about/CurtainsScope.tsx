@@ -122,7 +122,7 @@ export default function CurtainsScope() {
     >
       <div
         ref={cardRef}
-        className="relative mx-auto w-[90vw] overflow-hidden rounded-3xl font-nunito"
+        className="relative mx-auto w-[90vw] max-w-[88rem] overflow-hidden rounded-3xl font-nunito"
         style={{ backgroundColor: palette[0].bg, color: palette[0].text }}
       >
         <div
@@ -150,7 +150,7 @@ export default function CurtainsScope() {
             <Link
               href={section.cta.href}
               data-cursor-hover
-              className="cs-anim inline-flex w-fit items-center gap-2 rounded-lg border border-current px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-60"
+              className="cs-anim inline-flex w-fit items-center gap-2 rounded-lg border border-current px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-60 focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
             >
               {section.cta.label}
               <Icon icon="lucide:arrow-up-right" width={16} height={16} />
@@ -160,16 +160,29 @@ export default function CurtainsScope() {
           <div
             className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl border sm:aspect-[4/3]"
             style={{
-              borderColor: `${color.text}33`,
+              borderColor: `${color.text}1f`,
               backgroundColor: `${color.text}0d`,
             }}
           >
-            <Icon
-              icon="mdi:image-outline"
-              width={48}
-              height={48}
-              className="opacity-30"
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-[0.08]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
+                backgroundSize: "36px 36px",
+              }}
             />
+            <span className="absolute left-5 top-5 font-spaceMono text-[10px] uppercase tracking-[0.25em] opacity-60">
+              {section.title}
+            </span>
+            <span
+              aria-hidden="true"
+              className="text-outline pointer-events-none absolute -bottom-8 -right-3 select-none font-nunito text-[clamp(7rem,16vw,14rem)] font-extrabold leading-none tracking-[-0.03em] opacity-60"
+              style={{ color: color.text }}
+            >
+              {String(active + 1).padStart(2, "0")}
+            </span>
           </div>
         </div>
 

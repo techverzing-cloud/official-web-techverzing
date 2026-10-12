@@ -4,6 +4,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import Link from "next/link";
 
 type CardNavLink = {
   label: string;
@@ -215,14 +216,16 @@ const CardNav: React.FC<CardNavProps> = ({
       >
         <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] z-[2]">
           <div className="logo-container flex items-center" data-cursor-hover>
-            <Image
-              src={logo}
-              alt={logoAlt}
-              width={120}
-              height={28}
-              className="h-14 w-auto"
-              priority
-            />
+            <Link href="/" aria-label="Go to home" className="flex items-center">
+              <Image
+                src={logo}
+                alt={logoAlt}
+                width={120}
+                height={28}
+                className="h-14 w-auto"
+                priority
+              />
+            </Link>
           </div>
 
           <div

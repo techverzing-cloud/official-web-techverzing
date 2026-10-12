@@ -5,7 +5,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -163,7 +162,7 @@ const HowWeWork = () => {
           eyebrow={howWeWork.eyebrow}
           heading={howWeWork.heading}
         />
-        <p className="mt-6 max-w-2xl font-inter text-base font-normal leading-[1.7] text-dull-text text-pretty md:text-lg">
+        <p className="mt-6 max-w-[62ch] font-inter text-base font-normal leading-[1.7] text-dull-text text-pretty md:text-lg">
           {howWeWork.description}
         </p>
       </div>
@@ -194,19 +193,12 @@ const HowWeWork = () => {
                     className="object-cover"
                   />
                 ) : (
-                  <div className="absolute inset-0 grid place-items-center">
-                    <div className="flex flex-col items-center gap-2 text-dull-text">
-                      <Icon
-                        icon="mdi:image-outline"
-                        width={40}
-                        height={40}
-                        className="opacity-50"
-                      />
-                      <span className="font-spaceMono text-[10px] uppercase tracking-[0.25em]">
-                        Image coming soon
-                      </span>
-                    </div>
-                  </div>
+                  <span
+                    aria-hidden="true"
+                    className="text-outline pointer-events-none absolute -bottom-6 -right-2 select-none font-nunito text-[clamp(6rem,9vw,10.5rem)] font-extrabold leading-none tracking-[-0.03em] text-cream-white opacity-40"
+                  >
+                    {step.index}
+                  </span>
                 )}
 
                 <span className="absolute bottom-3 left-4 font-spaceMono text-[10px] uppercase tracking-[0.25em] text-dull-text">
@@ -280,9 +272,9 @@ const HowWeWork = () => {
                 type="button"
                 onClick={() => goToStep(i)}
                 aria-label={`Go to stage ${step.index}: ${step.title}`}
-                aria-current={i === active}
+                aria-current={i === active ? "step" : undefined}
                 data-cursor-hover
-                className="group flex flex-col items-center gap-2"
+                className="group flex flex-col items-center gap-2 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-impact focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
               >
                 <span
                   className={`h-2.5 w-2.5 rounded-full border transition-all duration-300 ${

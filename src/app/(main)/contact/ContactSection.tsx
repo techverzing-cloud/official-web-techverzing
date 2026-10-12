@@ -91,7 +91,7 @@ export default function ContactSection() {
               ))}
             </dl>
 
-            <div>
+            <div className="mt-4">
               <span className={labelCls}>Elsewhere</span>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {contactInfo.socialLinks.map((social) => (
@@ -117,7 +117,7 @@ export default function ContactSection() {
               </ul>
             </div>
 
-            <div className="mt-10 border-t border-black-slate/10 pt-6">
+            <div className="mt-6 border-t border-black-slate/10 pt-6">
               <h2 className="font-nunito text-lg font-semibold text-black-slate">
                 What happens next
               </h2>

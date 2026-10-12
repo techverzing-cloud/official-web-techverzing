@@ -159,7 +159,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14 lg:gap-16">
             <div
               ref={(el) => { columnRefs.current[0] = el; }}
-              className="lg:pr-8"
+              className="flex flex-col items-center text-center md:items-start md:text-start lg:pr-8"
             >
               <Image
                 src="/global/logo.png"
@@ -173,7 +173,7 @@ export default function Footer() {
                 {footer.description}
               </p>
 
-              <div className="mt-8 flex gap-3 list-none" role="list" aria-label="Social links">
+              <div className="mt-8 flex justify-center gap-3 list-none md:justify-start" role="list" aria-label="Social links">
                 {contactInfo.socialLinks.map((link, idx) => (
                   <li key={idx} role="listitem">
                     <Link
@@ -202,15 +202,15 @@ export default function Footer() {
               <div
                 key={section.label}
                 ref={(el) => { columnRefs.current[sectionIdx + 1] = el; }}
-                className="md:col-span-1"
+                className="flex flex-col items-center text-center md:col-span-1 md:items-start md:text-start"
               >
                 <div className="relative pb-3">
-                  <div className="absolute bottom-0 left-0 w-10 h-px bg-white/10" aria-hidden="true" />
+                  <div className="absolute bottom-0 left-0 w-10 h-px bg-white/10 max-md:left-1/2 max-md:-translate-x-1/2" aria-hidden="true" />
                   <h3 className="text-cream-white font-nunito font-semibold text-sm md:text-base tracking-wider uppercase">
                     {section.label}
                   </h3>
                 </div>
-                <nav className="mt-5" aria-label={`${section.label} links`}>
+                <nav className="mt-5 w-full" aria-label={`${section.label} links`}>
                   <ul className="space-y-3 list-none" role="list">
                     {section.categories.map((link, linkIdx) => (
                       <li key={linkIdx}>
@@ -237,7 +237,7 @@ export default function Footer() {
             aria-hidden="true"
           >
             <div className="relative overflow-hidden">
-              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl text-3xl leading-none select-none">
+              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl text-3xl leading-none select-none text-center md:text-left">
                 Techverzing
               </p>
             </div>
@@ -246,7 +246,7 @@ export default function Footer() {
 
         <div className="relative pt-8 md:pt-10 border-t border-white/5">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-6 py-6">
-            <p className="text-cream-white/40 text-sm md:text-base tracking-wide">
+            <p className="text-center text-cream-white/40 text-sm md:text-left md:text-base tracking-wide">
               © {new Date().getFullYear()} Techverzing Technologies. All rights reserved.
             </p>
 
