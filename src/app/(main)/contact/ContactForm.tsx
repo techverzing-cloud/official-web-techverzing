@@ -3,15 +3,9 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-const services = [
-  "Web Development",
-  "Mobile App Development",
-  "CRM & Business Automation",
-  "Digital Marketing & SEO",
-  "UI/UX Design",
-  "Cloud & IT Solutions",
-  "Other",
-];
+import contactData from "@/content/contact.json";
+
+const services = contactData.formServices;
 
 type Status = "idle" | "sending" | "success" | "error";
 

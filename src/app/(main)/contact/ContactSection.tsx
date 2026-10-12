@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
-import globalData from "@/json/global.json";
+import globalData from "@/content/site.json";
 import { siteConfig } from "@/lib/seo";
 import SectionHeading from "@/components/home/SectionHeading";
 import ContactForm from "./ContactForm";
 
-const { contactInfo } = globalData;
+const { contact: contactInfo, socialLinks } = globalData;
 
 const phone = contactInfo.items[0].text;
 const mapsHref =
@@ -45,7 +45,7 @@ export default function ContactSection() {
       id="contact"
       data-light-bg
       aria-label="Contact details and enquiry form"
-      className="rounded-t-4xl mrPy"
+      className="rounded-t-4xl"
     >
       <div className="mrMx">
         <SectionHeading
@@ -54,7 +54,7 @@ export default function ContactSection() {
         />
         <p className="mt-5 max-w-[58ch] text-pretty font-inter text-base font-normal leading-[1.7] text-dull-text-dark md:text-lg">
           We&rsquo;re a small office, so every note that lands here reaches a
-          person — not a queue. Tell us what you&rsquo;re building and
+          person - not a queue. Tell us what you&rsquo;re building and
           we&rsquo;ll write back within one working day.
         </p>
 
@@ -94,7 +94,7 @@ export default function ContactSection() {
             <div className="mt-4">
               <span className={labelCls}>Elsewhere</span>
               <ul className="mt-3 flex flex-wrap gap-2">
-                {contactInfo.socialLinks.map((social) => (
+                {socialLinks.map((social) => (
                   <li key={social.name}>
                     <Link
                       href={social.href}
@@ -123,7 +123,7 @@ export default function ContactSection() {
               </h2>
               <p className="mt-2 max-w-[52ch] text-pretty font-inter text-sm leading-relaxed text-dull-text-dark md:text-base">
                 One of us reads your note. Within a working day you&rsquo;ll
-                hear back with a few sharp questions and a clear direction — and
+                hear back with a few sharp questions and a clear direction - and
                 if it&rsquo;s a fit, the scope, timelines, and honest next
                 steps.
               </p>

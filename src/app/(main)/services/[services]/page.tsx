@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import rawData from "@/json/services/data.json";
-import introData from "@/json/services/intro.json";
+import rawData from "@/content/services-data.json";
+import introData from "@/content/services.json";
 import { siteConfig } from "@/lib/seo";
 import SectionHero from "@/components/global/SectionHero";
 import ServiceIntro from "@/components/services/ServiceIntro";
@@ -76,7 +76,7 @@ async function ServicesPage({
   const data = servicesData[param.services];
   if (!data) notFound();
 
-  const intro = introData.find(
+  const intro = introData.services.find(
     (s) => s.link.url === `/services/${param.services}`
   );
   if (!intro) notFound();

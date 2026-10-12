@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 
 /**
  * A single office/location. Add more objects to the `locations` array in
- * mapSection.jsx to render additional offices — nothing else needs to change.
+ * mapSection.jsx to render additional offices - nothing else needs to change.
  */
 const LocationCard = ({ label, name, addressLines, mapSrc, mapsQuery }) => {
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
@@ -40,7 +40,7 @@ const LocationCard = ({ label, name, addressLines, mapSrc, mapsQuery }) => {
 
       <figure className="mt-6 overflow-hidden rounded-3xl border border-black-slate/10">
         <iframe
-          title={`Map showing the location of ${name} — ${label}`}
+          title={`Map showing the location of ${name} - ${label}`}
           src={mapSrc}
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"

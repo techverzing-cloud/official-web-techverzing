@@ -1,6 +1,6 @@
 ---
 name: gsap-utils
-description: Official GSAP skill for gsap.utils — clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP.
+description: Official GSAP skill for gsap.utils - clamp, mapRange, normalize, interpolate, random, snap, toArray, wrap, pipe. Use when the user asks about gsap.utils, clamp, mapRange, random, snap, toArray, wrap, or helper utilities in GSAP.
 license: MIT
 ---
 
@@ -16,7 +16,7 @@ Apply when writing or reviewing code that uses **gsap.utils** for math, array/co
 
 **gsap.utils** provides pure helpers; no need to register. Use in tween vars (e.g. function-based values), in ScrollTrigger or Observer callbacks, or in any JS that drives GSAP. All are on **gsap.utils** (e.g. `gsap.utils.clamp()`).
 
-**Omitting the value: function form.** Many utils accept the value to transform as the **last** argument. If you omit that argument, the util returns a **function** that accepts the value later. Use the function form when you need to clamp, map, normalize, or snap many values with the same config (e.g. in a mousemove handler or tween callback). **Exception: random()** — pass **true** as the last argument to get a reusable function (do not omit the value); see [random()](https://gsap.com/docs/v3/GSAP/UtilityMethods/random()).
+**Omitting the value: function form.** Many utils accept the value to transform as the **last** argument. If you omit that argument, the util returns a **function** that accepts the value later. Use the function form when you need to clamp, map, normalize, or snap many values with the same config (e.g. in a mousemove handler or tween callback). **Exception: random()** - pass **true** as the last argument to get a reusable function (do not omit the value); see [random()](https://gsap.com/docs/v3/GSAP/UtilityMethods/random()).
 
 ```javascript
 // With value: returns the result
@@ -137,7 +137,7 @@ gsap.utils.shuffle([1, 2, 3, 4]); // e.g. [3, 1, 4, 2]
 
 ### distribute(config)
 
-**Returns a function** that assigns a value to each target based on its position in the array (or in a grid). Used internally for advanced staggers; use it whenever you need values spread across many elements (e.g. scale, opacity, x, delay). The returned function receives `(index, target, targets)` — either call it manually or pass the result directly into a tween; GSAP will call it per target with index, element, and array.
+**Returns a function** that assigns a value to each target based on its position in the array (or in a grid). Used internally for advanced staggers; use it whenever you need values spread across many elements (e.g. scale, opacity, x, delay). The returned function receives `(index, target, targets)` - either call it manually or pass the result directly into a tween; GSAP will call it per target with index, element, and array.
 
 **Config (all optional):**
 

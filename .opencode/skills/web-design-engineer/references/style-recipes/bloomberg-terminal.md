@@ -1,9 +1,9 @@
-# bloomberg-terminal — Bloomberg Terminal
+# bloomberg-terminal - Bloomberg Terminal
 
 - **School**: Information Architecture
 - **Vibe**: Maximum data-ink, mission-critical density, chrome-amber on near-black
 - **Best for**: Finance / trading / monitoring dashboards, "professionals don't have time for whitespace" products
-- **Touchstone**: a real Bloomberg Terminal screenshot (always reference the real thing — it's denser than memory suggests)
+- **Touchstone**: a real Bloomberg Terminal screenshot (always reference the real thing - it's denser than memory suggests)
 
 **Palette**
 - Ground: `#0A0E1A` (deep navy-black)
@@ -16,8 +16,8 @@
 - High-importance text: `#E8ECF4`
 
 **Typography**
-- Display & body: a monospaced workhorse — IBM Plex Mono, JetBrains Mono, or Berkeley Mono. Bloomberg itself uses a proprietary mono.
-- Sizes: 11 / 12 / 13 / 14px — densely packed. No 16px body. No 32px headlines.
+- Display & body: a monospaced workhorse - IBM Plex Mono, JetBrains Mono, or Berkeley Mono. Bloomberg itself uses a proprietary mono.
+- Sizes: 11 / 12 / 13 / 14px - densely packed. No 16px body. No 32px headlines.
 - All numerals tabular-aligned (right-aligned columns of digits)
 
 **Spacing**: 2 / 4 / 8 / 12. Multi-pane layouts with no luxury margins.
@@ -29,7 +29,7 @@
 **Motion**: ticker scroll (uniform linear), instant state flips, blink on data update (50–80ms flash). No eased animations.
 
 **Signature moves**
-- Multi-pane workspaces with hairline dividers — 4 to 9 panels visible at once
+- Multi-pane workspaces with hairline dividers - 4 to 9 panels visible at once
 - Amber text on near-black for the most important data; chrome-white for secondary
 - Status / ticker bar at top with marquee-scrolling tickers, color-coded up/down
 - Keyboard-shortcut chips in the margins (`F9: TRADE`)
@@ -46,11 +46,11 @@
 > Trading workstation user interface, deep navy #0A0E1A background, multi-pane layout with amber #FFA02F headlines, monospaced data tables, ticker scroll across the top, no rounded corners, no illustrations, fixed-width font throughout.
 
 **Don't use when**
-- The audience is consumer (they'll bounce in 3 seconds — terminal density is acquired taste)
-- You can't fill the screen with real data — terminal aesthetic + dummy "Lorem 1,234" placeholders looks broken
-- The task is a marketing landing page — terminals are for working in, not for selling
+- The audience is consumer (they'll bounce in 3 seconds - terminal density is acquired taste)
+- You can't fill the screen with real data - terminal aesthetic + dummy "Lorem 1,234" placeholders looks broken
+- The task is a marketing landing page - terminals are for working in, not for selling
 
 ---
 
-> **Same school — Information Architecture**: [`pentagram`](./pentagram.md) · [`vignelli-swiss-helvetica`](./vignelli-swiss-helvetica.md) · [`tufte-dataink`](./tufte-dataink.md) · [`nyt-the-daily`](./nyt-the-daily.md)  
+> **Same school - Information Architecture**: [`pentagram`](./pentagram.md) · [`vignelli-swiss-helvetica`](./vignelli-swiss-helvetica.md) · [`tufte-dataink`](./tufte-dataink.md) · [`nyt-the-daily`](./nyt-the-daily.md)  
 > **Browse all 25 recipes**: [INDEX.md](./INDEX.md)

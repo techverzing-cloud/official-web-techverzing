@@ -1,26 +1,23 @@
-import global from "@/json/global.json";
+import site from "@/content/site.json";
 
-const siteUrl = "https://www.techverzing.com";
+const siteUrl = site.seo.siteUrl;
 
 export const siteConfig = {
-  name: "Techverzing Technologies",
-  shortName: "Techverzing",
+  name: site.company.name,
+  shortName: site.company.shortName,
   url: siteUrl,
-  tagline: "Where Technology Meets Business Growth.",
-  description:
-    "Techverzing Technologies is a digital marketing and IT solutions agency offering websites, mobile apps, custom CRM, AI/ML, SEO, and 360° marketing.",
-  email: "info@techverzing.com",
-  phone: "+917307693692",
+  tagline: site.company.tagline,
+  description: site.company.description,
+  email: site.contact.emails[0],
+  phone: site.contact.phoneRaw,
   address: {
-    addressLocality: "New Delhi",
-    addressRegion: "Delhi",
-    addressCountry: "IN",
+    addressLocality: site.contact.address.locality,
+    addressRegion: site.contact.address.region,
+    addressCountry: site.contact.address.country,
   },
-  socialLinks: global.contactInfo.socialLinks.map((link) => link.href),
+  socialLinks: site.socialLinks.map((link) => link.href),
 } as const;
 
-export const homeTitle =
-  "Techverzing Technologies | Digital Marketing & IT Solutions Agency";
+export const homeTitle = site.seo.defaultTitle;
 
-export const homeDescription =
-  "Techverzing Technologies is a digital marketing and IT solutions agency offering websites, mobile apps, custom CRM, AI/ML, SEO, and 360° marketing.";
+export const homeDescription = site.seo.defaultDescription;

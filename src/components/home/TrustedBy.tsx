@@ -1,7 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import homeData from "@/json/home.json";
+import homeData from "@/content/home.json";
 import Divider from "@/components/ui/Divider";
 import { Marquee } from "./Marquee";
 import SectionHeading from "./SectionHeading";

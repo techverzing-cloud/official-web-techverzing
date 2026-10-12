@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 const data = await resend.emails.send({
   from: process.env.EMAIL_FROM!,
   to: process.env.EMAIL_TO!,
-  subject: `${name} sent a message via Contact Form — Techverzing`,
+  subject: `${name} sent a message via Contact Form - Techverzing`,
   html: `
   <div style="font-family:Arial,Segoe UI,sans-serif;background-color:#f3f4f6;padding:24px;">
     <div style="max-width:600px;margin:auto;background-color:#ffffff;border-radius:10px;padding:24px;border:1px solid #e5e7eb;">

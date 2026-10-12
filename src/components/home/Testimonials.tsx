@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Icon } from "@iconify/react";
-import homeData from "@/json/home.json";
+import homeData from "@/content/home.json";
 import SectionHeading from "./SectionHeading";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -160,7 +160,7 @@ const Testimonials = () => {
                   </span>
                   <span className="text-dull-text">
                     {" "}
-                    — {item.role}, {item.company}
+                    - {item.role}, {item.company}
                   </span>
                 </p>
               </footer>

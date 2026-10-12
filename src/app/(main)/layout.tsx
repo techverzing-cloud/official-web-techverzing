@@ -8,6 +8,7 @@ import ClientProviders from "@/components/global/ClientProviders";
 import JsonLd from "@/components/global/JsonLd";
 import PreloaderWrapper from "@/components/global/PreloaderWrapper";
 import WhatsAppButton from "@/components/global/WhatsAppButton";
+import ChatWidgetClient from "@/components/global/ChatWidgetClient";
 import { ENABLE_PRELOADER } from "@/lib/config";
 import { siteConfig } from "@/lib/seo";
 import "../../css/globals.css";
@@ -136,6 +137,7 @@ export default function RootLayout({
 
         <ClientProviders />
         <WhatsAppButton />
+        <ChatWidgetClient apiUrl="/api/chat" />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
       </body>

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/seo";
-import servicesData from "@/json/services/data.json";
+import servicesData from "@/content/services/data.json";
 
 const siteUrl = siteConfig.url;
 

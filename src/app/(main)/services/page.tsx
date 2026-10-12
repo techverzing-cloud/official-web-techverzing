@@ -3,19 +3,19 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { siteConfig } from "@/lib/seo";
 import SectionHero from "@/components/global/SectionHero";
-import serviceData from "@/json/services/intro.json";
+import serviceData from "@/content/services.json";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} Services | Web, App, CRM, AI & Marketing Solutions`,
   description:
-    "Explore Techverzing Technologies services — website development, mobile apps, custom CRM & automation, AI/ML solutions, UI/UX design, SEO & performance marketing, digital branding, and 360° marketing.",
+    "Explore Techverzing Technologies services - website development, mobile apps, custom CRM & automation, AI/ML solutions, UI/UX design, SEO & performance marketing, digital branding, and 360° marketing.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
     title: `${siteConfig.name} Services | Web, App, CRM, AI & Marketing Solutions`,
     description:
-      "Explore Techverzing Technologies services — website development, mobile apps, custom CRM & automation, AI/ML solutions, UI/UX design, SEO & performance marketing, digital branding, and 360° marketing.",
+      "Explore Techverzing Technologies services - website development, mobile apps, custom CRM & automation, AI/ML solutions, UI/UX design, SEO & performance marketing, digital branding, and 360° marketing.",
     url: "/services",
     type: "website",
   },
@@ -100,7 +100,7 @@ const Services = () => (
       scrollTo="#services-list"
     />
 
-    <ServicesList services={serviceData} />
+    <ServicesList services={serviceData.services} />
   </>
 );
 

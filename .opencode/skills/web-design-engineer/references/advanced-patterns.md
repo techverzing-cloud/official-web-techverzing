@@ -480,7 +480,7 @@ Use oklch to define a harmonious color system:
 
 > ⚠️ **These are experience-based suggestions, not hard rules.**
 > - Always prefer fonts already specified by the brand or design system; only refer to this table when the user hasn't provided any font scheme.
-> - The only hard rule: **Avoid Inter / Roboto / Arial / Fraunces / system-ui — fonts overused by AI-generated content** that instantly signal "this was assembled by AI."
+> - The only hard rule: **Avoid Inter / Roboto / Arial / Fraunces / system-ui - fonts overused by AI-generated content** that instantly signal "this was assembled by AI."
 > - When choosing fonts, focus on "personality fit" rather than "what's trendy." The table below lists common high-quality choices, not an exhaustive list.
 
 | Use Case | Recommendation | Google Fonts Name |
@@ -501,7 +501,7 @@ Use oklch to define a harmonious color system:
 
 ## Color × Font Pairing Reference
 
-> ⚠️ **These are experience-based pairing suggestions, not hard rules.** When you have **absolutely no design context**, pick one as a starting point — it's far better than starting from Inter + #3b82f6.
+> ⚠️ **These are experience-based pairing suggestions, not hard rules.** When you have **absolutely no design context**, pick one as a starting point - it's far better than starting from Inter + #3b82f6.
 > Once the user provides a brand / design system / reference site, drop this table immediately and follow their materials.
 
 For quickly establishing a visual system with personality:

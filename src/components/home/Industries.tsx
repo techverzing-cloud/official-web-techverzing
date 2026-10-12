@@ -7,7 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import homeData from "@/json/home.json";
+import homeData from "@/content/home.json";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
@@ -209,7 +209,7 @@ const Industries = () => {
                       alt={item.text}
                       fill
                       priority={i === 0}
-                      quality={72}
+                      quality={75}
                       sizes="100vw"
                       className="object-cover"
                     />

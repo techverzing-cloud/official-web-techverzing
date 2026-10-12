@@ -4,11 +4,11 @@ Canonical index of every skill vendored at `.opencode/skills/`. Load a skill via
 
 ## Critical workflows (MUST)
 
-- **Impeccable design work** — design, redesign, audit, critique, polish, or any `impeccable` command (`/impeccable init`, `shape`, `audit`, etc.) MUST load `impeccable` and follow its framework and reference guides.
-- **Code reviews** — PRs, diffs, changesets, or any code review request MUST load `code-review-skill` and follow its framework and reference guides.
-- **UI work** — creating, building, reshaping, restyling, auditing, or fixing any UI (web UIs, frontend components, design tokens, palettes, spacing, hierarchy, typography, theming, "my UI looks off", "fix the design") MUST load BOTH skills in sequence:
-  1. `frontend-design` first — aesthetic direction (identity, typeface pairing, palette as a point of view, signature element).
-  2. `refactoring-ui` second — execution (grayscale-first hierarchy, 4/8/16/24/32/48/64 spacing scale, modular type scale, systematic color, WCAG contrast, shadow/elevation). Run its Quick Diagnostic and state the score out of 10.
+- **Impeccable design work** - design, redesign, audit, critique, polish, or any `impeccable` command (`/impeccable init`, `shape`, `audit`, etc.) MUST load `impeccable` and follow its framework and reference guides.
+- **Code reviews** - PRs, diffs, changesets, or any code review request MUST load `code-review-skill` and follow its framework and reference guides.
+- **UI work** - creating, building, reshaping, restyling, auditing, or fixing any UI (web UIs, frontend components, design tokens, palettes, spacing, hierarchy, typography, theming, "my UI looks off", "fix the design") MUST load BOTH skills in sequence:
+  1. `frontend-design` first - aesthetic direction (identity, typeface pairing, palette as a point of view, signature element).
+  2. `refactoring-ui` second - execution (grayscale-first hierarchy, 4/8/16/24/32/48/64 spacing scale, modular type scale, systematic color, WCAG contrast, shadow/elevation). Run its Quick Diagnostic and state the score out of 10.
   - Reconcile conflicts by rule: `frontend-design` owns palette, typeface, and the signature element; `refactoring-ui` owns spacing, hierarchy, contrast, and depth.
 
 ## Design
@@ -29,7 +29,7 @@ Canonical index of every skill vendored at `.opencode/skills/`. Load a skill via
 | `improve-animations` | Audit a whole codebase's motion and produce prioritized implementation plans (read-only). |
 | `review-animations` | Review motion code against a high craft bar. Default to flagging. |
 | `find-animation-opportunities` | Find places that don't animate but should; propose exact values (read-only). |
-| `microinteractions` | Design the tiny high-frequency moments (triggers, rules, feedback, loops & modes) — button/loading states, toggles, form-validation responses, state transitions. "the interface feels dead", "add polish to interactions". |
+| `microinteractions` | Design the tiny high-frequency moments (triggers, rules, feedback, loops & modes) - button/loading states, toggles, form-validation responses, state transitions. "the interface feels dead", "add polish to interactions". |
 
 ## Libraries & components
 

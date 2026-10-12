@@ -9,14 +9,14 @@ import ServicesOverview from "@/components/about/ServicesOverview";
 export const metadata: Metadata = {
   title: `About ${siteConfig.name} | Digital Marketing & IT Solutions Agency`,
   description:
-    "Learn about Techverzing Technologies — the digital marketing and IT solutions agency building websites, apps, automation, AI, and marketing for real growth.",
+    "Learn about Techverzing Technologies - the digital marketing and IT solutions agency building websites, apps, automation, AI, and marketing for real growth.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
     title: `About ${siteConfig.name}`,
     description:
-      "Learn about Techverzing Technologies — the digital marketing and IT solutions agency building websites, apps, automation, AI, and marketing for real growth.",
+      "Learn about Techverzing Technologies - the digital marketing and IT solutions agency building websites, apps, automation, AI, and marketing for real growth.",
     url: "/about",
     type: "website",
   },

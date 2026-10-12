@@ -3,14 +3,14 @@
     "heading": {
       "title": "Website Development",
       "heading": "Modern Websites That Actually Perform",
-      "text": "We build fast, responsive, and conversion-focused websites—business sites, portfolios, landing pages, e-commerce stores, and custom dashboards."
+      "text": "We build fast, responsive, and conversion-focused websites-business sites, portfolios, landing pages, e-commerce stores, and custom dashboards."
     },
     "intro": [
       {
         "title": "Business & Portfolio Websites",
         "subtitle": "Clean, credible web presence for your brand",
         "image": {
-          "src": "/services/website-development/webd1.jpg",
+          "src": "/services/website-development/business-portfolio.jpg",
           "alt": "Business and Portfolio Website Design"
         },
         "description": [
@@ -23,7 +23,7 @@
         "title": "E-Commerce & Landing Pages",
         "subtitle": "Pages built to convert visitors into customers",
         "image": {
-          "src": "/services/website-development/webd2.jpg",
+          "src": "/services/website-development/ecommerce-landing.jpg",
           "alt": "E-Commerce and Landing Page Development"
         },
         "description": [
@@ -36,7 +36,7 @@
         "title": "Dashboards & High-Performance Builds",
         "subtitle": "Fast, scalable and mobile-friendly experiences",
         "image": {
-          "src": "/services/website-development/webd3.jpg",
+          "src": "/services/website-development/dashboards.jpg",
           "alt": "High Performance Website Dashboards"
         },
         "description": [
@@ -83,7 +83,7 @@
       "subtitle": "From idea to high-performing website",
       "description": [
         "We focus on websites that not only look modern but also load fast, convert well, and are easy to maintain.",
-        "Every project is structured around your goals—visibility, leads, sales, or brand building."
+        "Every project is structured around your goals-visibility, leads, sales, or brand building."
       ],
       "advantages": [
         {
@@ -92,7 +92,7 @@
         },
         {
           "title": "Design + Dev in Sync",
-          "description": "UI/UX and development work together—not as separate steps—for smoother delivery."
+          "description": "UI/UX and development work together-not as separate steps-for smoother delivery."
         },
         {
           "title": "Long-Term Friendly Builds",
@@ -113,7 +113,7 @@
         "title": "Android & iOS Apps",
         "subtitle": "Native-feel apps your users love",
         "image": {
-          "src": "/services/mobile-application/1.webp",
+          "src": "/services/mobile-application/hero.webp",
           "alt": "Android and iOS App Development"
         },
         "description": [
@@ -126,7 +126,7 @@
         "title": "Cross-Platform Development",
         "subtitle": "One codebase, multiple platforms",
         "image": {
-          "src": "/services/mobile-application/2.webp",
+          "src": "/services/mobile-application/cross-platform.webp",
           "alt": "Cross Platform Mobile Apps"
         },
         "description": [
@@ -139,7 +139,7 @@
         "title": "App Redesign & Upgrades",
         "subtitle": "Upgrade old apps into modern experiences",
         "image": {
-          "src": "/services/mobile-application/3.webp",
+          "src": "/services/mobile-application/redesign.webp",
           "alt": "Mobile App Redesign and Upgrades"
         },
         "description": [
@@ -191,7 +191,7 @@
       "advantages": [
         {
           "title": "Product Thinking",
-          "description": "We don’t just code features—we help shape the product experience."
+          "description": "We don’t just code features-we help shape the product experience."
         },
         {
           "title": "Transparent Development",
@@ -216,7 +216,7 @@
         "title": "Custom CRM Systems",
         "subtitle": "Organize leads, customers, and relationships in one place",
         "image": {
-          "src": "/services/customized-software-development/1.png",
+          "src": "/services/customized-software-development/hero.png",
           "alt": "Custom CRM Development"
         },
         "description": [
@@ -229,7 +229,7 @@
         "title": "Lead & Business Management",
         "subtitle": "Stay on top of leads, tasks, and follow-ups",
         "image": {
-          "src": "/services/customized-software-development/2.webp",
+          "src": "/services/customized-software-development/lead-management.webp",
           "alt": "Lead Management Systems"
         },
         "description": [
@@ -242,7 +242,7 @@
         "title": "Employee, Payroll & Workflow Automation",
         "subtitle": "Automate repetitive operations and save time",
         "image": {
-          "src": "/services/customized-software-development/3.webp",
+          "src": "/services/customized-software-development/automation.webp",
           "alt": "Business Automation and Admin Panels"
         },
         "description": [
@@ -286,7 +286,7 @@
     ],
     "advantage": {
       "title": "Why Choose Techverzing for CRM & Automation?",
-      "subtitle": "Tools that fit your business—not generic templates",
+      "subtitle": "Tools that fit your business-not generic templates",
       "description": [
         "We design systems that mirror your real processes, saving time and reducing chaos.",
         "Whether you’re managing leads, employees, or operations, we help you centralize and automate."
@@ -319,7 +319,7 @@
         "title": "AI Chatbots & Assistants",
         "subtitle": "Automated conversations that feel human",
         "image": {
-          "src": "/services/ai-ml-solutions/1.webp",
+          "src": "/services/ai-ml-solutions/hero.webp",
           "alt": "AI Chatbot and Assistant Development"
         },
         "description": [
@@ -332,7 +332,7 @@
         "title": "Recommendation & Prediction Systems",
         "subtitle": "Use your data to make better decisions",
         "image": {
-          "src": "/services/ai-ml-solutions/2.webp",
+          "src": "/services/ai-ml-solutions/recommendation.webp",
           "alt": "AI Recommendation and Prediction Systems"
         },
         "description": [
@@ -345,7 +345,7 @@
         "title": "Custom AI Integrations",
         "subtitle": "Bring AI into your existing products",
         "image": {
-          "src": "/services/ai-ml-solutions/3.webp",
+          "src": "/services/ai-ml-solutions/integration.webp",
           "alt": "Custom AI Integration and Automation"
         },
         "description": [
@@ -391,7 +391,7 @@
       "title": "Why Work with Techverzing for AI & ML?",
       "subtitle": "Practical AI, not just buzzwords",
       "description": [
-        "We focus on AI that clearly improves experience, efficiency, or decision-making—not just demo features.",
+        "We focus on AI that clearly improves experience, efficiency, or decision-making-not just demo features.",
         "Every implementation is grounded in your data, use case, and technical reality."
       ],
       "advantages": [
@@ -415,14 +415,14 @@
     "heading": {
       "title": "Cloud & Backend Development",
       "heading": "Secure, Scalable Backends for Modern Apps",
-      "text": "We design and implement backend systems using Firebase, AWS, and Google Cloud—covering APIs, authentication, databases, and storage."
+      "text": "We design and implement backend systems using Firebase, AWS, and Google Cloud-covering APIs, authentication, databases, and storage."
     },
     "intro": [
       {
         "title": "Cloud Setup & Architecture",
         "subtitle": "Right-sized infrastructure for your product",
         "image": {
-          "src": "/services/cloud-backend-development/1.webp",
+          "src": "/services/cloud-backend-development/hero.webp",
           "alt": "Cloud Architecture and Setup"
         },
         "description": [
@@ -435,7 +435,7 @@
         "title": "APIs, Auth & Backend Logic",
         "subtitle": "The backbone of your web and mobile apps",
         "image": {
-          "src": "/services/cloud-backend-development/2.webp",
+          "src": "/services/cloud-backend-development/api-auth.webp",
           "alt": "Backend Development and API Design"
         },
         "description": [
@@ -448,7 +448,7 @@
         "title": "Databases & Cloud Storage",
         "subtitle": "Handle data the right way from the start",
         "image": {
-          "src": "/services/cloud-backend-development/3.webp",
+          "src": "/services/cloud-backend-development/database-storage.webp",
           "alt": "Database and Cloud Storage Solutions"
         },
         "description": [
@@ -525,7 +525,7 @@
         "title": "Website & App UI Design",
         "subtitle": "Pixel-perfect designs for modern products",
         "image": {
-          "src": "/services/ui-ux-design/1.webp",
+          "src": "/services/ui-ux-design/hero.webp",
           "alt": "UI Design for Web and Mobile"
         },
         "description": [
@@ -538,7 +538,7 @@
         "title": "Wireframes & Prototypes",
         "subtitle": "Test ideas before you build them",
         "image": {
-          "src": "/services/ui-ux-design/2.webp",
+          "src": "/services/ui-ux-design/wireframes.webp",
           "alt": "Wireframes and Interactive Prototypes"
         },
         "description": [
@@ -551,7 +551,7 @@
         "title": "Brand Identity & Visual Language",
         "subtitle": "Give your product a distinct visual voice",
         "image": {
-          "src": "/services/ui-ux-design/3.png",
+          "src": "/services/ui-ux-design/brand-identity.png",
           "alt": "Brand Identity and Visual System"
         },
         "description": [
@@ -628,7 +628,7 @@
         "title": "Monthly Support Plans",
         "subtitle": "Stay covered after your project goes live",
         "image": {
-          "src": "/services/maintenance-support/1.webp",
+          "src": "/services/maintenance-support/hero.webp",
           "alt": "Ongoing Support and Maintenance Plans"
         },
         "description": [
@@ -641,7 +641,7 @@
         "title": "Bug Fixes & Stability",
         "subtitle": "Fix issues before your users notice them",
         "image": {
-          "src": "/services/maintenance-support/2.webp",
+          "src": "/services/maintenance-support/bug-fixes.webp",
           "alt": "Bug Fixes and Stability Improvements"
         },
         "description": [
@@ -654,7 +654,7 @@
         "title": "Performance & Security",
         "subtitle": "Make your product fast, safe, and reliable",
         "image": {
-          "src": "/services/maintenance-support/3.webp",
+          "src": "/services/maintenance-support/performance-security.webp",
           "alt": "Performance Optimization and Security Updates"
         },
         "description": [
@@ -706,7 +706,7 @@
       "advantages": [
         {
           "title": "Proactive Support",
-          "description": "We don’t wait for things to break—we look for what can be improved."
+          "description": "We don’t wait for things to break-we look for what can be improved."
         },
         {
           "title": "Context & Continuity",
@@ -731,7 +731,7 @@
         "title": "Logo Design",
         "subtitle": "A mark that represents your brand clearly",
         "image": {
-          "src": "/services/digital-branding/1.webp",
+          "src": "/services/digital-branding/hero.webp",
           "alt": "Logo Design for Brands"
         },
         "description": [
@@ -744,7 +744,7 @@
         "title": "Branding Kits & Guidelines",
         "subtitle": "Visual systems that keep everything consistent",
         "image": {
-          "src": "/services/digital-branding/2.webp",
+          "src": "/services/digital-branding/brand-kit.webp",
           "alt": "Branding Kits and Visual Identity"
         },
         "description": [
@@ -757,7 +757,7 @@
         "title": "Social Media Creatives",
         "subtitle": "Content that looks on-brand across platforms",
         "image": {
-          "src": "/services/digital-branding/3.webp",
+          "src": "/services/digital-branding/social-creatives.webp",
           "alt": "Social Media Creative Design"
         },
         "description": [
@@ -801,7 +801,7 @@
     ],
     "advantage": {
       "title": "Why Brand with Techverzing?",
-      "subtitle": "Looks matter—but so does clarity",
+      "subtitle": "Looks matter-but so does clarity",
       "description": [
         "We don’t just make things look pretty; we design for recognition, clarity, and usability.",
         "Your brand assets are created to work in real scenarios, not just in mockups."
@@ -809,7 +809,7 @@
       "advantages": [
         {
           "title": "Purposeful Visuals",
-          "description": "Every choice—color, font, layout—has a reason behind it."
+          "description": "Every choice-color, font, layout-has a reason behind it."
         },
         {
           "title": "Ready for Growth",
@@ -834,7 +834,7 @@
         "title": "On-Page & Technical SEO",
         "subtitle": "Lay the right SEO foundation",
         "image": {
-          "src": "/services/seo/1.png",
+          "src": "/services/seo/hero.png",
           "alt": "On-page and Technical SEO"
         },
         "description": [
@@ -847,7 +847,7 @@
         "title": "Keyword & Content Optimization",
         "subtitle": "Rank for what actually matters",
         "image": {
-          "src": "/services/seo/2.jpg",
+          "src": "/services/seo/keyword-research.jpg",
           "alt": "Keyword Research and Content Optimization"
         },
         "description": [
@@ -860,7 +860,7 @@
         "title": "Speed & Performance",
         "subtitle": "Faster websites, happier users, better rankings",
         "image": {
-          "src": "/services/seo/3.jpg",
+          "src": "/services/seo/speed-performance.jpg",
           "alt": "Website Speed and Performance Optimization"
         },
         "description": [
@@ -906,7 +906,7 @@
       "title": "Why Use Techverzing for SEO & Performance?",
       "subtitle": "Technical, content, and performance under one roof",
       "description": [
-        "We combine dev knowledge with SEO understanding—so changes are realistic and effective.",
+        "We combine dev knowledge with SEO understanding-so changes are realistic and effective.",
         "You get a site that’s not only discoverable, but also fast and pleasant to use."
       ],
       "advantages": [
@@ -916,7 +916,7 @@
         },
         {
           "title": "Practical Recommendations",
-          "description": "We suggest changes that can actually be implemented—often by us directly."
+          "description": "We suggest changes that can actually be implemented-often by us directly."
         },
         {
           "title": "Long-Term Focus",
@@ -937,7 +937,7 @@
         "title": "Social Media Marketing",
         "subtitle": "Stay active, relevant, and engaging",
         "image": {
-          "src": "/services/social-media-optimization/1.jpg",
+          "src": "/services/social-media-optimization/hero.jpg",
           "alt": "Social Media Marketing for Brands"
         },
         "description": [
@@ -950,11 +950,11 @@
         "title": "Paid Ads: Google & Meta",
         "subtitle": "Performance-focused campaigns to drive results",
         "image": {
-          "src": "/services/social-media-optimization/2.jpg",
+          "src": "/services/social-media-optimization/paid-ads.jpg",
           "alt": "Google and Meta Ads Campaigns"
         },
         "description": [
-          "Campaigns planned around clear objectives—leads, sales, traffic, or awareness.",
+          "Campaigns planned around clear objectives-leads, sales, traffic, or awareness.",
           "Ad sets, targeting, and creatives optimized for ROI.",
           "Continuous testing and refinement of what works."
         ]
@@ -963,7 +963,7 @@
         "title": "Content, Creatives & Analytics",
         "subtitle": "Plan, create, launch, measure, repeat",
         "image": {
-          "src": "/services/social-media-optimization/3.png",
+          "src": "/services/social-media-optimization/analytics.png",
           "alt": "Full Funnel Marketing Strategy and Analytics"
         },
         "description": [

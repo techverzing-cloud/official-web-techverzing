@@ -1,12 +1,12 @@
-# Critique Mode — Detailed Reference
+# Critique Mode - Detailed Reference
 
 Read this when running Step 7 of the workflow (user asked for review, or self-check before delivery). The main `SKILL.md` already covers the **5 dimensions and output format**. This file provides **scoring rubrics, per-output-type weighting, and the common-issue catalog**.
 
-**Critique the design, not the designer.** Be specific, actionable, and grounded in design language — not vague taste claims.
+**Critique the design, not the designer.** Be specific, actionable, and grounded in design language - not vague taste claims.
 
 ---
 
-## The Five Dimensions — Detailed Rubrics
+## The Five Dimensions - Detailed Rubrics
 
 ### 1. Philosophy Alignment
 
@@ -35,13 +35,13 @@ Does the eye flow where the designer intends?
 | 7–8 | Primary/secondary clear; 1–2 spots where hierarchy is muddy |
 | 5–6 | Title vs. body distinguishable, but middle layers (subtitles, captions) collapse together |
 | 3–4 | Information sits flat with no clear entry point |
-| 1–2 | Chaotic — viewer doesn't know where to look first |
+| 1–2 | Chaotic - viewer doesn't know where to look first |
 
 **What to look for**:
 - Title vs. body size ratio ≥ 2.5× (ideally 4–6× for hero)?
 - Color / weight / size building 3–4 clear levels?
 - Whitespace actively guiding the eye?
-- **Squint test**: squint at the screen — is the hierarchy still legible?
+- **Squint test**: squint at the screen - is the hierarchy still legible?
 
 ### 3. Craft Quality
 
@@ -53,12 +53,12 @@ Pixel-level execution: alignment, spacing, color discipline.
 | 7–8 | Refined overall; 1–2 minor alignment or spacing issues |
 | 5–6 | Basically aligned, but spacing is inconsistent and color use is unsystematic |
 | 3–4 | Obvious alignment errors, chaotic spacing, too many colors |
-| 1–2 | Sloppy — looks like a draft |
+| 1–2 | Sloppy - looks like a draft |
 
 **What to look for**:
 - Consistent spacing system (8pt grid: 8 / 16 / 24 / 32 / 48 / 64)?
 - Same-class elements use identical spacing?
-- Color count controlled (typically ≤ 4 — primary + accent + neutral scale + 1 emphasis)?
+- Color count controlled (typically ≤ 4 - primary + accent + neutral scale + 1 emphasis)?
 - Font families ≤ 2 (1 display + 1 body)?
 - Edges align precisely?
 
@@ -105,7 +105,7 @@ Different outputs need different priorities. When scoring, weight these dimensio
 
 | Output type | Most important | Secondary | Can relax |
 |---|---|---|---|
-| Landing page / marketing site | Functionality, Visual hierarchy | Originality | — (must be all-around) |
+| Landing page / marketing site | Functionality, Visual hierarchy | Originality | - (must be all-around) |
 | Dashboard / data product | Functionality, Craft quality | Visual hierarchy | Originality (clarity wins) |
 | HTML slide deck | Visual hierarchy, Functionality | Craft | Originality (legibility wins) |
 | Mobile app prototype | Functionality, Craft | Visual hierarchy | Philosophy alignment (usability wins) |
@@ -116,13 +116,13 @@ Different outputs need different priorities. When scoring, weight these dimensio
 
 ---
 
-## Common Issues — Top 10 Catalog
+## Common Issues - Top 10 Catalog
 
 Use these as a checklist when running a critique. Each entry has the issue, why it matters, and the fix.
 
 ### 1. AI-tech cliché
 **Issue**: Gradient orbs, digital rain, blue circuit boards, robot faces
-**Why it's a problem**: Audience is exhausted by these — your product becomes indistinguishable
+**Why it's a problem**: Audience is exhausted by these - your product becomes indistinguishable
 **Fix**: Use abstract metaphors instead of literal symbols (e.g., a "conversation" metaphor instead of a chat bubble icon)
 
 ### 2. Insufficient type-size hierarchy
@@ -157,12 +157,12 @@ Use these as a checklist when running a critique. Each entry has the issue, why 
 
 ### 8. Decoration eclipses content
 **Issue**: Background patterns / gradients / shadows steal focus from primary content
-**Why**: Inverts the priority — users came for information, not for decoration
+**Why**: Inverts the priority - users came for information, not for decoration
 **Fix**: Apply the deletion test: "if I remove this decoration, does the design get worse?" If no → remove
 
 ### 9. Cyber-neon overuse
 **Issue**: Dark navy `#0D1117` + neon-glow accents
-**Why**: This is the GitHub-dark / "AI dev tool" cliché — every clone looks the same
+**Why**: This is the GitHub-dark / "AI dev tool" cliché - every clone looks the same
 **Fix**: Pick a more distinctive palette; if dark mode is mandatory, choose a non-default base (deep warm gray, near-black with hint of color)
 
 ### 10. Information density mismatched to medium
@@ -184,23 +184,23 @@ Use these as a checklist when running a critique. Each entry has the issue, why 
 **Overall: X.X / 10** [Excellent (8+) / Good (6–7.9) / Needs work (4–5.9) / Failing (<4)]
 
 **By dimension**:
-- Philosophy alignment: X / 10 — [one-sentence reason]
-- Visual hierarchy: X / 10 — [one-sentence reason]
-- Craft quality: X / 10 — [one-sentence reason]
-- Functionality: X / 10 — [one-sentence reason]
-- Originality: X / 10 — [one-sentence reason]
+- Philosophy alignment: X / 10 - [one-sentence reason]
+- Visual hierarchy: X / 10 - [one-sentence reason]
+- Craft quality: X / 10 - [one-sentence reason]
+- Functionality: X / 10 - [one-sentence reason]
+- Originality: X / 10 - [one-sentence reason]
 
 ### Keep
-- [Specific things done well, in design language — not "the colors are nice", say "the muted terracotta against warm off-white reads as confident and editorial"]
+- [Specific things done well, in design language - not "the colors are nice", say "the muted terracotta against warm off-white reads as confident and editorial"]
 
 ### Fix (sorted by severity)
 
-**1. [Issue name]** — ⚠️ Critical / ⚡ Important / 💡 Polish
+**1. [Issue name]** - ⚠️ Critical / ⚡ Important / 💡 Polish
 - Current: [what it looks like now]
 - Why: [why it's a problem, anchored in a principle above]
-- Fix: [concrete change with specific values — "increase title size from 32px to 56px", not "make titles bigger"]
+- Fix: [concrete change with specific values - "increase title size from 32px to 56px", not "make titles bigger"]
 
-**2. [Issue name]** — ⚠️ / ⚡ / 💡
+**2. [Issue name]** - ⚠️ / ⚡ / 💡
 …
 
 ### Quick Wins (top 3 if you only have 5 minutes)
@@ -213,14 +213,14 @@ Use these as a checklist when running a critique. Each entry has the issue, why 
 
 ## Critique Anti-Patterns
 
-❌ **Vague taste claims**: "the colors are off" → bad. "The accent saturation is too high — at oklch(0.65 0.25 25) it competes with the primary; reduce to 0.18 chroma to subordinate it" → good.
+❌ **Vague taste claims**: "the colors are off" → bad. "The accent saturation is too high - at oklch(0.65 0.25 25) it competes with the primary; reduce to 0.18 chroma to subordinate it" → good.
 
 ❌ **Praise without specifics**: "looks great!" provides zero learning. Always say *what* is great and *why*.
 
 ❌ **Mixing severity**: putting a critical hierarchy bug next to a polish-level color tweak in the same list. Always sort by ⚠️ → ⚡ → 💡.
 
-❌ **More than 7 fix items**: cognitive overload. If there are more, group them — "five spacing inconsistencies" as one item, not five.
+❌ **More than 7 fix items**: cognitive overload. If there are more, group them - "five spacing inconsistencies" as one item, not five.
 
 ❌ **Critiquing without grounding**: every "Fix" should reference a principle (hierarchy, craft, philosophy, etc.) so the user understands the *why*, not just the *what*.
 
-❌ **Critiquing the designer instead of the design**: "you didn't think this through" is unhelpful and not the agent's role. "This element doesn't earn its place — consider removing" is the right framing.
+❌ **Critiquing the designer instead of the design**: "you didn't think this through" is unhelpful and not the agent's role. "This element doesn't earn its place - consider removing" is the right framing.

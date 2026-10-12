@@ -6,7 +6,7 @@ import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import homeData from "@/json/home.json";
+import homeData from "@/content/home.json";
 import { Icon as IconifyIcon } from "@iconify/react";
 import {
   VisibilityIcon,

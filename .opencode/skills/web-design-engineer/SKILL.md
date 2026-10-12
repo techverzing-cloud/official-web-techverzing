@@ -23,7 +23,7 @@ Core philosophy: **The bar is "stunning," not "functional." Every pixel is inten
 
 ### Step 0: Verify Facts Before Anything Else
 
-**Highest priority — runs before clarifying questions.**
+**Highest priority - runs before clarifying questions.**
 
 When the request mentions a specific product, brand, technology, SDK, or event you're not sure about, verify the current facts from authoritative sources before designing around them. Never assert unstable facts from memory.
 
@@ -43,17 +43,17 @@ Whether and how much to ask depends on how much information has been provided. *
 | Scenario | Ask? |
 |---|---|
 | "Make a deck" (no PRD, no audience) | ✅ Ask extensively: audience, duration, tone, variants |
-| "Use this PRD to make a 10-min deck for Eng All Hands" | ❌ Enough info — start building |
+| "Use this PRD to make a 10-min deck for Eng All Hands" | ❌ Enough info - start building |
 | "Turn this screenshot into an interactive prototype" | ⚠️ Only ask if the intended interactions are unclear |
-| "Make 6 slides about the history of butter" | ✅ Too vague — at least ask about tone and audience |
+| "Make 6 slides about the history of butter" | ✅ Too vague - at least ask about tone and audience |
 | "Design onboarding for my food-delivery app" | ✅ Ask heavily: users, flows, brand, variants |
-| "Recreate the composer UI from this codebase" | ❌ Read the code directly — no questions needed |
+| "Recreate the composer UI from this codebase" | ❌ Read the code directly - no questions needed |
 | "Make me something nice / I don't know what style I want" | ⚡ Switch to **Design Direction Advisor** (see below) |
 
-Key areas to probe (pick as needed — no fixed count required):
+Key areas to probe (pick as needed - no fixed count required):
 - **Product context**: What product? Target users? Existing design system / brand guidelines / codebase?
 - **Output type**: Web page / prototype / slide deck / animation / dashboard? Fidelity level?
-- **Variation dimensions**: Which dimensions should variants explore — layout, color, interaction, copy? How many?
+- **Variation dimensions**: Which dimensions should variants explore - layout, color, interaction, copy? How many?
 - **Constraints**: Responsive breakpoints? Dark/light mode? Accessibility? Fixed dimensions?
 
 > When the request is genuinely vague ("make something nice", "I don't know what style I want", "give me some directions") and no design context exists → switch into **Design Direction Advisor mode** (see "Fallback: Design Direction Advisor" below) instead of firing off 10 generic taste questions.
@@ -70,25 +70,25 @@ Good design is rooted in existing context. **Never start from thin air.** Priori
 
 When analyzing reference materials, focus on: color system, typography scheme, spacing system, border-radius strategy, shadow hierarchy, motion style, component density, copywriting tone.
 
-> **Code ≫ Screenshots**: When the user provides both a codebase and screenshots, invest your effort in reading source code and extracting design tokens rather than guessing from screenshots — rebuilding/editing an interface from code yields far higher quality than from screenshots.
+> **Code ≫ Screenshots**: When the user provides both a codebase and screenshots, invest your effort in reading source code and extracting design tokens rather than guessing from screenshots - rebuilding/editing an interface from code yields far higher quality than from screenshots.
 
-#### When the Task Involves a Specific Brand — Asset Protocol
+#### When the Task Involves a Specific Brand - Asset Protocol
 
-**Asset > Spec.** A brand's identity is "being recognized." Recognition is driven by assets in this order — **not by hex codes**:
+**Asset > Spec.** A brand's identity is "being recognized." Recognition is driven by assets in this order - **not by hex codes**:
 
 | Asset | Recognition contribution | When required |
 |---|---|---|
-| **Logo** (SVG / PNG, both light & dark variants if available) | Highest — any brand is identified by its logo | **Any brand task** — non-negotiable |
-| **Product imagery** (hero shots, detail, in-context) | Very high — physical products' "main character" *is* the product itself | **Physical products** (hardware, packaging, consumer goods) |
-| **UI screenshots** (latest version, real data scrubbed) | Very high — digital products' "main character" *is* the interface | **Digital products** (apps, SaaS, websites) |
-| Color tokens | Medium — auxiliary; without the assets above, brands collide | Auxiliary |
-| Typography | Low — needs the above to land | Auxiliary |
+| **Logo** (SVG / PNG, both light & dark variants if available) | Highest - any brand is identified by its logo | **Any brand task** - non-negotiable |
+| **Product imagery** (hero shots, detail, in-context) | Very high - physical products' "main character" *is* the product itself | **Physical products** (hardware, packaging, consumer goods) |
+| **UI screenshots** (latest version, real data scrubbed) | Very high - digital products' "main character" *is* the interface | **Digital products** (apps, SaaS, websites) |
+| Color tokens | Medium - auxiliary; without the assets above, brands collide | Auxiliary |
+| Typography | Low - needs the above to land | Auxiliary |
 
 **Hard rules**:
 
-- **Don't substitute CSS silhouettes / hand-drawn SVG for real product imagery** — the result is generic "tech aesthetic" any brand could wear (zero recognition value, the #1 way branded work fails)
-- **Logo is non-negotiable** — if you can't source it after a real attempt, **stop and ask the user**, don't proceed with a colored rectangle
-- **Color hex codes alone are not a brand** — they're the cheapest part of the identity
+- **Don't substitute CSS silhouettes / hand-drawn SVG for real product imagery** - the result is generic "tech aesthetic" any brand could wear (zero recognition value, the #1 way branded work fails)
+- **Logo is non-negotiable** - if you can't source it after a real attempt, **stop and ask the user**, don't proceed with a colored rectangle
+- **Color hex codes alone are not a brand** - they're the cheapest part of the identity
 - Capture all assets in a `brand-spec.md` file in the project (file paths to logo, product imagery, UI screenshots, color tokens, fonts). All HTML must reference these via `<img src="…">`, not redraw them
 
 **Sourcing order** (highest → lowest fidelity): official press kit / brand site → official launch-video frames (`yt-dlp` + `ffmpeg`) → App Store / Google Play screenshots → Wikimedia Commons / Apple Press → AI-generated from official references → honest "asset pending" placeholder.
@@ -123,7 +123,7 @@ Use the dials as decision variables, not decorative scores. They must affect lay
 - **Narrative role**: Hero / transition / data / pull-quote / closing? (Each demands a different visual register.)
 - **Viewing distance**: 10cm phone / 1m laptop / 10m projector? (Drives type scale and information density.)
 - **Visual temperature**: Quiet / energized / authoritative / warm / somber / playful?
-- **Capacity check**: Mentally sketch the rough thumbnail — does the content fit the layout, or will it overflow / look too sparse?
+- **Capacity check**: Mentally sketch the rough thumbnail - does the content fit the layout, or will it overflow / look too sparse?
 
 The system that follows must serve these answers. Picking aesthetics in a vacuum is the root cause of generic output.
 
@@ -143,19 +143,19 @@ Design Decisions:
 - Motion style: [easing curves / duration / trigger]
 ```
 
-> If you picked a recipe from `references/style-recipes/`, paste its concrete palette / typography / spacing / radius / shadow / motion values straight into the block above — that catalog exists so you don't have to invent these on the fly, which is the leading cause of AI-default Inter + #3b82f6 mush. **Load only the one recipe file you're using**, not the whole catalog.
+> If you picked a recipe from `references/style-recipes/`, paste its concrete palette / typography / spacing / radius / shadow / motion values straight into the block above - that catalog exists so you don't have to invent these on the fly, which is the leading cause of AI-default Inter + #3b82f6 mush. **Load only the one recipe file you're using**, not the whole catalog.
 
-🛑 **Checkpoint 1**: After articulating Steps 3a + 3, stop. Tell the user "I plan to use this system. Confirm and I'll start the v0." Then **actually wait** — don't say it and immediately start coding.
+🛑 **Checkpoint 1**: After articulating Steps 3a + 3, stop. Tell the user "I plan to use this system. Confirm and I'll start the v0." Then **actually wait** - don't say it and immediately start coding.
 
 ### Step 4: Show a v0 Draft Early
 
 **Don't hold back a big reveal.** Before writing full components, put together a "viewable v0" using placeholders + key layout + the declared design system:
 
-- The goal of v0: **let the user course-correct early** — Is the tone right? Is the layout direction right? Are the variant directions right?
+- The goal of v0: **let the user course-correct early** - Is the tone right? Is the layout direction right? Are the variant directions right?
 - Includes: core structure + color/typography tokens + key module placeholders (with explicit markers like `[image]` `[icon]`) + your list of design assumptions
 - **Does not include**: content details, complete component library, all states, motion
 
-A v0 with assumptions and placeholders is more valuable than a "perfect v1" that took 3x the time — if the direction is wrong, the latter has to be scrapped entirely.
+A v0 with assumptions and placeholders is more valuable than a "perfect v1" that took 3x the time - if the direction is wrong, the latter has to be scrapped entirely.
 
 🛑 **Checkpoint 2**: Push v0 to the user before continuing. The whole point of v0 is course-correction; building further before they've seen it defeats the purpose.
 
@@ -163,7 +163,7 @@ A v0 with assumptions and placeholders is more valuable than a "perfect v1" that
 
 After v0 is approved, write full components, add states, and implement motion. Follow the technical specifications and design principles below.
 
-🛑 **Checkpoint 3**: When you hit a non-trivial decision point during the build (interaction approach choice, content variant, fundamental layout shift), pause and confirm again — don't silently push through.
+🛑 **Checkpoint 3**: When you hit a non-trivial decision point during the build (interaction approach choice, content variant, fundamental layout shift), pause and confirm again - don't silently push through.
 
 ### Step 6: Verification
 
@@ -201,14 +201,14 @@ Score each 0–10; report overall score, dimension scores, Keep, severity-sorted
 
 ### Mechanism: 3 differentiated directions, not 10 questions
 
-Don't ask the user 10 generic taste questions. Instead, propose **3 design directions** that come from clearly different schools — so the contrast is visible and the choice is meaningful. Each direction must include:
+Don't ask the user 10 generic taste questions. Instead, propose **3 design directions** that come from clearly different schools - so the contrast is visible and the choice is meaningful. Each direction must include:
 
 - **A named designer or studio reference** (e.g., "Pentagram-style information architecture", not just "minimalist")
 - **2–3 lines of why this direction fits the user's context**
 - **Signature visual cues** (3–4 concrete details: color, typography, layout, motion)
 - **Optional**: one famous touchstone work
 
-### School library — pick 3 from different rows
+### School library - pick 3 from different rows
 
 | School | Vibe | Sample anchors | Best for |
 |---|---|---|---|
@@ -219,7 +219,7 @@ Don't ask the user 10 generic taste questions. Instead, propose **3 design direc
 | **Brutalist / raw** | Anti-design, honest, unpolished | Balenciaga, Are.na, Bloomberg Businessweek covers | Differentiated / confident / counter-culture |
 | **Warm humanist** | Approachable, organic, hand-touched | Mailchimp (early), Stripe Press, Headspace | Lifestyle / education / approachable B2C / wellness |
 
-❌ **Hard rule**: never recommend 3 picks from the same row — the user can't tell them apart and the contrast that makes the choice meaningful collapses.
+❌ **Hard rule**: never recommend 3 picks from the same row - the user can't tell them apart and the contrast that makes the choice meaningful collapses.
 
 ### After the user picks
 
@@ -235,21 +235,21 @@ The chosen direction becomes the design context for Step 2 onward. Document it i
 
 ### React + Babel (Inline JSX)
 
-For React prototypes, use **pinned-version** CDN scripts with `integrity` hashes — see the exact `<script>` tags in `references/advanced-patterns.md`. Do not change versions, do not add `type="module"` (breaks the Babel transpilation pipeline). Import order: React → ReactDOM → Babel → your component files.
+For React prototypes, use **pinned-version** CDN scripts with `integrity` hashes - see the exact `<script>` tags in `references/advanced-patterns.md`. Do not change versions, do not add `type="module"` (breaks the Babel transpilation pipeline). Import order: React → ReactDOM → Babel → your component files.
 
 #### Three Non-negotiable Hard Rules
 
-**1. Never use `const styles = { ... }`** — multiple component files with `styles` as a global object will silently overwrite each other. Always namespace: `const terminalStyles = { ... }`, `const headerStyles = { ... }`. Or use inline `style={{...}}` directly. **Never use `styles` as a variable name.**
+**1. Never use `const styles = { ... }`** - multiple component files with `styles` as a global object will silently overwrite each other. Always namespace: `const terminalStyles = { ... }`, `const headerStyles = { ... }`. Or use inline `style={{...}}` directly. **Never use `styles` as a variable name.**
 
-**2. Separate `<script type="text/babel">` blocks do not share scope** — each Babel script is compiled independently. To share components across files, explicitly attach them to `window` at the end of each file: `Object.assign(window, { Terminal, Line });`
+**2. Separate `<script type="text/babel">` blocks do not share scope** - each Babel script is compiled independently. To share components across files, explicitly attach them to `window` at the end of each file: `Object.assign(window, { Terminal, Line });`
 
-**3. Do not use `scrollIntoView`** — in iframe-embedded preview environments, it disrupts outer-frame scrolling. Use `element.scrollTop = ...` or `window.scrollTo({...})` instead.
+**3. Do not use `scrollIntoView`** - in iframe-embedded preview environments, it disrupts outer-frame scrolling. Use `element.scrollTop = ...` or `window.scrollTo({...})` instead.
 
 ### CSS Best Practices
 
 - Prefer CSS Grid + Flexbox for layout
 - Manage design tokens with CSS custom properties
-- **Prefer brand colors for palette**; when more colors are needed, derive harmonious variants using `oklch()` — **never invent new hues from scratch**
+- **Prefer brand colors for palette**; when more colors are needed, derive harmonious variants using `oklch()` - **never invent new hues from scratch**
 - Use `text-wrap: pretty` for better line breaking
 - Use `clamp()` for fluid typography
 - Use `@container` queries for component-level responsiveness
@@ -261,7 +261,7 @@ For React prototypes, use **pinned-version** CDN scripts with `integrity` hashes
 - Split large files (>1000 lines) into multiple small JSX files and compose them with `<script>` tags in the main file
 - For major revisions, copy + rename with `v2`/`v3` to preserve older versions (`My Design.html` → `My Design v2.html`)
 - For multiple variants, prefer **a single file + Tweaks toggles** over separate files
-- Copy assets locally before referencing them — don't hotlink directly to user-provided assets
+- Copy assets locally before referencing them - don't hotlink directly to user-provided assets
 - For branded work, all real brand assets live under `assets/<brand>-brand/` and are referenced from `brand-spec.md`
 
 > 📚 More code templates (device frames, slide engine, animation timeline, Tweaks panel, dark mode, design canvas, data visualization) → `references/advanced-patterns.md`
@@ -272,24 +272,24 @@ For React prototypes, use **pinned-version** CDN scripts with `integrity` hashes
 
 ### Avoid AI-Style Clichés (the WHY matters)
 
-Anti-cliché is **not aesthetic snobbery** — it's protecting the user's brand recognition. The reasoning chain:
+Anti-cliché is **not aesthetic snobbery** - it's protecting the user's brand recognition. The reasoning chain:
 
 1. The user wants their brand to be recognized
 2. AI defaults = average of training data = all brands averaged together = **no brand recognized**
 3. So AI-default output dilutes the user's identity into "yet another AI-generated page"
 
-This is why the only legitimate exception to every anti-cliché rule below is **"the brand spec uses it"** — at that point it stops being slop and becomes a brand signature.
+This is why the only legitimate exception to every anti-cliché rule below is **"the brand spec uses it"** - at that point it stops being slop and becomes a brand signature.
 
 | Pattern | Why it's slop | When it's actually fine |
 |---|---|---|
 | Aggressive purple → pink → blue gradient | The "tech vibe" formula AI training data converged on; on every SaaS / AI / web3 landing page | The brand itself uses it, or the task is satirizing this aesthetic |
 | Rounded card + colored left-border accent | Material/Tailwind era leftover; now visual noise in every dashboard | The user explicitly asks, or the brand spec preserves it |
 | Emoji as icon substitute | "Not professional → slap emoji on it" tic from training data | The brand uses emoji (Notion, Slack, early Linear), or audience is kids / casual |
-| SVG-drawn imagery (faces, scenes, objects) | AI-drawn SVG humans always have misaligned features and feel cheap | **Almost never** — use real images, AI-generated images, or honest placeholder |
-| CSS silhouette substituting for real product imagery | Generic "tech aesthetic" — same look across every brand | **Never** for branded work — go fetch the real product image |
+| SVG-drawn imagery (faces, scenes, objects) | AI-drawn SVG humans always have misaligned features and feel cheap | **Almost never** - use real images, AI-generated images, or honest placeholder |
+| CSS silhouette substituting for real product imagery | Generic "tech aesthetic" - same look across every brand | **Never** for branded work - go fetch the real product image |
 | Inter / Roboto / Arial / Fraunces / system-ui as display | Too common; reads as "demo page" rather than "designed product" | The brand spec specifies these (and usually with custom adjustments) |
 | Cyber-neon on `#0D1117` dark | GitHub-dark cosplay; baseline noise in dev-tool clones | The brand actually lives in this aesthetic |
-| Fabricated stats, fake logo walls, dummy testimonials | Damages credibility; users notice when numbers don't match reality | **Never** — use placeholders that say "real data needed" |
+| Fabricated stats, fake logo walls, dummy testimonials | Damages credibility; users notice when numbers don't match reality | **Never** - use placeholders that say "real data needed" |
 
 These are baseline examples, not the whole taxonomy. When designing a multi-section marketing page, redesign, dashboard, or motion-heavy artifact, read only the matching parts of `references/failure-patterns.md`. Treat each pattern as **default → reason → exceptions → detection → repair**, not as an unconditional aesthetic ban.
 
@@ -325,7 +325,7 @@ A placeholder signals "real material needed here." A fake signals "I cut corners
 - Use CSS animations + transitions for polished micro-interactions (button press, card hover, entry animations)
 - Use SVG filters, `backdrop-filter`, `mix-blend-mode`, `mask`, and other advanced CSS to create memorable moments
 
-CSS, HTML, JS, and SVG are far more capable than most people realize — **use them to astonish the user**.
+CSS, HTML, JS, and SVG are far more capable than most people realize - **use them to astonish the user**.
 
 ### Appropriate Scale
 
@@ -338,10 +338,10 @@ CSS, HTML, JS, and SVG are far more capable than most people realize — **use t
 
 ### Content Principles
 
-- **No filler content** — every element must earn its place
-- **Don't add sections/pages unilaterally** — if more content seems needed, ask the user first; they know their audience better
-- **Placeholders > fabricated data** — fake data damages credibility more than admitting a gap
-- **Less is more** — "1,000 no's for every yes"; whitespace is design
+- **No filler content** - every element must earn its place
+- **Don't add sections/pages unilaterally** - if more content seems needed, ask the user first; they know their audience better
+- **Placeholders > fabricated data** - fake data damages credibility more than admitting a gap
+- **Less is more** - "1,000 no's for every yes"; whitespace is design
 - If the page looks empty → it's a layout problem, not a content problem. Solve it with composition, whitespace, and type-scale rhythm, not by stuffing content in
 
 ---
@@ -350,7 +350,7 @@ CSS, HTML, JS, and SVG are far more capable than most people realize — **use t
 
 ### Interactive Prototypes
 
-- **No title screen / cover page** — prototypes should center in the viewport or fill it (with sensible margins), letting the user see the product immediately
+- **No title screen / cover page** - prototypes should center in the viewport or fill it (with sensible margins), letting the user see the product immediately
 - Use device frames (iPhone / Android / browser window) to enhance realism (see references file)
 - Implement key interaction paths so the user can click through them
 - At least 3 variants, toggled via the Tweaks panel
@@ -361,14 +361,14 @@ CSS, HTML, JS, and SVG are far more capable than most people realize — **use t
 - Fixed canvas at 1920×1080 (16:9), auto-fitted to any viewport via JS `transform: scale()`
 - Centered with letterbox bars; prev/next buttons placed **outside** the scaled container (to remain usable on small screens)
 - Keyboard navigation: ← → to change slides, Space for next
-- Persist current position in `localStorage` (so refreshes don't lose position — a frequent action during iterative design)
-- **Slide numbering is 1-indexed**: use labels like `01 Title`, `02 Agenda`, matching human speech ("slide 5" corresponds to label `05` — never use 0-indexed labels that cause off-by-one confusion)
+- Persist current position in `localStorage` (so refreshes don't lose position - a frequent action during iterative design)
+- **Slide numbering is 1-indexed**: use labels like `01 Title`, `02 Agenda`, matching human speech ("slide 5" corresponds to label `05` - never use 0-indexed labels that cause off-by-one confusion)
 - Each slide should have a `data-screen-label` attribute for easy reference
-- Don't cram too much text — visuals lead, text supports; use at most 1–2 background colors per deck
+- Don't cram too much text - visuals lead, text supports; use at most 1–2 background colors per deck
 
 ### Data Visualization Dashboards
 
-- Chart.js (simple) or D3.js (complex custom) — loaded via CDN
+- Chart.js (simple) or D3.js (complex custom) - loaded via CDN
 - Responsive chart containers (`ResizeObserver`)
 - Provide dark/light mode toggle
 - Focus on **data-ink ratio**: remove unnecessary gridlines, 3D effects, and shadows; let the data speak
@@ -376,14 +376,14 @@ CSS, HTML, JS, and SVG are far more capable than most people realize — **use t
 
 ### Animation / Video Demos
 
-Choose animation approach by complexity, from simplest to heaviest — don't reach for a heavy library from the start:
+Choose animation approach by complexity, from simplest to heaviest - don't reach for a heavy library from the start:
 
-1. **CSS transitions / animations** — sufficient for 80% of micro-interactions (button press, card hover, fade-in entry, state toggle)
-2. **Simple React state + setTimeout / requestAnimationFrame** — simple frame-by-frame or event-driven animations
-3. **Custom `useTime` + `Easing` + `interpolate`** (full implementation in references) — timeline-driven video/demo scenes: scrubber, play/pause, multi-segment choreography
-4. **Fallback: Popmotion** (`https://unpkg.com/popmotion@11.0.5/dist/popmotion.min.js`) — only if the above three layers genuinely can't cover the use case
+1. **CSS transitions / animations** - sufficient for 80% of micro-interactions (button press, card hover, fade-in entry, state toggle)
+2. **Simple React state + setTimeout / requestAnimationFrame** - simple frame-by-frame or event-driven animations
+3. **Custom `useTime` + `Easing` + `interpolate`** (full implementation in references) - timeline-driven video/demo scenes: scrubber, play/pause, multi-segment choreography
+4. **Fallback: Popmotion** (`https://unpkg.com/popmotion@11.0.5/dist/popmotion.min.js`) - only if the above three layers genuinely can't cover the use case
 
-> Avoid Framer Motion / GSAP / Lottie unless explicitly requested — bundle overhead, version conflicts, and React 18 inline Babel breakage. Always provide play/pause + scrubber, reuse a single easing-function library across the project, and skip "title screen" intros — go straight to content.
+> Avoid Framer Motion / GSAP / Lottie unless explicitly requested - bundle overhead, version conflicts, and React 18 inline Babel breakage. Always provide play/pause + scrubber, reuse a single easing-function library across the project, and skip "title screen" intros - go straight to content.
 
 ### Static Visual Comparison vs. Full Flow
 
@@ -396,7 +396,7 @@ Choose animation approach by complexity, from simplest to heaviest — don't rea
 
 Providing multiple variants is about **exhausting possibilities so the user can mix and match**, not about delivering the perfect option.
 
-Explore "atomic variants" across at least these dimensions — mixing conservative, safe options with bold, novel ones:
+Explore "atomic variants" across at least these dimensions - mixing conservative, safe options with bold, novel ones:
 
 1. **Layout**: content organization (split pane / card grid / list / timeline)
 2. **Visual**: color palette, typography, texture, layering
@@ -422,7 +422,7 @@ Design guidelines:
 
 ## Common CDN Resources
 
-**Default to hand-written CSS or resources from the brand/design system.** Only load a CDN when the scenario clearly calls for it — never include everything by default.
+**Default to hand-written CSS or resources from the brand/design system.** Only load a CDN when the scenario clearly calls for it - never include everything by default.
 
 | When clearly needed | Library |
 |---|---|
@@ -443,7 +443,7 @@ Design guidelines:
 
 Complete this lightweight self-check before delivery. It does **not** require launching a browser unless the user explicitly requested executable acceptance in Step 6:
 
-- [ ] **Step 0 ran** if any specific product/brand was named — facts verified via WebSearch, not assumed
+- [ ] **Step 0 ran** if any specific product/brand was named - facts verified via WebSearch, not assumed
 - [ ] **Design Read** exists; five dials influenced real decisions instead of being decorative labels
 - [ ] Existing-work mode was classified correctly; preserve/extension contracts were not changed silently
 - [ ] **If the task is branded**: `brand-spec.md` exists; logo is real (not a colored rectangle); product imagery is real (not a CSS silhouette) for hardware; UI screenshots are real for digital products
@@ -451,10 +451,10 @@ Complete this lightweight self-check before delivery. It does **not** require la
 - [ ] Responsive rules exist for the target viewports; fixed-canvas artifacts define a non-distorting scale strategy
 - [ ] **Interactive components** (buttons, links, inputs, cards, etc.) include states as appropriate: hover / focus / active / disabled / loading; empty/error states added where the scenario warrants them
 - [ ] No text overflow or truncation; `text-wrap: pretty` applied
-- [ ] All colors come from the design system declared in Step 3 — **no rogue hues introduced**
+- [ ] All colors come from the design system declared in Step 3 - **no rogue hues introduced**
 - [ ] No use of `scrollIntoView`
 - [ ] In React projects, no `const styles = {...}`; cross-file components exported via `Object.assign(window, {...})`
-- [ ] No AI clichés (purple-pink gradients, emoji abuse, left-border accent cards, Inter/Roboto) — unless the brand spec explicitly uses them
+- [ ] No AI clichés (purple-pink gradients, emoji abuse, left-border accent cards, Inter/Roboto) - unless the brand spec explicitly uses them
 - [ ] No filler content, no fabricated data
 - [ ] Relevant failure patterns were checked; repeated layouts and decorative UI do not overpower the brief
 - [ ] Semantic naming, clean structure, easy to modify later
@@ -465,18 +465,18 @@ Complete this lightweight self-check before delivery. It does **not** require la
 
 ## Collaborating with the User
 
-- **Show work-in-progress early**: a v0 with assumptions + placeholders is more valuable than a polished v1 — the user can course-correct sooner
+- **Show work-in-progress early**: a v0 with assumptions + placeholders is more valuable than a polished v1 - the user can course-correct sooner
 - Explain decisions using **design language** ("I tightened the spacing to create a tool-like feel"), not technical language
-- When user feedback is ambiguous, **proactively ask for clarification** — don't guess
+- When user feedback is ambiguous, **proactively ask for clarification** - don't guess
 - Offer plenty of variants and creative options so the user sees the boundaries of what's possible
-- When summarizing, **only mention important caveats and next steps** — don't recap what you did; the code speaks for itself
-- **Honor checkpoints**: when you say "I'll wait for your confirmation," actually wait — don't say it and immediately keep working
+- When summarizing, **only mention important caveats and next steps** - don't recap what you did; the code speaks for itself
+- **Honor checkpoints**: when you say "I'll wait for your confirmation," actually wait - don't say it and immediately keep working
 
 ---
 
 ## References Routing
 
-Read on demand based on task type — don't preload everything:
+Read on demand based on task type - don't preload everything:
 
 | Task | Read |
 |---|---|
@@ -489,4 +489,4 @@ Read on demand based on task type — don't preload everything:
 | Vague request → recommend 3 design directions; extended philosophy library + per-direction visual recipes + AI-prompt templates | `references/design-directions.md` |
 | User named an anchor ("Linear-style" / "Aesop feeling") → load **only that one file** | `references/style-recipes/<anchor>.md` (e.g., `linear.md`, `aesop.md`) |
 | Browse the recipe catalog / compare options after Direction Advisor picks a school | `references/style-recipes/INDEX.md` (3 indexes + cross-cutting anti-patterns; then read 1–3 specific recipe files) |
-| Critique mode — detailed scoring rubrics, per-output-type weighting, common-issue catalog (top 10) | `references/critique-guide.md` |
+| Critique mode - detailed scoring rubrics, per-output-type weighting, common-issue catalog (top 10) | `references/critique-guide.md` |

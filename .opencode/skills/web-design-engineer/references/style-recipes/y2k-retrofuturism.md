@@ -1,4 +1,4 @@
-# y2k-retrofuturism — Y2K / Frutiger Aero Retrofuturism
+# y2k-retrofuturism - Y2K / Frutiger Aero Retrofuturism
 
 - **School**: Specialty / Genre
 - **Vibe**: Late-90s / early-2000s techno-optimism: chrome, glassy bubbles, jelly translucency, lens flare
@@ -13,16 +13,16 @@
 - Ink: `#000000` or `#FFFFFF` depending on ground
 
 **Typography**
-- Display: a chunky rounded sans with personality — Frutiger, Eurostile, or Sharp Grotesk in heavy weight; sometimes a chrome-effect treatment
+- Display: a chunky rounded sans with personality - Frutiger, Eurostile, or Sharp Grotesk in heavy weight; sometimes a chrome-effect treatment
 - Body: friendly humanist sans like Frutiger or Avenir at 14–16px
 - Numerals love an LCD / digital-readout treatment for hero counters
 - Underline + sparkle treatments common on link hover
 
-**Spacing**: 4 / 8 / 16 / 24 — packed but bubbly
+**Spacing**: 4 / 8 / 16 / 24 - packed but bubbly
 
-**Radius**: gummy — 16 / 24 / 32 / 9999 (full circle). Buttons are pill-shaped jelly bubbles.
+**Radius**: gummy - 16 / 24 / 32 / 9999 (full circle). Buttons are pill-shaped jelly bubbles.
 
-**Shadow**: heavy and colored — glossy reflections, drop shadows like `0 16px 32px rgba(95, 201, 248, 0.4)`. Inner highlights to simulate glass.
+**Shadow**: heavy and colored - glossy reflections, drop shadows like `0 16px 32px rgba(95, 201, 248, 0.4)`. Inner highlights to simulate glass.
 
 **Motion**: bouncy springs, glow pulses, lens flare sweeps. Anything that recalls early-Flash interactions.
 
@@ -36,8 +36,8 @@
 
 **Avoid**
 - Sharp corners
-- Muted / earthy palettes — Y2K is bright and synthetic
-- Restrained typography — Y2K is exuberant
+- Muted / earthy palettes - Y2K is bright and synthetic
+- Restrained typography - Y2K is exuberant
 - Anything that reads as "tasteful 2020s minimalism"
 
 **AI prompt seed**
@@ -45,10 +45,10 @@
 
 **Don't use when**
 - The brand has no nostalgic / retro / playful claim
-- The audience is enterprise / professional — this recipe is consumer-fashion-music coded
+- The audience is enterprise / professional - this recipe is consumer-fashion-music coded
 - Long-form readability matters (Y2K is for moments, not for reading)
 
 ---
 
-> **Same school — Specialty / Genre**: [`mid-century-modern`](./mid-century-modern.md)  
+> **Same school - Specialty / Genre**: [`mid-century-modern`](./mid-century-modern.md)  
 > **Browse all 25 recipes**: [INDEX.md](./INDEX.md)

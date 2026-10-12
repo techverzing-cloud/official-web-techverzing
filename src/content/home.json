@@ -1,6 +1,7 @@
 {
   "hero": {
-    "mainHeading": ["Powered by Innovation,", "Driven by Results."],
+    "eyebrow": "Techverzing Technologies",
+    "heading": ["Where technology meets", "business growth"],
     "subHeading": "We're giving back your marketing & technology solutions",
     "wordsAnimation": [
       "Authentic",
@@ -17,7 +18,10 @@
       "Result-Driven",
       "Growth-Focused"
     ],
-    "img": { "src": "/home/hero.webp", "alt": "digital marketing" }
+    "primaryCta": { "label": "Start a project", "href": "/contact" },
+    "secondaryCta": { "label": "Explore services", "href": "/services" },
+    "scrollLabel": "Scroll",
+    "scrollTo": "#what-we-do"
   },
   "paragraph": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready",
   "highlightWords": [
@@ -32,8 +36,9 @@
     "campaigns"
   ],
   "servicesSection": {
+    "eyebrow": "Our Services",
     "heading": ["Your Vision,", "Our Innovation."],
-    "description": "Every business works differently, and its challenges aren’t the same. That’s why we create tailored digital marketing, IT, and software solutions built around your goals. Our focus is to help you grow faster with strategies that are clear, practical, and built for long-term results.",
+    "description": "Every business works differently, and its challenges aren't the same. That's why we create tailored digital marketing, IT, and software solutions built around your goals. Our focus is to help you grow faster with strategies that are clear, practical, and built for long-term results.",
     "agencyServices": "Our in-house team covers the full spectrum of digital marketing and technology solutions, from strategy and creation to campaigns and system development"
   },
   "clientsSection": {
@@ -82,7 +87,6 @@
         "description": "Our cloud infrastructure, backend systems, security practices, and maintenance plans ensure your software stays fast, secure, and ready to grow with your business.",
         "tags": ["Cloud", "Security", "Support"]
       },
-
       {
         "icon": "strategy",
         "index": "05",
@@ -113,8 +117,8 @@
     "eyebrow": "Who We Are",
     "heading": "Creativity, data, and engineering under one roof.",
     "statement": "With 10+ years of experience, Techverzing helps businesses grow smarter through impactful Digital Marketing, scalable IT solutions, and innovative software. Our expert team combines creativity, data, and technology to deliver strategies that are authentic, result-driven, and future-ready.",
-    "img": {
-      "src": "/global/bgimage.jpeg",
+    "image": {
+      "src": "/shared/bgimage.jpeg",
       "alt": "The Techverzing team collaborating"
     },
     "story": [
@@ -197,50 +201,49 @@
     ]
   },
   "industries": {
-    "eyebrow": "Industries We Transform",
-    "heading": "Wherever you operate, we build for your reality.",
+    "eyebrow": "Problems We Solve",
+    "heading": "Whatever's holding your business back, we build the fix.",
     "items": [
       {
-        "text": "Website Development",
+        "text": "Get More Customers Online",
         "link": "/services/website-development",
-        "image": "/services/website-development/1.webp"
+        "image": "/services/website-development/hero.webp"
       },
       {
-        "text": "Customized Software Development",
+        "text": "Lead Generation & Management",
         "link": "/services/customized-software-development",
-        "image": "/services/customized-software-development/2.webp"
+        "image": "/services/customized-software-development/lead-management.webp"
       },
       {
-        "text": "Cloud & Backend Development",
+        "text": "Finance & Payment Systems",
         "link": "/services/cloud-backend-development",
-        "image": "/services/cloud-backend-development/1.webp"
+        "image": "/services/cloud-backend-development/hero.webp"
       },
       {
-        "text": "AI & ML Solutions",
+        "text": "Automation & AI Workflows",
         "link": "/services/ai-ml-solutions",
-        "image": "/services/ai-ml-solutions/3.webp"
+        "image": "/services/ai-ml-solutions/integration.webp"
       },
       {
-        "text": "Digital Branding",
+        "text": "Build a Brand People Trust",
         "link": "/services/digital-branding",
-        "image": "/services/digital-branding/2.webp"
+        "image": "/services/digital-branding/brand-kit.webp"
       },
       {
-        "text": "Mobile App Development",
+        "text": "Launch Your Own App",
         "link": "/services/mobile-app-development",
-        "image": "/services/mobile-application/1.webp"
+        "image": "/services/mobile-application/hero.webp"
       },
       {
-        "text": "UI/UX Design",
+        "text": "Turn Visitors Into Customers",
         "link": "/services/ui-ux-design",
-        "image": "/services/ui-ux-design/2.webp"
+        "image": "/services/ui-ux-design/wireframes.webp"
       },
       {
-        "text": "360° Marketing",
+        "text": "Grow Sales & Reach",
         "link": "/services/360-marketing",
-        "image": "/services/social-media-optimization/1.jpg"
+        "image": "/services/social-media-optimization/hero.jpg"
       }
     ]
-  },
-  "blogs": []
+  }
 }

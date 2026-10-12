@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Icon } from "@iconify/react";
-import globalData from "@/json/global.json";
+import globalData from "@/content/site.json";
 import MagicBento from "@/components/react-bit/MagicBento";
 import SpotlightCard from "./Spotlight-card";
 
@@ -27,7 +27,7 @@ const ServiceAdvantage = ({
   advantages,
 }: ServiceAdvantageProps) => {
   const root = useRef<HTMLElement>(null);
-  const contact = globalData.contactInfo.items;
+  const contact = globalData.contact.items;
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {

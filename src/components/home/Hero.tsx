@@ -7,13 +7,13 @@ import { Icon } from "@iconify/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import homeData from "@/json/home.json";
+import homeData from "@/content/home.json";
 import { renderTextWithHighlights } from "@/lib/util";
 import { ENABLE_PRELOADER } from "@/lib/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// The WebGL orb is the heaviest thing on the page — keep it out of the initial
+// The WebGL orb is the heaviest thing on the page - keep it out of the initial
 // bundle and only mount it once the page is idle.
 const CrystalizedOrb = dynamic(() => import("./CrystalizedOrb"), { ssr: false });
 
@@ -49,7 +49,7 @@ const Hero = () => {
       const shift = window.matchMedia("(min-width: 768px)").matches && !reduce ? 24 : 0;
 
       // Pre-reveal state, set once at mount. The copy block stays in its
-      // natural spot — only the text layers hide — so the reveal depends on no
+      // natural spot - only the text layers hide - so the reveal depends on no
       // viewport-height math and works the same on every screen. Reduced motion
       // hides with opacity only (no movement).
       gsap.set(".hero-orb", { scale: reduce ? 1 : 0.7 });
@@ -106,7 +106,7 @@ const Hero = () => {
           yoyo: true,
         });
 
-        // Scroll parallax — the orb drifts slowly as the copy lifts away.
+        // Scroll parallax - the orb drifts slowly as the copy lifts away.
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: section,

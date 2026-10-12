@@ -1,4 +1,4 @@
-# tufte-dataink — Edward Tufte / Maximum Data-Ink
+# tufte-dataink - Edward Tufte / Maximum Data-Ink
 
 - **School**: Information Architecture
 - **Vibe**: Every pixel earns its place; the chart is the page
@@ -8,13 +8,13 @@
 **Palette**
 - Ground: `#FBFAF6` (warm paper)
 - Ink: `#1B1B1A`
-- Two data colors only — typically a warm red `#A6300E` and a cool slate `#3E4A5C`. Add a third only if a third dimension genuinely needs it.
+- Two data colors only - typically a warm red `#A6300E` and a cool slate `#3E4A5C`. Add a third only if a third dimension genuinely needs it.
 - Faint reference rules: `#D8D2C2`
 
 **Typography**
-- Display & body: an old-style or transitional serif — ET Book (Tufte's own family), Equity, or Lyon Text. Weight 400 for body, italic for emphasis.
-- Body at 12–14px (Tufte deliberately uses small body text — the reader leans in)
-- Sans for axis labels only — a humanist sans at 10–11px, color `#5C5550`
+- Display & body: an old-style or transitional serif - ET Book (Tufte's own family), Equity, or Lyon Text. Weight 400 for body, italic for emphasis.
+- Body at 12–14px (Tufte deliberately uses small body text - the reader leans in)
+- Sans for axis labels only - a humanist sans at 10–11px, color `#5C5550`
 
 **Spacing**: tight. 4 / 8 / 12 / 16 / 24 / 48. Margins are filled with side-notes, not whitespace.
 
@@ -26,9 +26,9 @@
 
 **Signature moves**
 - Sparklines inline with body copy (a tiny chart embedded in a sentence)
-- Side-notes (marginalia) used heavily — annotations live in the right margin, not in tooltips
+- Side-notes (marginalia) used heavily - annotations live in the right margin, not in tooltips
 - Charts have no chart-junk: no gridlines except faint ones, no border boxes, no 3D, no legends if direct labels work
-- Small multiples — a 3×3 grid of the same chart with different data
+- Small multiples - a 3×3 grid of the same chart with different data
 - Direct labels on data series (the line is labeled at its endpoint, not in a legend box)
 
 **Avoid**
@@ -48,5 +48,5 @@
 
 ---
 
-> **Same school — Information Architecture**: [`pentagram`](./pentagram.md) · [`vignelli-swiss-helvetica`](./vignelli-swiss-helvetica.md) · [`bloomberg-terminal`](./bloomberg-terminal.md) · [`nyt-the-daily`](./nyt-the-daily.md)  
+> **Same school - Information Architecture**: [`pentagram`](./pentagram.md) · [`vignelli-swiss-helvetica`](./vignelli-swiss-helvetica.md) · [`bloomberg-terminal`](./bloomberg-terminal.md) · [`nyt-the-daily`](./nyt-the-daily.md)  
 > **Browse all 25 recipes**: [INDEX.md](./INDEX.md)

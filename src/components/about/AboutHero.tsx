@@ -1,5 +1,5 @@
 import SectionHero from "@/components/global/SectionHero";
-import about from "@/json/about.json";
+import about from "@/content/about.json";
 
 const hero = about.hero;
 

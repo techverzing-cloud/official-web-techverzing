@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import about from "@/json/about.json";
+import about from "@/content/about.json";
 import SectionHeading from "@/components/home/SectionHeading";
 import BounceCards from "./BounceCard";
 

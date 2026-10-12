@@ -1,7 +1,7 @@
 import CardNav, { type CardNavItem } from "@/components/react-bit/CardNav";
-import global from "@/json/global.json";
+import site from "@/content/site.json";
 
-const { sections, links } = global.menu;
+const { menuSections, mainLinks } = site.navigation;
 
 const sectionColors = [
   { bg: "#e8e6d9", text: "#141415" },
@@ -9,7 +9,7 @@ const sectionColors = [
 ];
 
 const items: CardNavItem[] = [
-  ...sections.map((section, i) => ({
+  ...menuSections.map((section, i) => ({
     label: section.label,
     bgColor: sectionColors[i]?.bg ?? "#e8e6d9",
     textColor: sectionColors[i]?.text ?? "#141415",
@@ -23,9 +23,9 @@ const items: CardNavItem[] = [
     label: "Company",
     bgColor: "#3a3a2e",
     textColor: "#e8e6d9",
-    links: links.map((link) => ({
+    links: mainLinks.map((link) => ({
       label: link.label,
-      href: link.path,
+      href: link.href,
       ariaLabel: link.label,
     })),
   },
@@ -34,7 +34,7 @@ const items: CardNavItem[] = [
 const Header = () => {
   return (
     <CardNav
-      logo="/global/logo_wbg.png"
+      logo="/shared/logo_wbg.png"
       logoAlt="Techverzing Technologies"
       items={items}
       baseColor="#202223"

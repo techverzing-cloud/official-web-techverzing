@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "eyebrow": "Contact us",
+    "heading": "Let's build something together",
+    "highlights": ["together"],
+    "description": "Tell us what you're building and we'll write back within one working day - clear scope, honest timelines, no jargon.",
+    "primary": { "label": "Email us", "href": "mailto:info@techverzing.com" },
+    "secondary": { "label": "Explore services", "href": "/services" },
+    "scrollTo": "#contact"
+  },
+  "contactSection": {
+    "darkBg": true,
+    "title": "Contact Us",
+    "description": "Feel free to contact us any time. We will get back to you as soon as we can!",
+    "formFields": [
+      { "name": "name", "type": "text", "placeholder": "Name" },
+      { "name": "email", "type": "text", "placeholder": "Email" },
+      { "name": "message", "type": "textarea", "placeholder": "Message" }
+    ],
+    "ctaButton": {
+      "label": "Send",
+      "icon": { "name": "mdi:send", "width": 24, "height": 24 },
+      "variant": "primary"
+    }
+  },
+  "mapSection": {
+    "lightBg": true,
+    "title": "Find Us on Google Map",
+    "mapEmbedSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471220.5631094339!2d88.04952462217592!3d22.6757520733225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1596988408134!5m2!1sen!2sin"
+  },
+  "contactDetails": [
+    {
+      "label": "Email",
+      "value": "info@techverzing.com",
+      "href": "mailto:info@techverzing.com",
+      "icon": "mdi:email-outline"
+    },
+    {
+      "label": "Phone",
+      "value": "+91 7309367692",
+      "href": "tel:+917309367692",
+      "icon": "mdi:phone-outline"
+    },
+    {
+      "label": "Office",
+      "value": "Janakpuri, New Delhi",
+      "href": "https://www.google.com/maps/search/?api=1&query=New+Delhi%2C+Delhi%2C+India",
+      "icon": "mdi:map-marker-outline",
+      "external": true
+    }
+  ],
+  "formServices": [
+    "Web Development",
+    "Mobile App Development",
+    "CRM & Business Automation",
+    "Digital Marketing & SEO",
+    "UI/UX Design",
+    "Cloud & IT Solutions",
+    "Other"
+  ]
+}

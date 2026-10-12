@@ -1,7 +1,7 @@
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+This version has breaking changes - APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
 # AGENTS.md - Techverzing Development Guide
@@ -76,7 +76,7 @@ src/
 │   ├── home/             # Home page components
 │   ├── form/             # Form components
 │   └── animation/        # Animation components
-├── json/                 # Content data (no API calls)
+├── content/              # Content data (no API calls)
 ├── hooks/                # Custom React hooks
 ├── lib/                  # Utilities and helpers
 └── css/                  # Global styles and animations
@@ -84,7 +84,7 @@ src/
 
 ### Imports
 
-- Use **absolute paths** with `@/` alias (`@/components/...`, `@/json/...`, `@/lib/...`)
+- Use **absolute paths** with `@/` alias (`@/components/...`, `@/content/...`, `@/lib/...`)
 - Group imports: 1) React, 2) external libraries, 3) internal modules, 4) assets/types
 - Use named exports for utilities, default exports for components
 
@@ -95,7 +95,7 @@ import { useState } from "react";
 import clsx from "clsx";
 import { twMerge } from "tailwind-merge";
 import GButton from "@/components/ui/Button";
-import homeData from "@/json/home.json";
+import homeData from "@/content/home.json";
 
 // From same directory
 import { slugger } from "../lib/util";
@@ -108,14 +108,14 @@ import { slugger } from "../lib/util";
 - Use `clamp()` for responsive sizing: `px-[clamp(1rem,5vw,4rem)]`
 - Use data attributes for theme switching: `data-light-bg`, `data-dark-bg`
 - Use predefined spacing: `mrMx` (margin-x), `mrPy` (padding-y), `px-global`
-- **Always prefer standard Tailwind scale values over arbitrary values** for every utility — sizing, spacing, colors, typography, borders, radius, shadows, etc. Use `h-10 w-12`, not `h-[2.5rem] w-[3rem]`.
+- **Always prefer standard Tailwind scale values over arbitrary values** for every utility - sizing, spacing, colors, typography, borders, radius, shadows, etc. Use `h-10 w-12`, not `h-[2.5rem] w-[3rem]`.
 - Only use arbitrary values (`h-[1px]`, `bg-[#ff0000]`, `text-[13px]`) when a standard value **cannot** express the intent (e.g. 1px hairlines, dynamic/clamped values, brand colors not in the theme).
 - The standard-value rule applies to **all** utilities, not just sizing.
 
 ### JSON Data Files
 
-- Store all static content in `src/json/*.json` files
-- Import directly: `import data from "@/json/home.json"`
+- Store all static content in `src/content/*.json` files
+- Import directly: `import data from "@/content/home.json"`
 - Avoid API calls for static content
 
 ### Error Handling
@@ -167,7 +167,7 @@ export default function ComponentName() {
 
 **Server Components:**
 ```typescript
-import data from "@/json/data.json";
+import data from "@/content/data.json";
 
 export default async function Page() {
   return <div>{data.content}</div>;

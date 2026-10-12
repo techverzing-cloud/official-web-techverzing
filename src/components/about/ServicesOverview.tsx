@@ -1,6 +1,6 @@
 "use client";
 
-import about from "@/json/about.json";
+import about from "@/content/about.json";
 import SectionHeading from "@/components/home/SectionHeading";
 import MagicBento from "@/components/react-bit/MagicBento";
 import type { BentoCardProps } from "@/components/react-bit/MagicBento";

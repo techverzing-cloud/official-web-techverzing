@@ -6,11 +6,11 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import global from "@/json/global.json";
+import site from "@/content/site.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const { footer, contactInfo } = global;
+const { footer } = site;
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -19,7 +19,7 @@ export default function Footer() {
   const socialRefs = useRef<(HTMLElement | null)[]>([]);
 
   useGSAP(
-    (context) => {
+    (_context) => {
       const footerEl = footerRef.current;
       if (!footerEl) return;
 
@@ -162,7 +162,7 @@ export default function Footer() {
               className="flex flex-col items-center text-center md:items-start md:text-start lg:pr-8"
             >
               <Image
-                src="/global/logo.png"
+                src="/shared/logo.png"
                 alt="Techverzing Technologies logo"
                 width={1069}
                 height={233}
@@ -174,7 +174,7 @@ export default function Footer() {
               </p>
 
               <div className="mt-8 flex justify-center gap-3 list-none md:justify-start" role="list" aria-label="Social links">
-                {contactInfo.socialLinks.map((link, idx) => (
+                {site.socialLinks.map((link, idx) => (
                   <li key={idx} role="listitem">
                     <Link
                       ref={(el) => { socialRefs.current[idx] = el; }}

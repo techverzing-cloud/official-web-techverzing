@@ -1,0 +1,181 @@
+{
+  "company": {
+    "name": "Techverzing Technologies",
+    "shortName": "Techverzing",
+    "tagline": "Where Technology Meets Business Growth.",
+    "description": "Techverzing Technologies is a digital marketing and IT solutions agency offering websites, mobile apps, custom CRM, AI/ML, SEO, and 360° marketing.",
+    "founded": "2015",
+    "experienceYears": "10+"
+  },
+  "contact": {
+    "phone": "+91 7309367692",
+    "phoneRaw": "+917309367692",
+    "emails": ["info@techverzing.com", "support@techverzing.com"],
+    "address": {
+      "locality": "New Delhi",
+      "region": "Delhi",
+      "country": "IN",
+      "full": "Janakpuri, New Delhi, India"
+    },
+    "mapsEmbedSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471220.5631094339!2d88.04952462217592!3d22.6757520733225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f882db4908f667%3A0x43e330e68f6c2cbc!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1596988408134!5m2!1sen!2sin",
+    "mapsSearchHref": "https://www.google.com/maps/search/?api=1&query=New+Delhi%2C+Delhi%2C+India",
+    "items": [
+      { "icon": "twemoji:telephone-receiver", "text": "+91 7309367692" },
+      { "icon": "mdi:email", "text": "info@techverzing.com" },
+      { "icon": "mdi:email", "text": "support@techverzing.com" },
+      { "icon": "mdi:map-marker", "text": "New Delhi, Delhi, India" }
+    ]
+  },
+  "socialLinks": [
+    {
+      "name": "Facebook",
+      "icon": "/shared/fb.webp",
+      "href": "https://www.facebook.com/share/techverzing"
+    },
+    {
+      "name": "Instagram",
+      "icon": "/shared/insta.webp",
+      "href": "https://www.instagram.com/techverzing"
+    },
+    {
+      "name": "Twitter",
+      "icon": "/shared/x.webp",
+      "href": "https://x.com/techverzing"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "/shared/linkedin.webp",
+      "href": "https://www.linkedin.com/company/techverzing/"
+    },
+    {
+      "name": "YouTube",
+      "icon": "/shared/yt.png",
+      "href": "https://youtube.com/@techverzing"
+    }
+  ],
+  "stats": [
+    { "value": 10, "suffix": "+", "label": "Years of experience" },
+    { "value": 250, "suffix": "+", "label": "Projects delivered" },
+    { "value": 40, "suffix": "+", "label": "Clients worldwide" },
+    { "value": 15, "suffix": "+", "label": "Industries served" }
+  ],
+  "navigation": {
+    "mainLinks": [
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "footerSections": [
+      {
+        "label": "Pages",
+        "links": [
+          { "name": "Home", "link": "/" },
+          { "name": "About", "link": "/about" },
+          { "name": "Services", "link": "/services" },
+          { "name": "Contact", "link": "/contact" }
+        ]
+      },
+      {
+        "label": "Systems, Web & Apps",
+        "links": [
+          { "name": "Custom CRM & Business Automation", "link": "/services/crm-automation" },
+          { "name": "AI & ML Solutions", "link": "/services/ai-ml-solutions" },
+          { "name": "Website Development", "link": "/services/website-development" },
+          { "name": "Mobile App Development", "link": "/services/mobile-app-development" },
+          { "name": "UI/UX Design", "link": "/services/ui-ux-design" },
+          { "name": "Cloud & Backend Development", "link": "/services/cloud-backend-development" },
+          { "name": "Maintenance & Support", "link": "/services/maintenance-support" }
+        ]
+      },
+      {
+        "label": "Branding & Marketing",
+        "links": [
+          { "name": "Digital Branding", "link": "/services/digital-branding" },
+          { "name": "SEO & Performance Marketing", "link": "/services/seo-performance-marketing" },
+          { "name": "360° Marketing", "link": "/services/360-marketing" }
+        ]
+      }
+    ],
+    "menuSections": [
+      {
+        "label": "Systems, Web & Apps",
+        "link": "/services/website-development",
+        "categories": [
+          { "name": "Custom CRM & Business Automation", "link": "/services/crm-automation" },
+          { "name": "AI & ML Solutions", "link": "/services/ai-ml-solutions" },
+          { "name": "Website Development", "link": "/services/website-development" },
+          { "name": "Mobile App Development", "link": "/services/mobile-app-development" },
+          { "name": "UI/UX Design", "link": "/services/ui-ux-design" },
+          { "name": "Cloud & Backend Development", "link": "/services/cloud-backend-development" },
+          { "name": "Maintenance & Support", "link": "/services/maintenance-support" }
+        ]
+      },
+      {
+        "label": "Brand & Marketing",
+        "link": "/services/360-marketing",
+        "categories": [
+          { "name": "Digital Branding", "link": "/services/digital-branding" },
+          { "name": "SEO & Performance Marketing", "link": "/services/seo-performance-marketing" },
+          { "name": "360° Marketing", "link": "/services/360-marketing" }
+        ]
+      }
+    ]
+  },
+  "sharedCta": {
+    "title": "Get Started in Minutes",
+    "description": "Tell us what you're building and we'll map the fastest path from idea to impact - clear scope, honest timelines, no jargon.",
+    "primary": { "text": "Start a project", "href": "/contact" },
+    "secondary": { "text": "Explore services", "href": "/services" }
+  },
+  "footer": {
+    "logo": {
+      "src": "/shared/logo_wbg.png",
+      "width": 80,
+      "height": 80,
+      "alt": "Techverzing Technologies logo"
+    },
+    "description": "Where Technology Meets Business Growth.",
+    "navSections": [
+      {
+        "label": "Pages",
+        "categories": [
+          { "name": "Home", "link": "/" },
+          { "name": "About", "link": "/about" },
+          { "name": "Services", "link": "/services" },
+          { "name": "Contact", "link": "/contact" }
+        ]
+      },
+      {
+        "label": "Systems, Web & Apps",
+        "categories": [
+          { "name": "Custom CRM & Business Automation", "link": "/services/crm-automation" },
+          { "name": "AI & ML Solutions", "link": "/services/ai-ml-solutions" },
+          { "name": "Website Development", "link": "/services/website-development" },
+          { "name": "Mobile App Development", "link": "/services/mobile-app-development" },
+          { "name": "UI/UX Design", "link": "/services/ui-ux-design" },
+          { "name": "Cloud & Backend Development", "link": "/services/cloud-backend-development" },
+          { "name": "Maintenance & Support", "link": "/services/maintenance-support" }
+        ]
+      },
+      {
+        "label": "Branding & Marketing",
+        "categories": [
+          { "name": "Digital Branding", "link": "/services/digital-branding" },
+          { "name": "SEO & Performance Marketing", "link": "/services/seo-performance-marketing" },
+          { "name": "360° Marketing", "link": "/services/360-marketing" }
+        ]
+      }
+    ],
+    "legal": {
+      "terms": { "label": "Terms & Conditions", "href": "/policies/terms-conditions" },
+      "privacy": { "label": "Privacy Policy", "href": "/policies/privacy-policy" },
+      "copyright": "2025 Techverzing Technologies. All rights reserved."
+    }
+  },
+  "seo": {
+    "siteUrl": "https://www.techverzing.com",
+    "defaultTitle": "Techverzing Technologies | Digital Marketing & IT Solutions Agency",
+    "defaultDescription": "Techverzing Technologies is a digital marketing and IT solutions agency offering websites, mobile apps, custom CRM, AI/ML, SEO, and 360° marketing."
+  }
+}

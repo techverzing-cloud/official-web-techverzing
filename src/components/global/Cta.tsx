@@ -7,7 +7,7 @@ import { Icon } from "@iconify/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import globalData from "@/json/global.json";
+import globalData from "@/content/site.json";
 
 gsap.registerPlugin(ScrollTrigger);
 

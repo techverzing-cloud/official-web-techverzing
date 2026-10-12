@@ -1,0 +1,172 @@
+{
+  "hero": {
+    "eyebrow": "About Techverzing",
+    "heading": "We blend strategy and technology to grow brands.",
+    "description": "A marketing agency with engineering at its core. We design, build, and scale digital experiences that convert.",
+    "highlights": ["strategy", "technology"],
+    "primary": { "label": "Start a project", "href": "/contact" },
+    "secondary": { "label": "See our services", "href": "/services" },
+    "scrollTo": "#about-company"
+  },
+  "about": {
+    "heading": "About the Company",
+    "description": "We're a cross-disciplinary team of strategists, creatives, and engineers. Our mission is to help ambitious brands find momentum through design and code.",
+    "sections": [
+      {
+        "title": "Our Story",
+        "text": "Techverzing began with a passion for blending creativity and data to craft impactful digital marketing strategies for brands worldwide.",
+        "cta": { "label": "About the team", "href": "/about" }
+      },
+      {
+        "title": "Mission",
+        "text": "Our mission is to deliver creative, data-driven marketing solutions that help brands grow, engage, and build meaningful connections with their audiences.",
+        "cta": { "label": "See our services", "href": "/services" }
+      },
+      {
+        "title": "Vision",
+        "text": "We envision a future where every brand can harness the power of creativity and analytics to inspire, innovate, and lead in the digital space.",
+        "cta": { "label": "Start a project", "href": "/contact" }
+      }
+    ]
+  },
+  "whyWeExist": {
+    "eyebrow": "Why We Exist",
+    "heading": ["Creativity and code,", "on the same team."],
+    "description": "Techverzing exists because strategy, design, and engineering work better together than apart. We put strategists, creatives, and engineers in one room so ideas don't stall in handoffs - they ship, get measured, and come back sharper.",
+    "hint": "Hover the deck",
+    "cards": [
+      {
+        "src": "/services/ui-ux-design/hero.webp",
+        "alt": "Interface and design work"
+      },
+      {
+        "src": "/services/website-development/hero.webp",
+        "alt": "Web platform build"
+      },
+      {
+        "src": "/services/seo/hero.png",
+        "alt": "Search and performance campaign"
+      },
+      {
+        "src": "/services/mobile-application/hero.webp",
+        "alt": "Mobile product build"
+      },
+      {
+        "src": "/services/digital-branding/hero.webp",
+        "alt": "Brand identity work"
+      },
+      {
+        "src": "/services/ai-ml-solutions/hero.webp",
+        "alt": "AI and machine learning build"
+      },
+      {
+        "src": "/services/customized-software-development/hero.png",
+        "alt": "Custom software build"
+      }
+    ]
+  },
+  "howWeWork": {
+    "eyebrow": "How We Work",
+    "heading": ["No guesswork.", "No surprises.", "Just results."],
+    "description": "From your first call to launch day and beyond, we keep things simple, transparent, and collaborative, so you always know where your project stands.",
+    "steps": [
+      {
+        "index": "01",
+        "title": "Listen",
+        "text": "We learn about your business, your customers, and the problem you want solved.",
+        "deliverables": ["Free Consultation", "Business Review", "Clear Goals"],
+        "image": ""
+      },
+      {
+        "index": "02",
+        "title": "Plan",
+        "text": "We map out what to build, how long it takes, and how success will be measured.",
+        "deliverables": ["Project Scope", "Timeline", "Success Metrics"],
+        "image": ""
+      },
+      {
+        "index": "03",
+        "title": "Design",
+        "text": "We create a look and feel your customers will enjoy, and you get to approve it before we build.",
+        "deliverables": ["Page Previews", "Brand Look", "Your Approval"],
+        "image": ""
+      },
+      {
+        "index": "04",
+        "title": "Build",
+        "text": "We develop your solution in small steps and show you progress along the way.",
+        "deliverables": ["Weekly Updates", "Live Preview", "Your Feedback"],
+        "image": ""
+      },
+      {
+        "index": "05",
+        "title": "Test",
+        "text": "We check that everything works, loads fast, and keeps your data safe before it goes live.",
+        "deliverables": ["Bug-Free Checks", "Fast Loading", "Data Security"],
+        "image": ""
+      },
+      {
+        "index": "06",
+        "title": "Launch & Support",
+        "text": "We take your project live and stay with you to fix, maintain, and improve it as you grow.",
+        "deliverables": ["Go Live", "Ongoing Support", "Growth Updates"],
+        "image": ""
+      }
+    ]
+  },
+  "servicesSection": {
+    "eyebrow": "Services Overview",
+    "heading": ["Marketing and technology,", "under one roof."],
+    "description": "From performance marketing to custom software, every capability ships through the same cross-disciplinary team - strategy, design, and engineering working as one."
+  },
+  "services": [
+    {
+      "category": "Marketing",
+      "icon": "mdi:bullhorn",
+      "items": [
+        {
+          "icon": "mdi:chart-line",
+          "title": "Performance Marketing",
+          "description": "ROI-driven ads across search, social, and programmatic."
+        },
+        {
+          "icon": "mdi:cellphone",
+          "title": "Content & Social",
+          "description": "Creative production and channel management at scale."
+        },
+        {
+          "icon": "mdi:bullhorn",
+          "title": "Brand Strategy",
+          "description": "Positioning, messaging, and identity systems that stand out."
+        }
+      ]
+    },
+    {
+      "category": "Tech Solutions",
+      "icon": "mdi:code-tags",
+      "items": [
+        {
+          "icon": "mdi:shield-check",
+          "title": "Cloud & Security",
+          "description": "Secure, compliant infrastructures with best practices."
+        },
+        {
+          "icon": "mdi:wrench",
+          "title": "Automation & Integrations",
+          "description": "APIs, workflows, and data pipelines that reduce toil."
+        },
+        {
+          "icon": "mdi:code-tags",
+          "title": "Web & App Development",
+          "description": "Modern, accessible web and mobile apps built to scale."
+        }
+      ]
+    }
+  ],
+  "team": [
+    { "name": "Ava Thomas", "title": "Founder & CEO", "img": "" },
+    { "name": "Noah Patel", "title": "Head of Technology", "img": "" },
+    { "name": "Maya Chen", "title": "Creative Director", "img": "" },
+    { "name": "Liam Rodriguez", "title": "Growth Marketing Lead", "img": "" }
+  ]
+}

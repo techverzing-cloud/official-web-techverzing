@@ -25,7 +25,7 @@ const Contact = () => (
       eyebrow="Contact us"
       heading="Let's build something together"
       highlights={["together"]}
-      description="Tell us what you're building and we'll write back within one working day — clear scope, honest timelines, no jargon."
+      description="Tell us what you're building and we'll write back within one working day - clear scope, honest timelines, no jargon."
       primary={{ label: "Email us", href: `mailto:${siteConfig.email}` }}
       secondary={{ label: "Explore services", href: "/services" }}
       scrollTo="#contact"

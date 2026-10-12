@@ -9,11 +9,11 @@ metadata:
 
 # Web Typography
 
-A practical guide to choosing, pairing, and implementing typefaces for the web. The best typography is invisible — it immerses readers in content rather than calling attention to itself.
+A practical guide to choosing, pairing, and implementing typefaces for the web. The best typography is invisible - it immerses readers in content rather than calling attention to itself.
 
 ## Core Principle
 
-**Typography is the voice of your content.** The typeface you choose sets tone before a single word is read — a legal site shouldn't feel playful; a children's app shouldn't feel corporate. Follow the "clear goblet" principle: typography should be like a crystal-clear wine glass, keeping focus on the wine (content), not the glass (type).
+**Typography is the voice of your content.** The typeface you choose sets tone before a single word is read - a legal site shouldn't feel playful; a children's app shouldn't feel corporate. Follow the "clear goblet" principle: typography should be like a crystal-clear wine glass, keeping focus on the wine (content), not the glass (type).
 
 ## Scoring
 
@@ -28,21 +28,21 @@ All typography falls into two categories:
 | **Type for a moment** | Headlines, buttons, navigation, logos | Personality, impact, distinctiveness |
 | **Type to live with** | Body text, articles, documentation | Readability, comfort, endurance |
 
-**Workhorse typefaces** excel at "type to live with" — versatile across sizes, weights, and contexts without drawing attention. Examples: Georgia, Source Sans, Freight Text, FF Meta.
+**Workhorse typefaces** excel at "type to live with" - versatile across sizes, weights, and contexts without drawing attention. Examples: Georgia, Source Sans, Freight Text, FF Meta.
 
 ## Typography Framework
 
 ### 1. How We Read
 
-**Core concept:** Understanding reading mechanics is the foundation for every typography decision. Eyes don't scan smoothly — they jump in bursts.
+**Core concept:** Understanding reading mechanics is the foundation for every typography decision. Eyes don't scan smoothly - they jump in bursts.
 
 **Why it works:** Fighting these mechanics creates friction that drives readers away; aligning with them lets readers absorb content faster with less fatigue.
 
 **Key insights:**
-- **Saccades** — eyes jump in 7-9 character bursts; line length and letter spacing directly affect saccade efficiency
-- **Fixations** — eyes pause briefly to absorb content; dense or poorly spaced text slows reading
-- **Word shapes (bouma)** — experienced readers recognize word silhouettes, not individual letters
-- **Legibility vs. readability** — legibility is whether characters can be distinguished (a typeface concern); readability is whether text can be comfortably read for extended periods (a typography concern: size, spacing, line length). A legible typeface can still be set unreadably
+- **Saccades** - eyes jump in 7-9 character bursts; line length and letter spacing directly affect saccade efficiency
+- **Fixations** - eyes pause briefly to absorb content; dense or poorly spaced text slows reading
+- **Word shapes (bouma)** - experienced readers recognize word silhouettes, not individual letters
+- **Legibility vs. readability** - legibility is whether characters can be distinguished (a typeface concern); readability is whether text can be comfortably read for extended periods (a typography concern: size, spacing, line length). A legible typeface can still be set unreadably
 
 **Product applications:**
 
@@ -70,10 +70,10 @@ See: [references/typeface-anatomy.md](references/typeface-anatomy.md) when you n
 **Why it works:** Screen rendering, variable bandwidth, and diverse devices impose constraints print never faced. Rigorous evaluation prevents costly mid-project typeface swaps.
 
 **Key insights:**
-- **Technical quality** — consistent stroke weights, even visual color across text blocks, good kerning pairs (AV, To, Ty), complete character set, multiple weights (minimum: regular, bold, italic)
-- **Structural assessment** — generous x-height (better screen readability), open counters and apertures (a, e, c), distinct letterforms (Il1, O0, rn vs. m)
-- **Practical needs** — test at actual use sizes on target screens, check file size, verify the license
-- **Real content testing** — Lorem ipsum hides problems with character frequency, word length, and paragraph rhythm
+- **Technical quality** - consistent stroke weights, even visual color across text blocks, good kerning pairs (AV, To, Ty), complete character set, multiple weights (minimum: regular, bold, italic)
+- **Structural assessment** - generous x-height (better screen readability), open counters and apertures (a, e, c), distinct letterforms (Il1, O0, rn vs. m)
+- **Practical needs** - test at actual use sizes on target screens, check file size, verify the license
+- **Real content testing** - Lorem ipsum hides problems with character frequency, word length, and paragraph rhythm
 
 **Product applications:**
 
@@ -91,21 +91,21 @@ body { font-size: 16px; }
 h1 { font-size: 3rem; }
 ```
 
-**Ethical boundary:** Always verify the web license before shipping a font — desktop/print licenses rarely cover web embedding, and unlicensed use creates real legal liability.
+**Ethical boundary:** Always verify the web license before shipping a font - desktop/print licenses rarely cover web embedding, and unlicensed use creates real legal liability.
 
-See: [references/evaluating-typefaces.md](references/evaluating-typefaces.md) when vetting a candidate face — full quality checklist, red-flags table, and the structural criteria to inspect.
+See: [references/evaluating-typefaces.md](references/evaluating-typefaces.md) when vetting a candidate face - full quality checklist, red-flags table, and the structural criteria to inspect.
 
 ### 3. Choosing Typefaces
 
-**Core concept:** Start with purpose, not aesthetics. The content's tone, reading context, and duration should drive selection — not personal preference or trends.
+**Core concept:** Start with purpose, not aesthetics. The content's tone, reading context, and duration should drive selection - not personal preference or trends.
 
 **Why it works:** Purpose-driven choices feel inevitable rather than arbitrary, and survive stakeholder review because they can be justified with reasoning rather than taste.
 
 **Key insights:**
-- **Define the job first** — body text, headlines, and UI elements may each need different faces
-- **Match tone to content** — a financial report needs a different voice than a bakery menu
-- **Check the family** — confirm needed weights, italics, and styles exist before committing
-- **Safe starting points** — body serif: Georgia, Source Serif Pro, Charter; body sans: system fonts, Source Sans Pro, Inter, IBM Plex Sans
+- **Define the job first** - body text, headlines, and UI elements may each need different faces
+- **Match tone to content** - a financial report needs a different voice than a bakery menu
+- **Check the family** - confirm needed weights, italics, and styles exist before committing
+- **Safe starting points** - body serif: Georgia, Source Serif Pro, Charter; body sans: system fonts, Source Sans Pro, Inter, IBM Plex Sans
 
 **Product applications:**
 
@@ -124,19 +124,19 @@ body {
 }
 ```
 
-See: [references/evaluating-typefaces.md](references/evaluating-typefaces.md) when narrowing finalists or weighing free vs. paid faces — the side-by-side comparison method and quality-option shortlists.
+See: [references/evaluating-typefaces.md](references/evaluating-typefaces.md) when narrowing finalists or weighing free vs. paid faces - the side-by-side comparison method and quality-option shortlists.
 
 ### 4. Pairing Typefaces
 
-**Core concept:** Successful pairings create clear contrast — faces should be obviously different, not confusingly similar. One to two typefaces maximum.
+**Core concept:** Successful pairings create clear contrast - faces should be obviously different, not confusingly similar. One to two typefaces maximum.
 
-**Why it works:** Clear structural contrast (serif + sans, light + bold, humanist + geometric) gives each face a distinct role. Faces that are too similar create tension without purpose — readers sense something is "off" without knowing why.
+**Why it works:** Clear structural contrast (serif + sans, light + bold, humanist + geometric) gives each face a distinct role. Faces that are too similar create tension without purpose - readers sense something is "off" without knowing why.
 
 **Key insights:**
-- **Contrast types** — structure (serif + sans), weight (light + regular), era (humanist + geometric), width (condensed + normal)
-- **Same designer strategy** — faces by one designer often share harmonizing DNA (FF Meta + FF Meta Serif)
-- **Superfamilies** — families designed to work together eliminate guesswork (Roboto + Roboto Slab)
-- **Pairing failures** — two near-identical faces, both faces competing for attention, one face overwhelming the other
+- **Contrast types** - structure (serif + sans), weight (light + regular), era (humanist + geometric), width (condensed + normal)
+- **Same designer strategy** - faces by one designer often share harmonizing DNA (FF Meta + FF Meta Serif)
+- **Superfamilies** - families designed to work together eliminate guesswork (Roboto + Roboto Slab)
+- **Pairing failures** - two near-identical faces, both faces competing for attention, one face overwhelming the other
 
 **Product applications:**
 
@@ -153,19 +153,19 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; }
 body { font-family: 'Source Sans Pro', -apple-system, sans-serif; }
 ```
 
-See: [references/pairing-strategies.md](references/pairing-strategies.md) when picking a second face — proven combinations, the contrast-type table, and same-designer/superfamily shortcuts.
+See: [references/pairing-strategies.md](references/pairing-strategies.md) when picking a second face - proven combinations, the contrast-type table, and same-designer/superfamily shortcuts.
 
 ### 5. Typographic Measurements
 
-**Core concept:** Three measurements — font size, line length, and line height — form the foundation of comfortable reading. Getting these right matters more than typeface choice.
+**Core concept:** Three measurements - font size, line length, and line height - form the foundation of comfortable reading. Getting these right matters more than typeface choice.
 
 **Why it works:** These measurements govern how the eye tracks across and down text: optimal line length matches the saccade pattern, adequate line height prevents the eye from jumping to the wrong line on the return sweep, and sufficient size makes letterforms recognizable on screen.
 
 **Key insights:**
-- **Body size** — 16px minimum; err larger (18px) for reading-heavy sites; mobile users hold phones farther than designers assume
-- **Line length (measure)** — 45-75 characters ideal, 66 optimal; enforce with `ch` units or `max-width`
-- **Line height** — 1.4-1.8 for body; longer lines need more; headlines need tighter (1.1-1.25)
-- **Heading scale** — consistent ratio (1.2-1.5) between levels creates hierarchy without extremes
+- **Body size** - 16px minimum; err larger (18px) for reading-heavy sites; mobile users hold phones farther than designers assume
+- **Line length (measure)** - 45-75 characters ideal, 66 optimal; enforce with `ch` units or `max-width`
+- **Line height** - 1.4-1.8 for body; longer lines need more; headlines need tighter (1.1-1.25)
+- **Heading scale** - consistent ratio (1.2-1.5) between levels creates hierarchy without extremes
 
 **Product applications:**
 
@@ -188,19 +188,19 @@ h1, h2 { line-height: 1.1; }      /* headlines: 1.1-1.25 */
 .body-text { line-height: 1.6; }  /* body: 1.5-1.7 */
 ```
 
-See: [references/responsive-typography.md](references/responsive-typography.md) when writing the `clamp()` formulas — how to derive min/preferred/max and viewport-based measurement strategies.
+See: [references/responsive-typography.md](references/responsive-typography.md) when writing the `clamp()` formulas - how to derive min/preferred/max and viewport-based measurement strategies.
 
 ### 6. Building Type Hierarchies
 
-**Core concept:** Hierarchy tells readers what matters most. Create distinction through controlled variation in size, weight, and color — but don't pull all three levers at once.
+**Core concept:** Hierarchy tells readers what matters most. Create distinction through controlled variation in size, weight, and color - but don't pull all three levers at once.
 
 **Why it works:** Deliberate, consistent differences between levels let readers grasp page structure at a glance; without hierarchy everything competes and nothing wins.
 
 **Key insights:**
-- **Three levers** — size, weight, color; vary one or two between adjacent levels, never all three
-- **The squint test** — squinting at a page should still reveal the hierarchy
-- **Consistent scale** — a modular ratio (1.2-1.5) between heading levels creates rhythm; arbitrary sizes create noise
-- **Don't skip levels** — jumping H1 to H3 breaks the reader's mental model
+- **Three levers** - size, weight, color; vary one or two between adjacent levels, never all three
+- **The squint test** - squinting at a page should still reveal the hierarchy
+- **Consistent scale** - a modular ratio (1.2-1.5) between heading levels creates rhythm; arbitrary sizes create noise
+- **Don't skip levels** - jumping H1 to H3 breaks the reader's mental model
 
 **Product applications:**
 
@@ -220,21 +220,21 @@ body { font-size: 1rem; font-weight: 400; color: #333; }
 h1, h2, h3 { margin: 1.5em 0 0.5em; line-height: 1.2; }
 ```
 
-**Ethical boundary:** Don't bury fees, disclaimers, or opt-outs in small or low-contrast type to demote what users need to see — hierarchy that hides material information weaponizes typography against the reader.
+**Ethical boundary:** Don't bury fees, disclaimers, or opt-outs in small or low-contrast type to demote what users need to see - hierarchy that hides material information weaponizes typography against the reader.
 
-See: [references/css-implementation.md](references/css-implementation.md) when implementing the CSS — full hierarchy patterns, `@font-face` loading, `font-variation-settings` axes, and subsetting with pyftsubset.
+See: [references/css-implementation.md](references/css-implementation.md) when implementing the CSS - full hierarchy patterns, `@font-face` loading, `font-variation-settings` axes, and subsetting with pyftsubset.
 
 ### 7. Responsive Typography and Web Font Performance
 
 **Core concept:** Type must adapt to screens, and web fonts must load efficiently. Fluid typography with `clamp()` eliminates breakpoint jumps; strategic font loading prevents layout shift and slow renders.
 
-**Why it works:** A fixed font size cannot serve both a 320px phone and a 1440px desktop. Web fonts are render-blocking by default — unoptimized loading causes Flash of Invisible Text (FOIT) or Flash of Unstyled Text (FOUT).
+**Why it works:** A fixed font size cannot serve both a 320px phone and a 1440px desktop. Web fonts are render-blocking by default - unoptimized loading causes Flash of Invisible Text (FOIT) or Flash of Unstyled Text (FOUT).
 
 **Key insights:**
-- **Fluid typography** — `clamp(min, preferred, max)` scales smoothly between viewports, no media queries needed for type
-- **Breakpoint adjustments** — mobile needs slightly larger body (17-18px) and a tighter heading scale; desktop can push display sizes while keeping line-length limits
-- **Loading strategy** — `font-display: swap` shows fallback text immediately; preload critical fonts; subset to needed characters
-- **Performance budget** — under 200KB total font payload; prefer WOFF2; a variable font can replace 4-6 static weight files
+- **Fluid typography** - `clamp(min, preferred, max)` scales smoothly between viewports, no media queries needed for type
+- **Breakpoint adjustments** - mobile needs slightly larger body (17-18px) and a tighter heading scale; desktop can push display sizes while keeping line-length limits
+- **Loading strategy** - `font-display: swap` shows fallback text immediately; preload critical fonts; subset to needed characters
+- **Performance budget** - under 200KB total font payload; prefer WOFF2; a variable font can replace 4-6 static weight files
 
 **Product applications:**
 
@@ -257,7 +257,7 @@ h1 { font-size: clamp(2rem, 1.5rem + 2vw, 3.5rem); }
 /* In <head>: <link rel="preload" href="/fonts/custom.woff2" as="font" type="font/woff2" crossorigin> */
 ```
 
-**Ethical boundary:** Don't optimize users out — subsetting that drops characters non-English readers need, or removing italic/bold weights needed for emphasis, trades inclusivity for speed.
+**Ethical boundary:** Don't optimize users out - subsetting that drops characters non-English readers need, or removing italic/bold weights needed for emphasis, trades inclusivity for speed.
 
 ## Common Mistakes
 
