@@ -3,9 +3,11 @@ import Script from "next/script";
 import type { Metadata, Viewport } from "next";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
+import Cta from "@/components/global/Cta";
 import ClientProviders from "@/components/global/ClientProviders";
 import JsonLd from "@/components/global/JsonLd";
 import Preloader from "@/components/global/Preloader";
+import WhatsAppButton from "@/components/global/WhatsAppButton";
 import { ENABLE_PRELOADER } from "@/lib/config";
 import { siteConfig } from "@/lib/seo";
 import "../../css/globals.css";
@@ -126,11 +128,14 @@ export default function RootLayout({
 
         <main className="mrBg min-h-screen">{children}</main>
 
+        <Cta />
+
         <footer>
           <Footer />
         </footer>
 
         <ClientProviders />
+        <WhatsAppButton />
         <JsonLd data={organizationJsonLd} />
         <JsonLd data={websiteJsonLd} />
       </body>

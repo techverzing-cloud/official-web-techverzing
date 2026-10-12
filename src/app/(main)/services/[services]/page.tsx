@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import rawData from "@/json/services/data.json";
 import introData from "@/json/services/intro.json";
 import { siteConfig } from "@/lib/seo";
-import ServiceHero from "@/components/services/ServiceHero";
+import SectionHero from "@/components/global/SectionHero";
 import ServiceIntro from "@/components/services/ServiceIntro";
 import ServiceHighlights from "@/components/services/ServiceHighlights";
 import ServiceAdvantage from "@/components/services/ServiceAdvantage";
-import ServiceCta from "@/components/services/ServiceCta";
 
 type ServicePageData = {
   heading: {
@@ -84,10 +83,13 @@ async function ServicesPage({
 
   return (
     <>
-      <ServiceHero
-        title={intro.title}
-        slogan={intro.slogan}
-        icon={intro.icon}
+      <SectionHero
+        eyebrow="Techverzing Services"
+        heading={intro.title}
+        description={intro.slogan}
+        primary={{ label: "Discuss a project", href: "/contact" }}
+        secondary={{ label: "All services", href: "/services" }}
+        scrollTo="#service-intro"
       />
       <ServiceIntro
         heading={data.heading.heading}
@@ -102,7 +104,6 @@ async function ServicesPage({
         description={data.advantage.description}
         advantages={data.advantage.advantages}
       />
-      <ServiceCta title={intro.title} slogan={intro.slogan} />
     </>
   );
 }

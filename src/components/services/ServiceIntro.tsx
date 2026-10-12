@@ -72,10 +72,11 @@ const ServiceIntro = ({ heading, text, icon, items }: ServiceIntroProps) => {
 
   return (
     <section
+      id="service-intro"
       ref={root}
       data-dark-bg
       aria-label={heading}
-      className="relative overflow-hidden py-[clamp(3rem,7vw,7rem)]"
+      className="relative overflow-hidden py-[clamp(4rem,9vw,9rem)]"
     >
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -left-[20vw] top-1/4 h-[50vh] w-[45vw] rounded-full bg-impact/[0.07] blur-[120px]" />
@@ -103,7 +104,7 @@ const ServiceIntro = ({ heading, text, icon, items }: ServiceIntroProps) => {
         </svg>
       </div>
 
-      <div className="container relative mx-auto mrMx">
+      <div className="container relative mx-auto">
         <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="intro-head lg:col-span-4 lg:sticky lg:top-28">
             <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-cream-white/60">
@@ -111,7 +112,7 @@ const ServiceIntro = ({ heading, text, icon, items }: ServiceIntroProps) => {
               <Icon icon={icon} width={16} height={16} className="text-impact" />
               What We Do
             </span>
-            <h2 className="heading_2 mt-6 font-semibold text-cream-white">
+            <h2 className="heading_4 mt-6 font-semibold text-cream-white">
               {heading}
             </h2>
             <p className="mt-6 text-base text-cream-white/70 md:text-lg">{text}</p>

@@ -19,11 +19,7 @@ const Preloader = () => {
 
   useEffect(() => {
     if (!ENABLE_PRELOADER) return;
-    const hasVisited = sessionStorage.getItem("tv_preloader_shown");
-    if (!hasVisited) {
-      setShouldShow(true);
-      sessionStorage.setItem("tv_preloader_shown", "true");
-    }
+    setShouldShow(true);
   }, []);
 
   useGSAP(

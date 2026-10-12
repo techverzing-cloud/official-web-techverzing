@@ -1,106 +1,46 @@
 import React from "react";
+import SectionHeading from "@/components/home/SectionHeading";
+import LocationCard from "./LocationCard";
 
 /**
- * EDIT THESE: replace with your real office details.
- * The map embed, directions link and "open in Google Maps" link
- * are all built from the address below.
+ * Add a new object here for each office. `LocationCard` handles the rest.
  */
-const office = {
-  name: "Techverzing Technologies",
-  addressLines: ["Your street address", "City, State PIN code", "India"],
-  // Exact text Google Maps should search for (street, city, PIN).
-  mapQuery: "Your street address, City, State PIN code, India",
-};
-
-const query = encodeURIComponent(office.mapQuery);
-const embedUrl = `https://www.google.com/maps?q=${query}&output=embed`;
-const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${query}`;
-const viewUrl = `https://www.google.com/maps/search/?api=1&query=${query}`;
+const locations = [
+  {
+    id: "delhi-janakpuri",
+    label: "Head Office",
+    name: "Techverzing Technologies",
+    addressLines: [
+      "505, 5th Floor, DDA Building 5",
+      "Janakpuri District Center",
+      "Janakpuri, Delhi, 110058",
+    ],
+    mapsQuery:
+      "505, 5th Floor, DDA Building 5, Janakpuri District Center, Janakpuri, Delhi, 110058",
+    mapSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.982303198658!2d77.07918877520258!3d28.630292484182874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d04bf07adce33%3A0xdd37d78784f6582e!2sDDA%20Building%2C%20Janakpuri%20District%20Center%2C%20Janakpuri%2C%20Delhi%2C%20110058!5e0!3m2!1sen!2sin!4v1791793693705!5m2!1sen!2sin",
+  },
+];
 
 const MapSection = () => {
   return (
     <section
-      aria-labelledby="map-heading"
-      className="border-t border-gray-200 bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8"
+      data-light-bg
+      aria-label="Office location"
+      className="relative pb-[clamp(4rem,8vw,8rem)] pt-[clamp(1rem,3vw,3rem)]"
     >
-      <div className="mx-auto max-w-6xl">
-        <h2
-          id="map-heading"
-          className="text-2xl font-bold tracking-tight text-[#101c2d] sm:text-3xl"
-        >
-          Find us on the map
-        </h2>
-        <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 sm:text-base">
-          Planning to visit? Message us first so we can confirm a time and make
-          sure the right person is available.
+      <div className="relative z-10 mrMx">
+        <SectionHeading eyebrow="Visit us" heading="Or come by the office" />
+        <p className="mt-5 max-w-[58ch] text-pretty font-inter text-base font-normal leading-[1.7] text-dull-text-dark md:text-lg">
+          We work with teams everywhere, but you&rsquo;re always welcome to drop
+          in. Message first and we&rsquo;ll make sure the right person is
+          around.
         </p>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
-          {/* Address card */}
-          <div className="flex flex-col justify-between rounded-2xl border border-gray-200 bg-gray-50 p-5 sm:p-6">
-            <div className="flex gap-4">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ff8b32]/12 text-[#ff8b32]">
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-5 w-5"
-                >
-                  <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
-                  <circle cx="12" cy="10" r="2.5" />
-                </svg>
-              </span>
-
-              <address className="not-italic">
-                <p className="text-base font-semibold text-[#101c2d]">
-                  {office.name}
-                </p>
-                <p className="mt-1 text-sm leading-6 text-slate-600">
-                  {office.addressLines.map((line, i) => (
-                    <React.Fragment key={line}>
-                      {line}
-                      {i < office.addressLines.length - 1 && <br />}
-                    </React.Fragment>
-                  ))}
-                </p>
-              </address>
-            </div>
-
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
-              <a
-                href={directionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-11 flex-1 items-center justify-center rounded-lg bg-[#ff8b32] px-4 py-2.5 text-sm font-bold text-[#101c2d] transition-colors duration-200 hover:bg-[#ff9b4d] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffad70] focus-visible:ring-offset-2 focus-visible:ring-offset-gray-50"
-              >
-                Get directions
-              </a>
-              <a
-                href={viewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex min-h-11 flex-1 items-center justify-center rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-semibold text-[#101c2d] transition-colors duration-200 hover:border-[#ff8b32] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff8b32]"
-              >
-                Open in Google Maps
-              </a>
-            </div>
-          </div>
-
-          {/* Map */}
-          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-100">
-            <iframe
-              title={`Map showing the location of ${office.name}`}
-              src={embedUrl}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-              className="block h-72 w-full border-0 sm:h-96 lg:h-full lg:min-h-[22rem]"
-            />
-          </div>
+        <div className="mt-10">
+          {locations.map((location) => (
+            <LocationCard key={location.id} {...location} />
+          ))}
         </div>
       </div>
     </section>

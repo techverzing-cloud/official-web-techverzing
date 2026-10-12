@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { siteConfig } from "@/lib/seo";
-import GButton from "@/components/ui/Button";
-import Cta from "@/components/global/Cta";
+import SectionHero from "@/components/global/SectionHero";
 import serviceData from "@/json/services/intro.json";
 
 export const metadata: Metadata = {
@@ -35,6 +34,7 @@ type servicesType = {
 function ServicesList({ services }: { services: servicesType[] }) {
   return (
     <section
+      id="services-list"
       data-light-bg
       className="w-full rounded-t-3xl px-4 pt-12 sm:pt-16 md:pt-20"
     >
@@ -90,57 +90,17 @@ function ServicesList({ services }: { services: servicesType[] }) {
 
 const Services = () => (
   <>
-    <section
-      aria-label="Services"
-      id="hero"
-      data-dark-bg
-      className="mrBg relative overflow-hidden py-8"
-    >
-      <div className="mx-auto max-w-6xl px-6 pt-24 pb-20 sm:px-8 sm:pt-32 sm:pb-28">
-        <div className="mb-12 text-cream-white">
-          <h1 className="heading_0 w-max font-semibold tracking-tight capitalize">
-            Our Services
-            <div className="ml-auto w-max text-right text-xl tracking-normal text-cream-white/60">
-              How can we help you?
-            </div>
-          </h1>
-        </div>
-
-        <div>
-          <p className="text-dull-text mt-4">
-            If your business is ready to grow, you need more than one off
-            services. You need a digital partner who understands your goals and
-            works with you to achieve them. We combine technology, marketing,
-            and design to create solutions that enhance your brand, improve
-            customer experiences, and streamline the way your business operates.
-            From the first idea to ongoing support, we help you build the
-            digital foundation that drives long term success.
-          </p>
-        </div>
-
-        <div>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <GButton className="border-dull-text border">
-              <Link href="/contact" className="center">
-                Discuss a project
-              </Link>
-            </GButton>
-
-            <GButton
-              variant="secondary"
-              className="text-dull-text border-dull-text"
-            >
-              <Link href="/services" className="center">
-                View services
-              </Link>
-            </GButton>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SectionHero
+      eyebrow="How can we help you?"
+      heading="Our Services"
+      highlights={["Services"]}
+      description="If your business is ready to grow, you need more than one off services. You need a digital partner who understands your goals and works with you to achieve them. We combine technology, marketing, and design to create solutions that enhance your brand, improve customer experiences, and streamline the way your business operates."
+      primary={{ label: "Discuss a project", href: "/contact" }}
+      secondary={{ label: "View services", href: "/services" }}
+      scrollTo="#services-list"
+    />
 
     <ServicesList services={serviceData} />
-    <Cta />
   </>
 );
 

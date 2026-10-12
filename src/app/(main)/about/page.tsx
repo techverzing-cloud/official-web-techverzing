@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/seo";
 import CurtainsScope from "@/components/about/CurtainsScope";
+import AboutHero from "@/components/about/AboutHero";
 import WhyWeExist from "@/components/about/WhyWeExist";
 import HowWeWork from "@/components/home/HowWeWork";
 import ServicesOverview from "@/components/about/ServicesOverview";
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      {/* Hero */}
+      <AboutHero />
+
       {/* About the Company */}
       <CurtainsScope />
 

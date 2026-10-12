@@ -110,6 +110,7 @@ export default function FlowField({ className = "" }: FlowFieldProps) {
       mouse.ty = 1 - (e.clientY - rect.top) / rect.height;
     };
 
+    let visible = true;
     let raf = 0;
     let time = 0;
     const loop = () => {
@@ -119,8 +120,17 @@ export default function FlowField({ className = "" }: FlowFieldProps) {
       program.uniforms.uTime.value = time;
       program.uniforms.uMouse.value = [mouse.x, mouse.y];
       renderer.render({ scene: mesh, camera });
-      raf = requestAnimationFrame(loop);
+      raf = visible ? requestAnimationFrame(loop) : 0;
     };
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        if (visible && raf === 0) raf = requestAnimationFrame(loop);
+      },
+      { threshold: 0 },
+    );
+    io.observe(container);
 
     window.addEventListener("resize", resize);
     window.addEventListener("mousemove", onMove);
@@ -128,6 +138,7 @@ export default function FlowField({ className = "" }: FlowFieldProps) {
 
     return () => {
       cancelAnimationFrame(raf);
+      io.disconnect();
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", onMove);
       gl.getExtension("WEBGL_lose_context")?.loseContext();

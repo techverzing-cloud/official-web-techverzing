@@ -147,12 +147,12 @@ const BALL_PRESETS: Record<Preset, PresetValues> = {
   },
   ember: {
     color: '#FF8A2A',
-    strands: 5,
+    strands: 4,
     crackle: 0.9,
     flares: 0.8,
     glow: 1,
     sparks: 0.8,
-    particleCount: 12000,
+    particleCount: 2000,
     fill: 0.35,
     motion: 'rise',
     particleShape: 'round',
@@ -236,11 +236,11 @@ const MOTIONS: Record<string, number> = { rise: 0, fall: 1, drift: 2, orbit: 3 }
 const SHAPES: Record<string, number> = { square: 0, round: 1 };
 const MAX_STRANDS = 8;
 const MAX_ARCS = 4;
-const MAX_PARTICLES = 40000;
+const MAX_PARTICLES = 12000;
 const STATE_WIDTH = 256;
-const PIXEL_BUDGET = 4.5e6;
+const PIXEL_BUDGET = 2.2e6;
 const INTRO_SECONDS = 2.2;
-const SETTLE_SECONDS = 7;
+const SETTLE_SECONDS = 3;
 const WHITE: Rgb = [1, 1, 1];
 const BLACK: Rgb = [0, 0, 0];
 
@@ -1244,7 +1244,7 @@ const CrystalizedBall = ({
     const resize = () => {
       width = Math.max(1, container.clientWidth);
       height = Math.max(1, container.clientHeight);
-      renderer.dpr = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(PIXEL_BUDGET / (width * height)));
+      renderer.dpr = Math.min(window.devicePixelRatio || 1, 1.5, Math.sqrt(PIXEL_BUDGET / (width * height)));
       renderer.setSize(width, height);
       sceneTarget.setSize(gl.canvas.width, gl.canvas.height);
       start();
@@ -1363,7 +1363,7 @@ const CrystalizedBall = ({
       fieldUniforms.uLine.value = Math.max(0.6, radius * 0.0035);
       fieldUniforms.uTime.value = rimTime;
       fieldUniforms.uFrame.value = Math.floor(rimTime * 24) % 100000;
-      fieldUniforms.uBins.value = clamp(Math.round((Math.PI * 2 * radius) / 2.6), 240, 900);
+      fieldUniforms.uBins.value = clamp(Math.round((Math.PI * 2 * radius) / 2.6), 240, 600);
       fieldUniforms.uStrands.value = Math.round(clamp(s.strands, 1, MAX_STRANDS));
       fieldUniforms.uCrackle.value = clamp(s.crackle, 0, 1) + surge * 0.5 + charge;
       fieldUniforms.uFlares.value = clamp(s.flares, 0, 1);
@@ -1509,10 +1509,13 @@ const CrystalizedBall = ({
       if (!document.hidden) start();
     };
 
-    window.addEventListener('pointermove', onPointerMove, { passive: true });
-    window.addEventListener('pointerdown', onPointerDown, { passive: true });
-    window.addEventListener('pointerout', onPointerOut, { passive: true });
-    window.addEventListener('pointerup', onPointerUp, { passive: true });
+    const tracked = settingsRef.current?.interactive !== false && !reducedMotion;
+    if (tracked) {
+      window.addEventListener('pointermove', onPointerMove, { passive: true });
+      window.addEventListener('pointerdown', onPointerDown, { passive: true });
+      window.addEventListener('pointerout', onPointerOut, { passive: true });
+      window.addEventListener('pointerup', onPointerUp, { passive: true });
+    }
     window.addEventListener('blur', onPointerLeave);
     document.addEventListener('visibilitychange', onVisibility);
 
@@ -1533,10 +1536,12 @@ const CrystalizedBall = ({
       cancelAnimationFrame(raf);
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
-      window.removeEventListener('pointermove', onPointerMove);
-      window.removeEventListener('pointerdown', onPointerDown);
-      window.removeEventListener('pointerout', onPointerOut);
-      window.removeEventListener('pointerup', onPointerUp);
+      if (tracked) {
+        window.removeEventListener('pointermove', onPointerMove);
+        window.removeEventListener('pointerdown', onPointerDown);
+        window.removeEventListener('pointerout', onPointerOut);
+        window.removeEventListener('pointerup', onPointerUp);
+      }
       window.removeEventListener('blur', onPointerLeave);
       document.removeEventListener('visibilitychange', onVisibility);
       wakeRef.current = null;

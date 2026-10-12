@@ -1,144 +1,126 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Icon } from "@iconify/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import homeData from "@/json/home.json";
 import { renderTextWithHighlights } from "@/lib/util";
-import CrystalizedOrb from "./CrystalizedOrb";
 import { ENABLE_PRELOADER } from "@/lib/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// The WebGL orb is the heaviest thing on the page — keep it out of the initial
+// bundle and only mount it once the page is idle.
+const CrystalizedOrb = dynamic(() => import("./CrystalizedOrb"), { ssr: false });
+
+const isLowEndDevice = () => {
+  if (typeof navigator === "undefined") return false;
+  const nav = navigator as Navigator & { deviceMemory?: number };
+  const lowCpu = typeof navigator.hardwareConcurrency === "number" && navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4;
+  const lowRam = typeof nav.deviceMemory === "number" && nav.deviceMemory > 0 && nav.deviceMemory <= 4;
+  return lowCpu || lowRam;
+};
+
 const Hero = () => {
   const root = useRef<HTMLElement>(null);
+  const [ready, setReady] = useState(!ENABLE_PRELOADER);
+
+  useEffect(() => {
+    if (!ENABLE_PRELOADER) return;
+    const done = () => setReady(true);
+    window.addEventListener("preloader:complete", done, { once: true });
+    const safety = window.setTimeout(done, 7000);
+    return () => {
+      window.removeEventListener("preloader:complete", done);
+      window.clearTimeout(safety);
+    };
+  }, []);
 
   useGSAP(
     () => {
       const section = root.current;
       if (!section) return;
 
-      // The preloader paints an opaque dark layer over the page; lift the orb
-      // above it so the orb stays visible while loading, then drop it back
-      // behind the copy once the preloader lifts.
-      let orbZCleanup = () => {};
-      if (ENABLE_PRELOADER) {
-        const restore = () => gsap.set(".hero-orb", { zIndex: 0 });
-        window.addEventListener("preloader:complete", restore, { once: true });
-        const safetyZ = window.setTimeout(restore, 7000);
-        orbZCleanup = () => {
-          window.removeEventListener("preloader:complete", restore);
-          window.clearTimeout(safetyZ);
-        };
-      } else {
-        gsap.set(".hero-orb", { zIndex: 0 });
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const shift = window.matchMedia("(min-width: 768px)").matches && !reduce ? 24 : 0;
+
+      // Pre-reveal state, set once at mount. The copy block stays in its
+      // natural spot — only the text layers hide — so the reveal depends on no
+      // viewport-height math and works the same on every screen. Reduced motion
+      // hides with opacity only (no movement).
+      gsap.set(".hero-orb", { scale: reduce ? 1 : 0.7 });
+      gsap.set(".hero-eyebrow", { autoAlpha: 0, y: reduce ? 0 : 16 });
+      gsap.set(".hero-word", reduce ? { autoAlpha: 0 } : { yPercent: 115 });
+      gsap.set(".hero-sub", { autoAlpha: 0, y: reduce ? 0 : 20 });
+      gsap.set(".hero-cta > *", { autoAlpha: 0, y: reduce ? 0 : 18 });
+      gsap.set(".hero-scroll", { autoAlpha: 0 });
+
+      // `ready` flips the instant the preloader lifts. The timeline is rebuilt
+      // and played then: orb settles at centre → text fades/slides in over it.
+      if (!ready) return;
+
+      const intro = gsap.timeline({ defaults: { ease: reduce ? "power1.out" : "power3.out" } });
+      if (!reduce) {
+        intro.to(
+          ".hero-orb",
+          { scale: 1, xPercent: shift, duration: 1.4, ease: "power2.inOut" },
+          0
+        );
       }
+      const wordTo = reduce ? { autoAlpha: 1 } : { yPercent: 0 };
+      intro
+        .to(".hero-eyebrow", { autoAlpha: 1, y: 0, duration: 0.6 }, 0.35)
+        .to(
+          ".hero-word",
+          { ...wordTo, duration: 0.9, stagger: 0.06, ease: "power4.out" },
+          0.35
+        )
+        .to(".hero-sub", { autoAlpha: 1, y: 0, duration: 0.7 }, 0.65)
+        .to(
+          ".hero-cta > *",
+          { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1 },
+          0.8
+        )
+        .to(".hero-scroll", { autoAlpha: 1, duration: 0.5 }, 1.0);
+    },
+    { scope: root, dependencies: [ready] }
+  );
+
+  useGSAP(
+    () => {
+      const section = root.current;
+      if (!section) return;
 
       const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        // Ambient scroll cue
+        gsap.to(".hero-scroll-icon", {
+          y: 6,
+          duration: 1.1,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        });
 
-      mm.add(
-        {
-          reduce: "(prefers-reduced-motion: reduce)",
-          isDesktop: "(min-width: 768px)",
-        },
-        (ctx) => {
-          const { reduce, isDesktop } = ctx.conditions as {
-            reduce: boolean;
-            isDesktop: boolean;
-          };
-          const shift = isDesktop ? 24 : 0;
-
-          if (reduce) {
-            gsap.set(
-              [
-                ".hero-orb",
-                ".hero-eyebrow",
-                ".hero-sub",
-                ".hero-cta > *",
-                ".hero-scroll",
-              ],
-              { autoAlpha: 1 }
-            );
-            gsap.set(".hero-word", { yPercent: 0 });
-            gsap.set(".hero-orb", { scale: 1, xPercent: shift });
-            gsap.set(".hero-copy", { xPercent: 0 });
-            return;
-          }
-
-          // The orb sits at centre, half size, lifted above the opaque preloader.
-          gsap.set(".hero-orb", { scale: 0.5 });
-
-          // On reveal the orb grows to full size and drifts right while the copy
-          // peels away to the left and reveals. Paused until the preloader lifts.
-          const intro = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
-          intro
-            .to(
-              ".hero-orb",
-              { scale: 1, xPercent: shift, duration: 1.7, ease: "power2.inOut" },
-              0
-            )
-            .from(".hero-copy", { xPercent: shift, duration: 1.7, ease: "power3.out" }, 0.2)
-            .from(".hero-eyebrow", { autoAlpha: 0, y: 16, duration: 0.7 }, 0.5)
-            .from(
-              ".hero-word",
-              { yPercent: 115, duration: 0.9, stagger: 0.06, ease: "power4.out" },
-              0.5
-            )
-            .from(".hero-sub", { autoAlpha: 0, y: 20, duration: 0.8 }, 0.85)
-            .from(
-              ".hero-cta > *",
-              { autoAlpha: 0, y: 18, duration: 0.7, stagger: 0.1 },
-              1
-            )
-            .from(".hero-scroll", { autoAlpha: 0, duration: 0.6 }, 1.25);
-
-          // Ambient scroll cue
-          gsap.to(".hero-scroll-icon", {
-            y: 6,
-            duration: 1.1,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true,
-          });
-
-          // Scroll parallax — the orb drifts slowly as the copy lifts away.
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: section,
-              start: "top top",
-              end: "bottom top",
-              scrub: true,
-            },
-          });
-          tl.to(".hero-orb", { yPercent: 8, ease: "none" }, 0).to(
-            ".hero-copy",
-            { yPercent: -10, autoAlpha: 0.4, ease: "none" },
-            0
-          );
-
-          // Gate the reveal on the preloader; safety net so we never trap the user.
-          const play = () => intro.play();
-          if (!ENABLE_PRELOADER) {
-            play();
-            return;
-          }
-          window.addEventListener("preloader:complete", play, { once: true });
-          const safety = window.setTimeout(play, 7000);
-          return () => {
-            window.removeEventListener("preloader:complete", play);
-            window.clearTimeout(safety);
-          };
-        },
-        root
-      );
-
-      return () => {
-        orbZCleanup();
-        mm.revert();
-      };
+        // Scroll parallax — the orb drifts slowly as the copy lifts away.
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+        tl.to(".hero-orb", { yPercent: 8, ease: "none" }, 0).to(
+          ".hero-copy-inner",
+          { yPercent: -10, autoAlpha: 0.4, ease: "none" },
+          0
+        );
+      });
     },
     { scope: root }
   );
@@ -150,9 +132,13 @@ const Hero = () => {
       data-dark-bg
       className="relative mb-8 min-h-svh w-full overflow-hidden text-cream-white"
     >
-      <div className="hero-orb pointer-events-none absolute inset-0 z-[10000] grid place-items-center">
-        <div className="h-[88vmin] w-[88vmin] max-w-[88vw]">
-          <CrystalizedOrb preset="ember" theme="dark" size={0.72} interactive />
+      <div
+        className={`hero-orb pointer-events-none absolute inset-0 grid place-items-center ${
+          ready ? "z-0" : "z-[10000]"
+        }`}
+      >
+        <div className="relative h-[62vmin] w-[62vmin] max-w-[70vw]">
+          <CrystalizedOrb preset="ember" theme="dark" size={0.66} interactive={!isLowEndDevice()} />
         </div>
       </div>
 

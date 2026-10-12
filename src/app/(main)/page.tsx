@@ -5,7 +5,6 @@ import WhoWeAre from "@/components/home/WhoWeAre";
 import TrustedBy from "@/components/home/TrustedBy";
 import Testimonials from "@/components/home/Testimonials";
 import Industries from "@/components/home/Industries";
-import ClientsCta from "@/components/home/ClientsCta";
 import { siteConfig, homeDescription } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -49,9 +48,6 @@ export default function Home() {
 
       {/* Industries We Transform */}
       <Industries />
-
-      {/* Clients CTA */}
-      <ClientsCta />
     </div>
   );
 }

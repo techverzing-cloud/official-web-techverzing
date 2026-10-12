@@ -5,8 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Icon } from "@iconify/react";
-import MagicBento from "./Magic-bento";
-import ThoughtLine from "./Thought-line";
+import MagicBento from "@/components/react-bit/MagicBento";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -67,7 +66,7 @@ const ServiceHighlights = ({ items }: ServiceHighlightsProps) => {
         <div className="absolute -right-[18vw] top-1/3 h-[45vh] w-[40vw] rounded-full bg-impact/[0.06] blur-[130px]" />
       </div>
 
-      <div className="container relative mx-auto mrMx">
+      <div className="container relative mx-auto">
         <div className="caps-head">
           <span className="inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.3em] text-dull-text-dark">
             <span className="h-px w-8 bg-impact" />
@@ -78,37 +77,23 @@ const ServiceHighlights = ({ items }: ServiceHighlightsProps) => {
           </h2>
         </div>
 
-        <div className="mt-8">
-          <ThoughtLine
-            label="Scoping capabilities"
-            doneLabel="Capabilities scoped"
-            steps={items.map((item) => item.title)}
-            fontSize={13}
-            color="#0d0d0e"
-            glyphColor="#ff8c42"
-            working
-            settleAfter={1.6}
-            showTimer={false}
-          />
-        </div>
-
-        <div className="mt-[clamp(2.5rem,6vw,5rem)]">
+        <div className="mt-[clamp(2.5rem,3vw,5rem)]">
           <MagicBento
             cards={items.map((item) => ({ title: item.title }))}
             renderCard={(_, index) => {
               const item = items[index];
               if (!item) return null;
               return (
-                <div>
-                  <span className="inline-flex h-12 w-12 ml-5 mt-5 items-center justify-center rounded-[7px] border border-impact/40 bg-impact/10 text-impact">
+                <div className="flex h-full flex-col">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-[7px] border border-impact/40 bg-impact/10 text-impact">
                     <Icon icon={item.icon} width={26} height={26} />
                   </span>
-                  <h3 className="ml-5 heading_6 mt-7 font-semibold text-cream-white">
+                  <h3 className="heading_6 mt-5 font-semibold text-cream-white">
                     {item.title}
                   </h3>
-                  <ul className="mt-6 space-y-3">
+                  <ul className="mt-4 space-y-3">
                     {item.description.map((li) => (
-                      <li key={li} className="ml-5 flex gap-3 text-cream-white/70">
+                      <li key={li} className="flex gap-3 text-base leading-relaxed text-cream-white/70">
                         <Icon
                           icon="mdi:arrow-top-right"
                           width={18}

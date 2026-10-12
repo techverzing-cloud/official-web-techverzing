@@ -45,6 +45,12 @@
       }
     ]
   },
+  "sharedCta": {
+    "title": "Get Started in Minutes",
+    "description": "Tell us what you're building and we'll map the fastest path from idea to impact — clear scope, honest timelines, no jargon.",
+    "primary": { "text": "Start a project", "href": "/contact" },
+    "secondary": { "text": "Explore services", "href": "/services" }
+  },
   "footer": {
     "logo": {
       "src": "/global/logo_wbg.png",
@@ -183,11 +189,6 @@
         ]
       }
     ],
-    "cta": {
-      "text": "An idea, a project? Let’s start today.",
-      "buttonText": "Get in touch",
-      "buttonLink": "/contact"
-    },
     "links": [
       { "label": "Home", "path": "/" },
       { "label": "About", "path": "/about" },

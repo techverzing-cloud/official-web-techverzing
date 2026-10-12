@@ -3,7 +3,7 @@
 // TODO: Step images go in `public/about/how-we-work/` (e.g. 01-discover.webp, 02-strategize.webp, ...).
 // Set each step's `image` path in `src/json/about.json` (`howWeWork.steps[i].image`) to render it.
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { gsap } from "gsap";
@@ -29,90 +29,93 @@ const HowWeWork = () => {
   const scrollerRef = useRef<ScrollTrigger | null>(null);
   const lastActive = useRef(0);
   const [active, setActive] = useState(0);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "10% 0% 10% 0%" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
-      mm.add(
-        "(min-width: 768px) and (prefers-reduced-motion: no-preference)",
-        () => {
-          const trackEl = track.current;
-          if (!trackEl) return;
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        const trackEl = track.current;
+        if (!trackEl) return;
 
-          const applyPad = () => {
-            const card = trackEl.querySelector<HTMLElement>(".hww-card");
-            if (!card) return;
-            const pad = Math.max(16, (window.innerWidth - card.offsetWidth) / 2);
-            trackEl.style.paddingLeft = `${pad}px`;
-            trackEl.style.paddingRight = `${pad}px`;
-          };
+        const applyPad = () => {
+          const card = trackEl.querySelector<HTMLElement>(".hww-card");
+          if (!card) return;
+          const pad = Math.max(16, (window.innerWidth - card.offsetWidth) / 2);
+          trackEl.style.paddingLeft = `${pad}px`;
+          trackEl.style.paddingRight = `${pad}px`;
+        };
 
-          const getDistance = () =>
-            Math.max(0, trackEl.scrollWidth - trackEl.clientWidth);
+        const getDistance = () =>
+          Math.max(0, trackEl.scrollWidth - trackEl.clientWidth);
 
-          applyPad();
+        applyPad();
 
-          const scrollTween = gsap.to(trackEl, {
-            x: () => -getDistance(),
-            ease: "none",
-            scrollTrigger: {
-              trigger: pin.current,
-              start: "top top",
-              end: () => "+=" + (getDistance() + window.innerHeight * 0.75),
-              pin: true,
-              scrub: 1,
-              anticipatePin: 1,
-              invalidateOnRefresh: true,
-              onRefreshInit: applyPad,
-              onUpdate: (self) => {
-                if (railFill.current) {
-                  gsap.set(railFill.current, { scaleX: self.progress });
-                }
-                const i = Math.round(self.progress * (STEPS.length - 1));
-                if (i !== lastActive.current) {
-                  lastActive.current = i;
-                  setActive(i);
-                }
-              },
+        const scrollTween = gsap.to(trackEl, {
+          x: () => -getDistance(),
+          ease: "none",
+          scrollTrigger: {
+            trigger: pin.current,
+            start: "top top",
+            end: () => "+=" + (getDistance() + window.innerHeight * 0.75),
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onRefreshInit: applyPad,
+            onUpdate: (self) => {
+              if (railFill.current) {
+                gsap.set(railFill.current, { scaleX: self.progress });
+              }
+              const i = Math.round(self.progress * (STEPS.length - 1));
+              if (i !== lastActive.current) {
+                lastActive.current = i;
+                setActive(i);
+              }
             },
-          });
-          scrollerRef.current = scrollTween.scrollTrigger ?? null;
+          },
+        });
+        scrollerRef.current = scrollTween.scrollTrigger ?? null;
 
-          gsap.utils
-            .toArray<HTMLElement>(".hww-card", root.current!)
-            .forEach((card) => {
-              gsap.fromTo(
-                card,
-                { scale: 0.86, opacity: 0.35 },
-                {
-                  scale: 1,
-                  opacity: 1,
-                  ease: "none",
-                  scrollTrigger: {
-                    trigger: card,
-                    containerAnimation: scrollTween,
-                    start: "left 72%",
-                    end: "right 28%",
-                    scrub: true,
-                  },
-                }
-              );
-            });
-        }
-      );
-
-      mm.add("(max-width: 767px), (prefers-reduced-motion: reduce)", () => {
         gsap.utils
           .toArray<HTMLElement>(".hww-card", root.current!)
           .forEach((card) => {
-            gsap.from(card, {
-              y: 40,
-              opacity: 0,
-              duration: 0.6,
-              ease: "power2.out",
-              scrollTrigger: { trigger: card, start: "top 85%", once: true },
-            });
+            gsap.fromTo(
+              card,
+              { scale: 0.86, opacity: 0.35 },
+              {
+                scale: 1,
+                opacity: 1,
+                ease: "none",
+                scrollTrigger: {
+                  trigger: card,
+                  containerAnimation: scrollTween,
+                  start: "left 72%",
+                  end: "right 28%",
+                  scrub: true,
+                },
+              }
+            );
+          });
+      });
+
+      mm.add("(prefers-reduced-motion: reduce)", () => {
+        gsap.utils
+          .toArray<HTMLElement>(".hww-card", root.current!)
+          .forEach((card) => {
+            gsap.set(card, { clearProps: "transform,opacity" });
           });
       });
     },
@@ -125,7 +128,7 @@ const HowWeWork = () => {
         gsap.fromTo(
           stepLabel.current,
           { yPercent: 70, opacity: 0 },
-          { yPercent: 0, opacity: 1, duration: 0.45, ease: "power3.out" }
+          { yPercent: 0, opacity: 1, duration: 0.3, ease: "power3.out" }
         );
       }
     },
@@ -167,17 +170,17 @@ const HowWeWork = () => {
 
       <div
         ref={pin}
-        className="relative mt-14 overflow-hidden motion-safe:md:mt-0 motion-safe:md:flex motion-safe:md:h-screen motion-safe:md:flex-col motion-safe:md:justify-center"
+        className="relative mt-14 overflow-hidden motion-safe:mt-0 motion-safe:flex motion-safe:h-svh motion-safe:flex-col motion-safe:justify-center"
       >
         <div
           ref={track}
-          className="relative z-[1] flex flex-col gap-6 motion-safe:md:flex-row motion-safe:md:items-center motion-safe:md:gap-8 motion-safe:md:px-[6vw] motion-safe:md:will-change-transform"
+          className="relative z-[1] flex flex-col gap-6 motion-safe:flex-row motion-safe:items-center motion-safe:gap-6 motion-safe:px-[6vw] motion-safe:will-change-transform motion-safe:md:gap-8"
         >
           {STEPS.map((step) => (
             <article
               key={step.index}
               data-cursor-hover
-              className="hww-card relative flex w-full shrink-0 flex-col overflow-hidden rounded-4xl border border-dashed border-cream-white/15 bg-black-slate/60 p-6 backdrop-blur-sm motion-safe:md:h-[62vh] motion-safe:md:w-[70vw] motion-safe:lg:w-[46vw] motion-safe:xl:w-[36vw] md:p-8"
+              className="hww-card relative flex w-full shrink-0 flex-col overflow-hidden rounded-4xl border border-dashed border-cream-white/15 bg-black-slate/80 p-6 motion-safe:h-[70vh] motion-safe:w-[82vw] motion-safe:md:h-[62vh] motion-safe:md:w-[70vw] motion-safe:lg:w-[46vw] motion-safe:xl:w-[36vw] md:bg-black-slate/60 md:p-8 md:backdrop-blur-sm"
             >
               <div className="relative min-h-[180px] flex-1 overflow-hidden rounded-3xl border border-cream-white/10 bg-[radial-gradient(circle_at_30%_20%,rgba(255,140,66,0.12),transparent_60%)] motion-safe:md:min-h-0">
                 <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(232,230,217,0.5)_1px,transparent_1px),linear-gradient(90deg,rgba(232,230,217,0.5)_1px,transparent_1px)] [background-size:34px_34px]" />
@@ -210,7 +213,11 @@ const HowWeWork = () => {
                   {step.title}
                 </span>
 
-                <span className="pointer-events-none absolute inset-x-0 h-16 bg-gradient-to-b from-transparent via-impact/10 to-transparent motion-safe:animate-[hwwScan_5s_linear_infinite]" />
+                <span
+                  className={`pointer-events-none absolute inset-x-0 h-16 bg-gradient-to-b from-transparent via-impact/10 to-transparent ${
+                    inView ? "motion-safe:animate-[hwwScan_5s_linear_infinite]" : ""
+                  }`}
+                />
               </div>
 
               <div className="mt-6">
@@ -241,7 +248,7 @@ const HowWeWork = () => {
           ))}
         </div>
 
-        <div className="relative z-10 mx-4 mt-10 sm:mx-8 md:absolute md:inset-x-0 md:bottom-10 md:mx-[6vw] md:mt-0">
+        <div className="relative z-10 mx-4 mt-10 sm:mx-8 motion-safe:absolute motion-safe:inset-x-0 motion-safe:bottom-8 motion-safe:mx-[6vw] motion-safe:mt-0">
           <div className="flex items-end justify-between">
             <span className="font-spaceMono text-[11px] uppercase tracking-[0.25em] text-dull-text">
               Stage
@@ -285,7 +292,7 @@ const HowWeWork = () => {
                   } ${i === active ? "scale-125" : ""}`}
                 />
                 <span
-                  className={`font-spaceMono text-[11px] transition-colors duration-300 ${
+                  className={`hidden font-spaceMono text-[11px] transition-colors duration-300 md:block ${
                     i === active
                       ? "text-cream-white"
                       : "text-dull-text group-hover:text-cream-white/80"

@@ -29,11 +29,13 @@ export default function CurtainsScope() {
   const [active, setActive] = useState(0);
   const containerRef = useRef<HTMLElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const panel = panelRef.current;
+      const card = cardRef.current;
       const root = containerRef.current;
       if (!panel || !root) return;
 
@@ -55,26 +57,32 @@ export default function CurtainsScope() {
           onUpdate: (self) => {
             const t = self.progress * DUR;
             let next = 0;
-            let seg = -1;
             for (let i = 0; i < N - 1; i++) {
               const at = LEAD + i * SEG;
               if (t >= at + WIPE / 2) next = i + 1;
-              if (t >= at && t <= at + WIPE) seg = i;
             }
             setActive((prev) => (prev === next ? prev : next));
-            if (seg >= 0) {
-              panel.style.backgroundColor =
-                palette[(seg + 1) % palette.length].bg;
-            }
           },
         },
       });
 
+      if (card) {
+        tl.set(card, { backgroundColor: palette[0].bg, color: palette[0].text }, 0);
+      }
+
       // one curtain sweep per slide transition, scrubbed by scroll
       for (let i = 0; i < N - 1; i++) {
         const at = LEAD + i * SEG;
-        tl.set(panel, { xPercent: -100, opacity: 1 }, at);
+        const next = palette[(i + 1) % palette.length];
+        tl.set(panel, { xPercent: -100, opacity: 1, backgroundColor: next.bg }, at);
         tl.to(panel, { xPercent: 100, duration: WIPE, ease: "power2.inOut" }, at);
+        if (card) {
+          tl.to(
+            card,
+            { backgroundColor: next.bg, color: next.text, duration: WIPE, ease: "power2.inOut" },
+            at,
+          );
+        }
       }
       tl.to({}, { duration: TAIL });
     },
@@ -109,17 +117,19 @@ export default function CurtainsScope() {
   return (
     <section
       ref={containerRef}
-      className="flex min-h-screen items-center justify-center bg-black-slate py-12"
+      id="about-company"
+      className="mrBg flex min-h-svh items-center justify-center pb-6 pt-16 md:py-12"
     >
       <div
-        className="relative mx-auto w-[90vw] overflow-hidden rounded-3xl font-nunito transition-colors duration-700"
-        style={{ backgroundColor: color.bg, color: color.text }}
+        ref={cardRef}
+        className="relative mx-auto w-[90vw] overflow-hidden rounded-3xl font-nunito"
+        style={{ backgroundColor: palette[0].bg, color: palette[0].text }}
       >
         <div
           ref={contentRef}
-          className="grid gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:gap-16 lg:p-16"
+          className="grid gap-4 p-5 sm:gap-10 sm:p-12 lg:grid-cols-2 lg:gap-16 lg:p-16"
         >
-          <div className="flex flex-col justify-between gap-10">
+          <div className="flex flex-col justify-between gap-4 sm:gap-10">
             <div className="cs-anim flex items-center justify-between font-spaceMono text-[11px] uppercase tracking-[0.3em] opacity-70">
               <span>{about.about.heading}</span>
               <span>
@@ -132,7 +142,7 @@ export default function CurtainsScope() {
               <h2 className="cs-anim heading font-extrabold text-balance">
                 {section.title}
               </h2>
-              <p className="cs-anim mt-6 max-w-[36ch] font-inter text-xl font-normal leading-relaxed text-pretty opacity-80">
+              <p className="cs-anim mt-3 max-w-[36ch] font-inter text-base font-normal leading-relaxed text-pretty opacity-80 sm:mt-6 sm:text-xl">
                 {section.text}
               </p>
             </div>
@@ -148,7 +158,7 @@ export default function CurtainsScope() {
           </div>
 
           <div
-            className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border"
+            className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl border sm:aspect-[4/3]"
             style={{
               borderColor: `${color.text}33`,
               backgroundColor: `${color.text}0d`,

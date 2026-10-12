@@ -161,6 +161,14 @@ export default function Footer() {
               ref={(el) => { columnRefs.current[0] = el; }}
               className="lg:pr-8"
             >
+              <Image
+                src="/global/logo.png"
+                alt="Techverzing Technologies logo"
+                width={1069}
+                height={233}
+                className="mb-6 h-9 w-auto md:h-11"
+              />
+
               <p className="text-cream-white/70 text-base md:text-lg leading-relaxed max-w-xs">
                 {footer.description}
               </p>
@@ -229,7 +237,7 @@ export default function Footer() {
             aria-hidden="true"
           >
             <div className="relative overflow-hidden">
-              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl leading-none select-none">
+              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl text-3xl leading-none select-none">
                 Techverzing
               </p>
             </div>

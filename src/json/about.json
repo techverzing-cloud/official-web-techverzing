@@ -1,11 +1,16 @@
 {
   "primaryColor": "#7142e8",
   "hero": {
+    "eyebrow": "About Techverzing",
     "heading": "We blend strategy and technology to grow brands.",
     "description": "A marketing agency with engineering at its core. We design, build, and scale digital experiences that convert.",
-    "cta": {
-      "label": "Start a Project",
-      "href": "#contact"
+    "primary": {
+      "label": "Start a project",
+      "href": "/contact"
+    },
+    "secondary": {
+      "label": "See our services",
+      "href": "/services"
     }
   },
   "about": {
@@ -41,7 +46,7 @@
       { "src": "/services/mobile-application/1.webp", "alt": "Mobile product build" },
       { "src": "/services/digital-branding/1.webp", "alt": "Brand identity work" },
       { "src": "/services/ai-ml-solutions/1.webp", "alt": "AI and machine learning build" },
-      { "src": "/services/customized-software-development/1.webp", "alt": "Custom software build" }
+      { "src": "/services/customized-software-development/1.png", "alt": "Custom software build" }
     ]
   },
   "howWeWork": {
@@ -167,21 +172,5 @@
       "title": "Growth Marketing Lead",
       "img": ""
     }
-  ],
-  "cta": {
-    "heading": "Ready to build what matters?",
-    "description": "Let’s talk about your goals and map the fastest path from idea to impact.",
-    "buttons": [
-      {
-        "label": "Contact Us",
-        "href": "/contact",
-        "style": "primary"
-      },
-      {
-        "label": "View Services",
-        "href": "/services",
-        "style": "outline"
-      }
-    ]
-  }
+  ]
 }

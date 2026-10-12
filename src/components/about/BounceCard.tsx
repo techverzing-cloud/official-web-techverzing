@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export type BounceCardImage = string | { src: string; alt?: string };
 
@@ -44,7 +45,7 @@ type Body = {
 
 const ROOT = 'relative touch-pan-y [-webkit-tap-highlight-color:transparent]';
 const CARD =
-  'absolute top-1/2 left-1/2 aspect-square w-[var(--bounce-cards-size)] overflow-hidden rounded-[var(--bounce-cards-radius)] border-[length:var(--bounce-cards-border)] border-solid border-[color:var(--bounce-cards-border-color)] [background:var(--bounce-cards-border-color)] [box-shadow:var(--bounce-cards-shadow)] [transform:translate(-50%,-50%)_scale(0)] transition-shadow duration-300 will-change-transform data-[active]:[box-shadow:var(--bounce-cards-shadow-active)]';
+  'absolute top-1/2 left-1/2 aspect-square w-[var(--bounce-cards-size)] overflow-hidden rounded-[var(--bounce-cards-radius)] border-[length:var(--bounce-cards-border)] border-solid border-[color:var(--bounce-cards-border-color)] [background:var(--bounce-cards-border-color)] [box-shadow:var(--bounce-cards-shadow)] [transform:translate(-50%,-50%)_scale(0)] transition-shadow duration-300 data-[active]:[box-shadow:var(--bounce-cards-shadow-active)]';
 const CLICKABLE =
   'cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[color:var(--bounce-cards-border-color)]';
 const IMG = 'pointer-events-none block h-full w-full object-cover select-none';
@@ -119,9 +120,11 @@ export default function BounceCards({
     clickable: typeof onCardClick === 'function'
   };
   const settingsRef = useRef(settings);
-  settingsRef.current = settings;
   const clickRef = useRef(onCardClick);
-  clickRef.current = onCardClick;
+  useEffect(() => {
+    settingsRef.current = settings;
+    clickRef.current = onCardClick;
+  });
 
   useEffect(() => {
     const root = rootRef.current;
@@ -131,8 +134,15 @@ export default function BounceCards({
     const bodies: Body[] = [];
     const state = { hovered: -1, time: 0, layer: -1 };
     let raf = 0;
-    let last = performance.now();
+    let last = 0;
     let alive = true;
+    let visible = true;
+
+    const setWillChange = (on: boolean) => {
+      for (const el of cardRefs.current) {
+        if (el) el.style.willChange = on ? 'transform' : '';
+      }
+    };
 
     const body = (i: number): Body => {
       if (!bodies[i]) {
@@ -168,6 +178,7 @@ export default function BounceCards({
       raf = 0;
       if (!alive) return;
       const s = settingsRef.current;
+      if (!last) last = now;
       const dt = Math.min(1 / 30, Math.max(1 / 240, (now - last) / 1000));
       last = now;
       state.time += dt;
@@ -233,12 +244,17 @@ export default function BounceCards({
         });
       }
 
-      if (moving > 0.02) raf = requestAnimationFrame(frame);
+      if (moving > 0.02 && visible) {
+        raf = requestAnimationFrame(frame);
+      } else {
+        setWillChange(false);
+      }
     };
 
     const wake = () => {
-      if (raf || !alive) return;
-      last = performance.now();
+      if (raf || !alive || !visible) return;
+      setWillChange(true);
+      last = 0;
       raf = requestAnimationFrame(frame);
     };
     wakeRef.current = wake;
@@ -306,6 +322,21 @@ export default function BounceCards({
       clickRef.current?.(index);
     };
 
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry?.isIntersecting ?? true;
+        if (visible) {
+          wake();
+        } else if (raf) {
+          cancelAnimationFrame(raf);
+          raf = 0;
+          setWillChange(false);
+        }
+      },
+      { threshold: 0 }
+    );
+    io.observe(root);
+
     root.addEventListener('pointermove', onMove);
     root.addEventListener('pointerdown', onMove);
     root.addEventListener('pointerleave', onLeave);
@@ -319,6 +350,7 @@ export default function BounceCards({
       alive = false;
       cancelAnimationFrame(raf);
       wakeRef.current = null;
+      io.disconnect();
       root.removeEventListener('pointermove', onMove);
       root.removeEventListener('pointerdown', onMove);
       root.removeEventListener('pointerleave', onLeave);
@@ -365,7 +397,16 @@ export default function BounceCards({
           style={{ zIndex: i + 1 }}
           {...(settings.clickable ? { role: 'button', tabIndex: 0, 'aria-label': card.alt || `Card ${i + 1}` } : null)}
         >
-          {card.src && <img className={IMG} src={card.src} alt={card.alt} draggable={false} />}
+          {card.src && (
+            <Image
+              className={IMG}
+              src={card.src}
+              alt={card.alt}
+              fill
+              sizes={`${settings.cardSize}px`}
+              draggable={false}
+            />
+          )}
         </div>
       ))}
     </div>

@@ -42,6 +42,25 @@
   button{
     @apply cursor-pointer
   }
+
+  /* Hallmark · macrostructure: Letter · genre: editorial
+   * theme: project tokens (cream-white paper · impact accent · Nunito / Inter / Space Mono)
+   * nav: global · footer: global · enrichment: none
+   * contrast: pass (40–41) · honest: pass (46) · chrome: pass (47) · tokens: pass (48)
+   * responsive: pass (49) · icons: pass (30) · mobile: pass (34, 49–57)
+   */
+  .contact-label {
+    @apply mb-2 block font-spaceMono text-[11px] uppercase tracking-[0.18em] text-black-slate/60;
+  }
+  .contact-input {
+    @apply min-h-12 w-full rounded-xl border border-black-slate/15 bg-white px-4 py-3 font-inter text-sm text-black-slate caret-impact outline-none transition-colors duration-200 placeholder:text-black-slate/60 hover:border-black-slate/30 focus-visible:border-impact focus-visible:ring-2 focus-visible:ring-impact/30 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .contact-input:user-invalid {
+    @apply border-red-500/60 focus-visible:border-red-500 focus-visible:ring-red-500/25;
+  }
+  .contact-select {
+    @apply cursor-pointer appearance-none pr-10;
+  }
 }
 /* Base font for headings */
 h1,

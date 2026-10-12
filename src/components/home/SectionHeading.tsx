@@ -7,6 +7,7 @@ interface SectionHeadingProps {
   heading: string | string[];
   dark?: boolean;
   className?: string;
+  size?: 2 | 3;
 }
 
 const SectionHeading = ({
@@ -14,6 +15,7 @@ const SectionHeading = ({
   heading,
   dark = false,
   className = "",
+  size = 2,
 }: SectionHeadingProps) => {
   const lines = Array.isArray(heading) ? heading : [heading];
 
@@ -28,7 +30,7 @@ const SectionHeading = ({
         {eyebrow}
       </span>
       <h2
-        className={`heading_2 mt-4 font-semibold ${
+        className={`mt-4 font-semibold ${size === 3 ? "heading_3" : "heading_2"} ${
           dark ? "text-white" : "text-black-slate"
         }`}
       >

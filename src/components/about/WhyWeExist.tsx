@@ -16,27 +16,27 @@ const deckFor = (vw: number) =>
   vw >= 1280
     ? {
         containerWidth: vw * 0.8,
-        containerHeight: 540,
+        containerHeight: 500,
         cardSize: 360,
         spread: 145,
       }
     : vw >= 1024
       ? {
           containerWidth: vw * 0.8,
-          containerHeight: 440,
+          containerHeight: 400,
           cardSize: 280,
           spread: 105,
         }
       : vw >= 640
         ? {
             containerWidth: vw * 0.8,
-            containerHeight: 400,
+            containerHeight: 340,
             cardSize: 240,
             spread: 70,
           }
         : {
             containerWidth: vw * 0.9,
-            containerHeight: 280,
+            containerHeight: 250,
             cardSize: 160,
             spread: 48,
           };
@@ -48,10 +48,20 @@ const WhyWeExist = () => {
   const [live, setLive] = useState(false);
 
   useEffect(() => {
-    const sync = () => setVw(window.innerWidth);
+    let raf = 0;
+    const sync = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        setVw(window.innerWidth);
+      });
+    };
     sync();
     window.addEventListener("resize", sync);
-    return () => window.removeEventListener("resize", sync);
+    return () => {
+      window.removeEventListener("resize", sync);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   useEffect(() => {
@@ -98,16 +108,16 @@ const WhyWeExist = () => {
           eyebrow={whyWeExist.eyebrow}
           heading={whyWeExist.heading}
         />
-        <p className="wwe-el mx-auto mt-6 max-w-2xl text-dull-text-dark md:text-lg">
+        <p className="wwe-el mx-auto mt-5 max-w-xl text-pretty leading-relaxed text-dull-text-dark md:text-lg">
           {whyWeExist.description}
         </p>
       </div>
 
-      <div className="mt-14 flex flex-col items-center gap-6">
+      <div className="mt-10 flex flex-col items-center gap-4">
         <div
           ref={deckRef}
           className="flex w-full justify-center"
-          style={{ height: deck?.containerHeight ?? 540 }}
+          style={{ height: deck?.containerHeight ?? 500 }}
         >
           {live && deck && (
             <BounceCards

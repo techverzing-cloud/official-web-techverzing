@@ -120,6 +120,10 @@ blockquote.desc::before {
   overflow: hidden;
 }
 
+.clip-text {
+  overflow: hidden;
+}
+
 /* Hide scrollbar for Chrome, Safari, and Opera */
 .no-scroll-bar::-webkit-scrollbar {
   display: none;

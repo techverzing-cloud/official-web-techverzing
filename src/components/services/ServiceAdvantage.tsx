@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Icon } from "@iconify/react";
 import globalData from "@/json/global.json";
-import MagicBento from "./Magic-bento";
+import MagicBento from "@/components/react-bit/MagicBento";
 import SpotlightCard from "./Spotlight-card";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -94,7 +94,7 @@ const ServiceAdvantage = ({
         <div className="absolute right-[-15vw] top-1/4 h-[45vh] w-[40vw] rounded-full bg-impact/[0.06] blur-[130px]" />
       </div>
 
-      <div className="container mx-auto mrMx">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
@@ -113,7 +113,7 @@ const ServiceAdvantage = ({
 
               <div className="mt-8 space-y-4">
                 {description.map((d) => (
-                  <p key={d} className="adv-reveal text-cream-white/70">
+                  <p key={d} className="adv-reveal text-base leading-relaxed text-cream-white/70">
                     {d}
                   </p>
                 ))}
@@ -174,7 +174,7 @@ const ServiceAdvantage = ({
                           </h3>
                           
                         </div>
-                        <p className="mt-4 text-cream-white/70">
+                        <p className="mt-4 text-base leading-relaxed text-cream-white/70">
                           {item.description}
                         </p>
                       </div>

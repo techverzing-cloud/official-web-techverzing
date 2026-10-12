@@ -22,7 +22,7 @@ const Testimonials = () => {
       const mm = gsap.matchMedia();
 
       mm.add(
-        "(min-width: 768px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
+        "(prefers-reduced-motion: no-preference)",
         () => {
           const cards = gsap.utils.toArray<HTMLElement>(".tst-item");
           const dots = gsap.utils.toArray<HTMLElement>(".tst-dot");
@@ -30,7 +30,7 @@ const Testimonials = () => {
           gsap.set(cards.slice(1), {
             opacity: 0,
             yPercent: 60,
-                filter: "blur(6px)",
+            filter: "blur(6px)",
           });
 
           const setActive = (index: number) => {
@@ -72,7 +72,7 @@ const Testimonials = () => {
               {
                 opacity: 0,
                 yPercent: -60,
-            filter: "blur(6px)",
+                filter: "blur(6px)",
                 duration: 1,
               },
               i - 1
@@ -86,12 +86,11 @@ const Testimonials = () => {
       );
 
       mm.add(
-        "(max-width: 767px), (prefers-reduced-motion: reduce), (hover: none)",
+        "(prefers-reduced-motion: reduce)",
         () => {
           gsap.utils.toArray<HTMLElement>(".tst-item").forEach((card) => {
             gsap.from(card, {
-              y: 40,
-              opacity: 0,
+              autoAlpha: 0,
               duration: 0.6,
               ease: "power2.out",
               scrollTrigger: { trigger: card, start: "top 85%", once: true },
@@ -107,18 +106,19 @@ const Testimonials = () => {
     <section ref={root} data-dark-bg className="mrBg text-cream-white">
       <div
         ref={pinRef}
-        className="relative flex flex-col overflow-hidden px-4 pb-16 pt-24 md:px-8 md:pb-10 xl:px-12 motion-safe:md:h-screen"
+        className="relative flex flex-col overflow-hidden px-4 pb-10 pt-20 md:px-8 md:pb-10 xl:px-12 motion-safe:h-screen"
       >
         <div className="mrMx flex items-end justify-between gap-6">
           <SectionHeading
             dark
+            size={3}
             eyebrow={testimonials.eyebrow}
             heading={testimonials.heading}
           />
-          <span className="hidden items-baseline gap-1 font-nunito md:flex">
+          <span className="hidden items-baseline gap-1 font-nunito sm:flex">
             <span
               ref={counterRef}
-              className="text-3xl font-bold text-white"
+              className="text-2xl font-bold text-white sm:text-3xl"
             >
               01
             </span>
@@ -128,11 +128,11 @@ const Testimonials = () => {
           </span>
         </div>
 
-        <div className="relative mrMx mt-10 flex-1 space-y-12 motion-safe:md:min-h-0 motion-safe:md:space-y-0">
+        <div className="relative mrMx mt-10 flex-1 space-y-12 motion-safe:min-h-0 motion-safe:space-y-0">
           {items.map((item, i) => (
             <blockquote
               key={i}
-              className="tst-item flex flex-col justify-between motion-safe:md:absolute motion-safe:md:inset-0"
+              className="tst-item flex flex-col justify-between motion-safe:absolute motion-safe:inset-0"
             >
               <div>
                 <Icon
@@ -140,7 +140,7 @@ const Testimonials = () => {
                   className="text-impact"
                   width={56}
                 />
-                <p className="mt-6 max-w-4xl font-nunito text-[clamp(1.4rem,2.6vw,2.25rem)] font-medium leading-snug text-white">
+                <p className="mt-6 max-w-4xl font-nunito text-[clamp(1.15rem,2.6vw,2.25rem)] font-medium leading-snug text-white">
                   {item.quote}
                 </p>
               </div>
@@ -168,7 +168,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="mrMx mt-10 hidden gap-2 motion-safe:md:flex">
+        <div className="mrMx mt-8 gap-2 motion-safe:flex">
           {items.map((_, i) => (
             <span
               key={i}
