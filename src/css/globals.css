@@ -1,3 +1,4 @@
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -7,16 +8,17 @@
   font-family: "NunitoSans";
   src: url("../assets/fonts/nunitoSans.woff2") format("woff2");
   font-weight: 100 1000;
-  font-stretch: 75% 125%;
   font-style: normal;
+  font-stretch: 75% 125%;
   font-display: swap;
 }
 
+/* Base */
 body {
   color: var(--color-black);
   font-size: 16px;
-  line-height: 1.5;
   font-weight: 300;
+  line-height: 1.5;
   overflow-x: clip;
 }
 
@@ -31,13 +33,16 @@ body {
   color: var(--color-cream-white);
 }
 
+/* Logo */
 .logo {
-  --SIZE: 50px;
-  width: var(--SIZE);
-  height: var(--SIZE);
+  --size: 50px;
+
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
 }
 
+/* Theme variants */
 .digitalAgency {
   color: var(--color-dull-text);
 }
@@ -59,18 +64,14 @@ section[data-light-bg="true"] {
   background-color: var(--color-white);
   color: var(--color-dull-black);
 }
+
 .mrBg {
   background-color: #202223;
-  /* background-image: linear-gradient(
-      44deg,
-      rgba(6, 30, 41, 1) 0%,
-      rgba(25, 49, 60, 1) 100%
-    ),
-    radial-gradient(circle at 25% 25%, rgba(25, 49, 60, 0.15), transparent 70%),
-    linear-gradient(to bottom, rgba(25, 49, 60, 0.1), transparent); */
 }
+
+/* Utilities */
 .shadow {
-  box-shadow: 8px 8px 0 #000000;
+  box-shadow: 8px 8px 0 #000;
 }
 
 .img {
@@ -83,37 +84,20 @@ section[data-light-bg="true"] {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(113, 66, 232, 0) 0%,
+    transparent 0%,
     rgba(113, 66, 232, 0.3) 100%
   );
   pointer-events: none;
 }
 
-blockquote.desc {
-  padding-left: 40px;
-  margin: 40px 0;
-  color: rgba(28, 30, 32, 0.7);
-  position: relative;
-  font-weight: 400;
-  font-family: "Outfit", sans-serif;
+.no-scroll-bar {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-blockquote.desc::before {
-  content: "";
-  background: url(/svg/quote.svg) no-repeat;
-  background-size: auto;
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 24px;
-  aspect-ratio: 1/1;
-  background-size: 100%;
-  filter: invert(1);
-  opacity: 0.2;
-}
-/* For a scrollable element */
-.no-scroll-bar {
-  overflow: auto; /* or scroll */
+.no-scroll-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .no-scroll {
@@ -124,7 +108,50 @@ blockquote.desc::before {
   overflow: hidden;
 }
 
-/* Hide scrollbar for Chrome, Safari, and Opera */
-.no-scroll-bar::-webkit-scrollbar {
-  display: none;
+/* Blockquote */
+blockquote.desc {
+  position: relative;
+  margin: 40px 0;
+  padding-left: 40px;
+  color: rgba(28, 30, 32, 0.7);
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+blockquote.desc::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 24px;
+  aspect-ratio: 1;
+  background: url("/svg/quote.svg") no-repeat center / 100%;
+  filter: invert(1);
+  opacity: 0.2;
+}
+
+/* Chat widget */
+.techverzing-chat-widget button:has(svg) {
+  background-color: #25d366 !important;
+  box-shadow: 0 10px 30px -8px rgba(37, 211, 102, 0.7) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.techverzing-chat-widget button:has(svg):hover {
+  transform: translateX(-8px) !important;
+}
+
+.techverzing-chat-widget button:has(svg) svg {
+  transition: transform 0.3s ease !important;
+}
+
+.techverzing-chat-widget button:has(svg):hover svg {
+  transform: translateX(4px) !important;
+}
+
+/* Chat messages scrolling */
+.techverzing-chat-widget .ai-chat-widget-root div[style*="overflowY: auto"] {
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
 }

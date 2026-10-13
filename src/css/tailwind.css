@@ -1,6 +1,28 @@
 @import "tailwindcss";
 @config '../../tailwind.config.ts';
 
+/* Global scrollbar - fully invisible */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.no-scroll-bar {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
 @theme {
   --color-white: #f4f4f4;
   --color-cream-white: #e8e6d9;
