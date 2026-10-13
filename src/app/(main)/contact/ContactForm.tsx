@@ -3,40 +3,40 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 
-import contactData from "@/content/contact.json";
-
-const services = contactData.formServices;
-
-type Status = "idle" | "sending" | "success" | "error";
+type Status = "idle" | "sending" | "success" | "error" | "rate-limited" | "spam";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    console.log("handleSubmit called");
     const form = e.currentTarget;
     const data = new FormData(form);
 
     // Honeypot: bots fill every field. Silently drop if set.
-    if (String(data.get("website") ?? "").trim()) return;
+    const honeypot = String(data.get("website") ?? "").trim();
+    if (honeypot) {
+      console.log("Honeypot triggered:", honeypot);
+      return;
+    }
 
     const name = String(data.get("fullName") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const company = String(data.get("company") ?? "").trim();
     const phone = String(data.get("phone") ?? "").trim();
-    const service = String(data.get("service") ?? "").trim();
     const details = String(data.get("message") ?? "").trim();
 
     const meta = [
       company && `Company: ${company}`,
       phone && `Phone: ${phone}`,
-      service && `Service: ${service}`,
     ].filter((line): line is string => Boolean(line));
 
     const message = [meta.join("\n"), details]
       .filter((part) => part.trim().length > 0)
       .join("\n\n");
 
+    console.log("Form data:", { name, email, message, company, phone });
     setStatus("sending");
 
     try {
@@ -45,10 +45,21 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
       });
-      if (!res.ok) throw new Error("Request failed");
+      const result = await res.json();
+      if (!res.ok) {
+        if (res.status === 429) {
+          setStatus("rate-limited");
+        } else if (res.status === 400 && result.code === "SPAM_DETECTED") {
+          setStatus("spam");
+        } else {
+          setStatus("error");
+        }
+        return;
+      }
       form.reset();
       setStatus("success");
-    } catch {
+    } catch (err) {
+      console.error("Form submit error:", err);
       setStatus("error");
     }
   }
@@ -73,13 +84,13 @@ export default function ContactForm() {
 
         <div>
           <label htmlFor="email" className="contact-label">
-            Work email <span aria-hidden="true">*</span>
+            email <span aria-hidden="true">*</span>
           </label>
           <input
             id="email"
             name="email"
             type="email"
-            placeholder="you@company.com"
+            placeholder="name@gmail.com"
             autoComplete="email"
             required
             className="contact-input"
@@ -87,65 +98,32 @@ export default function ContactForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <div>
-          <label htmlFor="company" className="contact-label">
-            Company name
-          </label>
-          <input
-            id="company"
-            name="company"
-            type="text"
-            placeholder="Your company"
-            autoComplete="organization"
-            className="contact-input"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="phone" className="contact-label">
-            Phone number
-          </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="+91 00000 00000"
-            autoComplete="tel"
-            className="contact-input"
-          />
-        </div>
+      <div>
+        <label htmlFor="company" className="contact-label">
+          Company name
+        </label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          placeholder="Your company"
+          autoComplete="organization"
+          className="contact-input"
+        />
       </div>
 
       <div>
-        <label htmlFor="service" className="contact-label">
-          Service <span aria-hidden="true">*</span>
+        <label htmlFor="phone" className="contact-label">
+          Phone number
         </label>
-        <div className="relative">
-          <select
-            id="service"
-            name="service"
-            defaultValue=""
-            required
-            className="contact-input contact-select [&>option]:bg-white [&>option]:text-black-slate"
-          >
-            <option value="" disabled>
-              Select a service
-            </option>
-            {services.map((service) => (
-              <option key={service} value={service}>
-                {service}
-              </option>
-            ))}
-          </select>
-          <Icon
-            icon="lucide:chevron-down"
-            width={18}
-            height={18}
-            aria-hidden="true"
-            className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-black-slate/40"
-          />
-        </div>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="+91 00000 00000"
+          autoComplete="tel"
+          className="contact-input"
+        />
       </div>
 
       <div>
@@ -200,6 +178,16 @@ export default function ContactForm() {
           <p className="rounded-xl border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm text-red-800">
             We couldn&rsquo;t send your note. Please try again, or email us at
             info@techverzing.com.
+          </p>
+        )}
+        {status === "rate-limited" && (
+          <p className="rounded-xl border border-amber-600/30 bg-amber-600/10 px-4 py-3 text-sm text-amber-800">
+            You&rsquo;ve sent 3 messages today. Please wait until tomorrow to send more.
+          </p>
+        )}
+        {status === "spam" && (
+          <p className="rounded-xl border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm text-red-800">
+            Your message was flagged as spam. Please revise and try again.
           </p>
         )}
       </div>
