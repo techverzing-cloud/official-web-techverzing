@@ -36,31 +36,31 @@
     "hint": "Hover the deck",
     "cards": [
       {
-        "src": "/services/ui-ux-design/hero.webp",
+        "src": "/Images/exit1.jpg",
         "alt": "Interface and design work"
       },
       {
-        "src": "/services/website-development/hero.webp",
+        "src": "/Images/exit2.jpg",
         "alt": "Web platform build"
       },
       {
-        "src": "/services/seo/hero.png",
+        "src": "/Images/exit3.jpg",
         "alt": "Search and performance campaign"
       },
       {
-        "src": "/services/mobile-application/hero.webp",
+        "src": "/Images/exit4.jpg",
         "alt": "Mobile product build"
       },
       {
-        "src": "/services/digital-branding/hero.webp",
+        "src": "/Images/exit5.jpg",
         "alt": "Brand identity work"
       },
       {
-        "src": "/services/ai-ml-solutions/hero.webp",
+        "src": "/Images/exit6.jpg",
         "alt": "AI and machine learning build"
       },
       {
-        "src": "/services/customized-software-development/hero.png",
+        "src": "/Images/exit7.jpg",
         "alt": "Custom software build"
       }
     ]
@@ -75,42 +75,42 @@
         "title": "Listen",
         "text": "We learn about your business, your customers, and the problem you want solved.",
         "deliverables": ["Free Consultation", "Business Review", "Clear Goals"],
-        "image": ""
+        "image": "/Images/listen.png"
       },
       {
         "index": "02",
         "title": "Plan",
         "text": "We map out what to build, how long it takes, and how success will be measured.",
         "deliverables": ["Project Scope", "Timeline", "Success Metrics"],
-        "image": ""
+        "image": "/Images/plan.png"
       },
       {
         "index": "03",
         "title": "Design",
         "text": "We create a look and feel your customers will enjoy, and you get to approve it before we build.",
         "deliverables": ["Page Previews", "Brand Look", "Your Approval"],
-        "image": ""
+        "image": "/Images/design.png"
       },
       {
         "index": "04",
         "title": "Build",
         "text": "We develop your solution in small steps and show you progress along the way.",
         "deliverables": ["Weekly Updates", "Live Preview", "Your Feedback"],
-        "image": ""
+        "image": "/Images/build.png"
       },
       {
         "index": "05",
         "title": "Test",
         "text": "We check that everything works, loads fast, and keeps your data safe before it goes live.",
         "deliverables": ["Bug-Free Checks", "Fast Loading", "Data Security"],
-        "image": ""
+        "image": "/Images/test.png"
       },
       {
         "index": "06",
         "title": "Launch & Support",
         "text": "We take your project live and stay with you to fix, maintain, and improve it as you grow.",
         "deliverables": ["Go Live", "Ongoing Support", "Growth Updates"],
-        "image": ""
+        "image": "/Images/launch.png"
       }
     ]
   },

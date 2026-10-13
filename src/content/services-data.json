@@ -216,7 +216,7 @@
         "title": "Custom CRM Systems",
         "subtitle": "Organize leads, customers, and relationships in one place",
         "image": {
-          "src": "/services/customized-software-development/hero.png",
+          "src": "/Images/crm1.jpg",
           "alt": "Custom CRM Development"
         },
         "description": [
@@ -229,7 +229,7 @@
         "title": "Lead & Business Management",
         "subtitle": "Stay on top of leads, tasks, and follow-ups",
         "image": {
-          "src": "/services/customized-software-development/lead-management.webp",
+          "src": "/Images/crm2.jpg",
           "alt": "Lead Management Systems"
         },
         "description": [
@@ -242,7 +242,7 @@
         "title": "Employee, Payroll & Workflow Automation",
         "subtitle": "Automate repetitive operations and save time",
         "image": {
-          "src": "/services/customized-software-development/automation.webp",
+          "src": "/Images/crm3.jpg",
           "alt": "Business Automation and Admin Panels"
         },
         "description": [
@@ -319,7 +319,7 @@
         "title": "AI Chatbots & Assistants",
         "subtitle": "Automated conversations that feel human",
         "image": {
-          "src": "/services/ai-ml-solutions/hero.webp",
+          "src": "/Images/aiml1.jpg",
           "alt": "AI Chatbot and Assistant Development"
         },
         "description": [
@@ -332,7 +332,7 @@
         "title": "Recommendation & Prediction Systems",
         "subtitle": "Use your data to make better decisions",
         "image": {
-          "src": "/services/ai-ml-solutions/recommendation.webp",
+          "src": "/Images/aiml2.jpg",
           "alt": "AI Recommendation and Prediction Systems"
         },
         "description": [
@@ -345,7 +345,7 @@
         "title": "Custom AI Integrations",
         "subtitle": "Bring AI into your existing products",
         "image": {
-          "src": "/services/ai-ml-solutions/integration.webp",
+          "src": "/Images/aiml3.jpg",
           "alt": "Custom AI Integration and Automation"
         },
         "description": [
@@ -422,7 +422,7 @@
         "title": "Cloud Setup & Architecture",
         "subtitle": "Right-sized infrastructure for your product",
         "image": {
-          "src": "/services/cloud-backend-development/hero.webp",
+          "src": "/Images/cloud1.jpg",
           "alt": "Cloud Architecture and Setup"
         },
         "description": [
@@ -525,7 +525,7 @@
         "title": "Website & App UI Design",
         "subtitle": "Pixel-perfect designs for modern products",
         "image": {
-          "src": "/services/ui-ux-design/hero.webp",
+          "src": "/Images/uiux1.jpg",
           "alt": "UI Design for Web and Mobile"
         },
         "description": [
@@ -538,7 +538,7 @@
         "title": "Wireframes & Prototypes",
         "subtitle": "Test ideas before you build them",
         "image": {
-          "src": "/services/ui-ux-design/wireframes.webp",
+          "src": "/Images/uiux2.jpg",
           "alt": "Wireframes and Interactive Prototypes"
         },
         "description": [
@@ -654,7 +654,7 @@
         "title": "Performance & Security",
         "subtitle": "Make your product fast, safe, and reliable",
         "image": {
-          "src": "/services/maintenance-support/performance-security.webp",
+          "src": "/Images/security.jpg",
           "alt": "Performance Optimization and Security Updates"
         },
         "description": [
@@ -834,7 +834,7 @@
         "title": "On-Page & Technical SEO",
         "subtitle": "Lay the right SEO foundation",
         "image": {
-          "src": "/services/seo/hero.png",
+          "src": "/Images/seo1.jpg",
           "alt": "On-page and Technical SEO"
         },
         "description": [
@@ -847,7 +847,7 @@
         "title": "Keyword & Content Optimization",
         "subtitle": "Rank for what actually matters",
         "image": {
-          "src": "/services/seo/keyword-research.jpg",
+          "src": "/Images/seo2.jpg",
           "alt": "Keyword Research and Content Optimization"
         },
         "description": [
@@ -860,7 +860,7 @@
         "title": "Speed & Performance",
         "subtitle": "Faster websites, happier users, better rankings",
         "image": {
-          "src": "/services/seo/speed-performance.jpg",
+          "src": "/Images/seo3.jpg",
           "alt": "Website Speed and Performance Optimization"
         },
         "description": [
@@ -963,7 +963,7 @@
         "title": "Content, Creatives & Analytics",
         "subtitle": "Plan, create, launch, measure, repeat",
         "image": {
-          "src": "/services/social-media-optimization/analytics.png",
+          "src": "/Images/three1.jpg",
           "alt": "Full Funnel Marketing Strategy and Analytics"
         },
         "description": [

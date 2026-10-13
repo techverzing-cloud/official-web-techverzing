@@ -204,42 +204,42 @@
       {
         "text": "Get More Customers Online",
         "link": "/services/website-development",
-        "image": "/services/website-development/hero.webp"
+        "image": "/Images/customer.png"
       },
       {
         "text": "Lead Generation & Management",
         "link": "/services/customized-software-development",
-        "image": "/services/customized-software-development/lead-management.webp"
+        "image": "/Images/lead.png"
       },
       {
         "text": "Finance & Payment Systems",
         "link": "/services/cloud-backend-development",
-        "image": "/services/cloud-backend-development/hero.webp"
+        "image": "/Images/finance.png"
       },
       {
         "text": "Automation & AI Workflows",
         "link": "/services/ai-ml-solutions",
-        "image": "/services/ai-ml-solutions/integration.webp"
+        "image": "/Images/aii.png"
       },
       {
         "text": "Build a Brand People Trust",
         "link": "/services/digital-branding",
-        "image": "/services/digital-branding/brand-kit.webp"
+        "image": "/Images/brand.png"
       },
       {
         "text": "Launch Your Own App",
         "link": "/services/mobile-app-development",
-        "image": "/services/mobile-application/hero.webp"
+        "image": "/Images/app.png"
       },
       {
         "text": "Turn Visitors Into Customers",
         "link": "/services/ui-ux-design",
-        "image": "/services/ui-ux-design/wireframes.webp"
+        "image": "/Images/visitor.png"
       },
       {
         "text": "Grow Sales & Reach",
         "link": "/services/360-marketing",
-        "image": "/services/social-media-optimization/hero.jpg"
+        "image": "/Images/sale.png"
       }
     ]
   }
