@@ -105,7 +105,7 @@ const Preloader = () => {
     <div
       ref={root}
       aria-hidden="true"
-      className="preloader-root fixed inset-0 z-[9999] select-none bg-primary"
+      className="preloader-root fixed inset-0 z-[10000] select-none bg-primary"
     >
       <div className="pre-content relative z-10 flex h-full w-full flex-col justify-between px-6 py-8 text-cream-white md:px-12 md:py-10">
         <div className="flex items-center justify-between font-space-mono text-[10px] uppercase tracking-[0.3em] text-dull-text md:text-xs">

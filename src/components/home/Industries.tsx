@@ -257,18 +257,7 @@ const Industries = () => {
             </Link>
           </div>
 
-          <div
-            className={`mrMx mt-[clamp(2.5rem,6vw,6rem)] max-w-4xl px-5 transition-all duration-700 ease-out sm:px-0 ${
-              active > 0 ? "-translate-y-10 opacity-0" : "translate-y-0 opacity-100"
-            }`}
-          >
-            <h2 className="font-semibold text-white text-[clamp(1.6rem,4.4vw,4rem)] leading-[clamp(1.9rem,4.8vw,4.8rem)]">
-              {industries.heading}
-            </h2>
-            <p className="mt-5 font-spaceMono text-[11px] uppercase tracking-[0.3em] text-cream-white/60">
-              Scroll to explore
-            </p>
-          </div>
+          
         </div>
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 motion-safe:block">
