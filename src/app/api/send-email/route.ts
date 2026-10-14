@@ -229,18 +229,13 @@ export async function POST(req: Request) {
     const service = clean(body?.service) || parsed.fields.service || "";
     const message = parsed.body;
 
-<<<<<<< HEAD
     const errors = validate(name, email, rawMessage, { company, phone, service }) ?? {};
     if (body?.consent !== true) {
       errors.consent =
         "Consent to the Privacy Policy and Terms & Conditions is required";
     }
     if (Object.keys(errors).length > 0) {
-=======
-    const errors = validate(name, email, rawMessage, { company, phone, service });
-    if (errors) {
       logEvent("contact_validation_error", { requestId, ip: clientIp, email, errors });
->>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
       return respond(requestId, 400, {
         success: false,
         code: "VALIDATION_ERROR",

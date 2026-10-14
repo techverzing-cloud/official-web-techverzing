@@ -1,11 +1,7 @@
 "use client";
 
-<<<<<<< HEAD
-import { useState } from "react";
-import Link from "next/link";
-=======
 import { useState, useRef, useEffect } from "react";
->>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -82,12 +78,9 @@ function ThankYou() {
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
-<<<<<<< HEAD
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState(false);
-=======
   const formLoadTimeRef = useRef<number>(0);
->>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
 
   useEffect(() => {
     formLoadTimeRef.current = Date.now();
@@ -129,16 +122,13 @@ export default function ContactForm() {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-<<<<<<< HEAD
-        body: JSON.stringify({ name, email, message, consent: true }),
-=======
         body: JSON.stringify({
           name,
           email,
           message,
+          consent: true,
           formLoadTime: formLoadTimeRef.current,
         }),
->>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
       });
       const result = await res.json();
       if (!res.ok) {
