@@ -5,7 +5,7 @@ import AboutHero from "@/components/about/AboutHero";
 import WhyWeExist from "@/components/about/WhyWeExist";
 import HowWeWork from "@/components/home/HowWeWork";
 import ServicesOverview from "@/components/about/ServicesOverview";
-
+//nothing to commit
 export const metadata: Metadata = {
   title: `About ${siteConfig.name} | Digital Marketing & IT Solutions Agency`,
   description:
