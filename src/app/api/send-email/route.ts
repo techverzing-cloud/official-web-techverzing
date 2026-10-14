@@ -210,8 +210,12 @@ export async function POST(req: Request) {
     const service = clean(body?.service) || parsed.fields.service || "";
     const message = parsed.body; // visitor's own text, without the header lines
 
-    const errors = validate(name, email, rawMessage, { company, phone, service });
-    if (errors) {
+    const errors = validate(name, email, rawMessage, { company, phone, service }) ?? {};
+    if (body?.consent !== true) {
+      errors.consent =
+        "Consent to the Privacy Policy and Terms & Conditions is required";
+    }
+    if (Object.keys(errors).length > 0) {
       return respond(requestId, 400, {
         success: false,
         code: "VALIDATION_ERROR",

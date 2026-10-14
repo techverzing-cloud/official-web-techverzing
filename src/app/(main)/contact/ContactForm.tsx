@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Icon } from "@iconify/react";
 
 type Status = "idle" | "sending" | "success" | "error" | "rate-limited" | "spam";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const [consent, setConsent] = useState(false);
+  const [consentError, setConsentError] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -18,6 +21,11 @@ export default function ContactForm() {
     const honeypot = String(data.get("website") ?? "").trim();
     if (honeypot) {
       console.log("Honeypot triggered:", honeypot);
+      return;
+    }
+
+    if (!consent) {
+      setConsentError(true);
       return;
     }
 
@@ -43,7 +51,7 @@ export default function ContactForm() {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, consent: true }),
       });
       const result = await res.json();
       if (!res.ok) {
@@ -57,6 +65,7 @@ export default function ContactForm() {
         return;
       }
       form.reset();
+      setConsent(false);
       setStatus("success");
     } catch (err) {
       console.error("Form submit error:", err);
@@ -150,6 +159,52 @@ export default function ContactForm() {
           tabIndex={-1}
           autoComplete="off"
         />
+      </div>
+
+      <div>
+        <label
+          htmlFor="consent"
+          className="flex cursor-pointer items-start gap-3 rounded-xl border border-black-slate/15 bg-white px-4 py-3 transition-colors duration-200 hover:border-black-slate/30"
+        >
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => {
+              setConsent(e.target.checked);
+              if (e.target.checked) setConsentError(false);
+            }}
+            aria-invalid={consentError}
+            aria-describedby={consentError ? "consent-error" : undefined}
+            className="mt-0.5 size-4 shrink-0 accent-impact focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-impact focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+          />
+          <span className="font-inter text-xs leading-relaxed text-black-slate/80 sm:text-sm">
+            I agree to the{" "}
+            <Link
+              href="/policies/privacy-policy"
+              data-cursor-hover
+              className="font-semibold text-impact underline underline-offset-2 transition-colors duration-200 hover:text-black-slate"
+            >
+              Privacy Policy
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/policies/terms-conditions"
+              data-cursor-hover
+              className="font-semibold text-impact underline underline-offset-2 transition-colors duration-200 hover:text-black-slate"
+            >
+              Terms &amp; Conditions
+            </Link>{" "}
+            of Techverzing Technologies.
+          </span>
+        </label>
+        {consentError && (
+          <p id="consent-error" className="mt-2 font-inter text-xs text-red-600">
+            Please agree to the Privacy Policy and Terms &amp; Conditions before
+            submitting.
+          </p>
+        )}
       </div>
 
       <button
