@@ -1,23 +1,102 @@
 "use client";
 
+<<<<<<< HEAD
 import { useState } from "react";
 import Link from "next/link";
+=======
+import { useState, useRef, useEffect } from "react";
+>>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
 import { Icon } from "@iconify/react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-type Status = "idle" | "sending" | "success" | "error" | "rate-limited" | "spam";
+gsap.registerPlugin(useGSAP);
+
+type Status =
+  | "idle"
+  | "sending"
+  | "success"
+  | "error"
+  | "rate-limited"
+  | "spam"
+  | "bot-timing-failed";
+
+function ThankYou() {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.from(panelRef.current, {
+          autoAlpha: 0,
+          y: 12,
+          duration: 0.5,
+          ease: "power3.out",
+        });
+      });
+      return () => mm.revert();
+    },
+    { scope: panelRef }
+  );
+
+  useEffect(() => {
+    headingRef.current?.focus();
+  }, []);
+
+  return (
+    <div
+      ref={panelRef}
+      role="status"
+      aria-live="polite"
+      className="flex flex-col items-center py-6 text-center"
+    >
+      <span
+        aria-hidden="true"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-impact/10 text-impact"
+      >
+        <Icon icon="lucide:check" width={26} height={26} />
+      </span>
+
+      <span className="mt-6 inline-flex items-center gap-3 font-spaceMono text-[11px] uppercase tracking-[0.18em] text-black-slate/60">
+        <span className="h-px w-8 bg-impact" />
+        Message sent
+      </span>
+
+      <h2
+        ref={headingRef}
+        tabIndex={-1}
+        className="heading_6 mt-4 font-semibold text-black-slate text-balance outline-none"
+      >
+        Thanks - your note is in.
+      </h2>
+
+      <p className="mt-4 max-w-[46ch] text-pretty font-inter text-base font-normal leading-[1.7] text-dull-text-dark">
+        It&rsquo;s landed with a real person, not a queue. We&rsquo;ll read your
+        note and reply within one working day.
+      </p>
+    </div>
+  );
+}
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+<<<<<<< HEAD
   const [consent, setConsent] = useState(false);
   const [consentError, setConsentError] = useState(false);
+=======
+  const formLoadTimeRef = useRef<number>(0);
+>>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
 
+  useEffect(() => {
+    formLoadTimeRef.current = Date.now();
+  }, []);
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("handleSubmit called");
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    // Honeypot: bots fill every field. Silently drop if set.
     const honeypot = String(data.get("website") ?? "").trim();
     if (honeypot) {
       console.log("Honeypot triggered:", honeypot);
@@ -44,14 +123,22 @@ export default function ContactForm() {
       .filter((part) => part.trim().length > 0)
       .join("\n\n");
 
-    console.log("Form data:", { name, email, message, company, phone });
     setStatus("sending");
 
     try {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+<<<<<<< HEAD
         body: JSON.stringify({ name, email, message, consent: true }),
+=======
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          formLoadTime: formLoadTimeRef.current,
+        }),
+>>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
       });
       const result = await res.json();
       if (!res.ok) {
@@ -59,6 +146,8 @@ export default function ContactForm() {
           setStatus("rate-limited");
         } else if (res.status === 400 && result.code === "SPAM_DETECTED") {
           setStatus("spam");
+        } else if (res.status === 400 && result.code === "BOT_TIMING_FAILED") {
+          setStatus("bot-timing-failed");
         } else {
           setStatus("error");
         }
@@ -71,6 +160,10 @@ export default function ContactForm() {
       console.error("Form submit error:", err);
       setStatus("error");
     }
+  }
+
+  if (status === "success") {
+    return <ThankYou />;
   }
 
   return (
@@ -224,11 +317,6 @@ export default function ContactForm() {
       </button>
 
       <div aria-live="polite" role="status">
-        {status === "success" && (
-          <p className="rounded-xl border border-emerald-600/30 bg-emerald-600/10 px-4 py-3 text-sm text-emerald-800">
-            Thanks, your note is in. We&rsquo;ll reply within one working day.
-          </p>
-        )}
         {status === "error" && (
           <p className="rounded-xl border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm text-red-800">
             We couldn&rsquo;t send your note. Please try again, or email us at
@@ -237,12 +325,18 @@ export default function ContactForm() {
         )}
         {status === "rate-limited" && (
           <p className="rounded-xl border border-amber-600/30 bg-amber-600/10 px-4 py-3 text-sm text-amber-800">
-            You&rsquo;ve sent 3 messages today. Please wait until tomorrow to send more.
+            You&rsquo;ve sent 3 messages today. Please wait until tomorrow to
+            send more.
           </p>
         )}
         {status === "spam" && (
           <p className="rounded-xl border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm text-red-800">
             Your message was flagged as spam. Please revise and try again.
+          </p>
+        )}
+        {status === "bot-timing-failed" && (
+          <p className="rounded-xl border border-red-600/30 bg-red-600/10 px-4 py-3 text-sm text-red-800">
+            Submission too fast. Please take your time filling the form.
           </p>
         )}
       </div>

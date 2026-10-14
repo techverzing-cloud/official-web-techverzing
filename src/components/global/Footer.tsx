@@ -155,7 +155,7 @@ export default function Footer() {
         aria-hidden="true"
       />
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-12 xl:px-16">
-        <div className="pt-16 md:pt-24 lg:pt-32 pb-8 md:pb-12">
+        <div className="pt-16 md:pt-24 lg:pt-32">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14 lg:gap-16">
             <div
               ref={(el) => { columnRefs.current[0] = el; }}
@@ -237,7 +237,7 @@ export default function Footer() {
             aria-hidden="true"
           >
             <div className="relative overflow-hidden">
-              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl text-3xl leading-none select-none text-center md:text-left">
+              <p className="footer-wordmark font-nunito font-extrabold uppercase tracking-tighter md:text-7xl lg:text-8xl xl:text-9xl text-5xl leading-[8.1] md:leading-none select-none text-center md:text-left">
                 Techverzing
               </p>
             </div>

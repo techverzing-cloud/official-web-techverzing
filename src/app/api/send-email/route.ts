@@ -4,13 +4,18 @@ import { randomUUID } from "node:crypto";
 import { buildContactEmail, parseContactMessage } from "./email-template";
 
 export const runtime = "nodejs";
+export const maxDuration = 30;
+export const dynamic = "force-dynamic";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const MAX_EMAILS_PER_DAY = 3;
 const RATE_LIMIT_WINDOW_MS = 24 * 60 * 60 * 1000;
+const MAX_REQUESTS_PER_HOUR_PER_IP = 10;
+const IP_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 
 const emailSendLog = new Map<string, number[]>();
+const ipRequestLog = new Map<string, number[]>();
 
 function cleanupOldEntries() {
   const now = Date.now();
@@ -22,11 +27,19 @@ function cleanupOldEntries() {
       emailSendLog.set(email, valid);
     }
   }
+  for (const [ip, timestamps] of ipRequestLog.entries()) {
+    const valid = timestamps.filter((t) => now - t < IP_RATE_LIMIT_WINDOW_MS);
+    if (valid.length === 0) {
+      ipRequestLog.delete(ip);
+    } else {
+      ipRequestLog.set(ip, valid);
+    }
+  }
 }
 
 setInterval(cleanupOldEntries, 60 * 60 * 1000);
 
-function checkRateLimit(email: string): { allowed: boolean; retryAfter?: number } {
+function checkEmailRateLimit(email: string): { allowed: boolean; retryAfter?: number } {
   const now = Date.now();
   const timestamps = emailSendLog.get(email.toLowerCase()) ?? [];
   const recent = timestamps.filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
@@ -39,6 +52,22 @@ function checkRateLimit(email: string): { allowed: boolean; retryAfter?: number 
 
   recent.push(now);
   emailSendLog.set(email.toLowerCase(), recent);
+  return { allowed: true };
+}
+
+function checkIpRateLimit(ip: string): { allowed: boolean; retryAfter?: number } {
+  const now = Date.now();
+  const timestamps = ipRequestLog.get(ip) ?? [];
+  const recent = timestamps.filter((t) => now - t < IP_RATE_LIMIT_WINDOW_MS);
+
+  if (recent.length >= MAX_REQUESTS_PER_HOUR_PER_IP) {
+    const oldest = recent[0];
+    const retryAfter = Math.ceil((oldest + IP_RATE_LIMIT_WINDOW_MS - now) / 1000);
+    return { allowed: false, retryAfter };
+  }
+
+  recent.push(now);
+  ipRequestLog.set(ip, recent);
   return { allowed: true };
 }
 
@@ -85,13 +114,6 @@ function checkSpam(message: string): boolean {
   return spamCount >= 2 || urlCount > 2 || capitalRatio > 0.5;
 }
 
-// ---------------------------------------------------------------------------
-// Response envelope
-// Every response (success or error) has exactly the same top-level keys, so
-// n8n expressions like {{ $json.success }} or {{ $json.data.emailId }} never
-// hit a missing path.
-// ---------------------------------------------------------------------------
-
 type ErrorCode =
   | "INVALID_JSON"
   | "VALIDATION_ERROR"
@@ -99,14 +121,15 @@ type ErrorCode =
   | "EMAIL_PROVIDER_ERROR"
   | "INTERNAL_ERROR"
   | "RATE_LIMITED"
-  | "SPAM_DETECTED";
+  | "SPAM_DETECTED"
+  | "BOT_TIMING_FAILED";
 
 interface ApiResponse {
   success: boolean;
   code: "EMAIL_SENT" | ErrorCode;
   message: string;
   requestId: string;
-  timestamp: string; // ISO 8601
+  timestamp: string;
   data: {
     emailId: string | null;
     name: string;
@@ -114,10 +137,10 @@ interface ApiResponse {
     company: string;
     phone: string;
     service: string;
-    message: string; // text without the Company/Phone/Service header lines
-    rawMessage: string; // exactly what the visitor submitted
+    message: string;
+    rawMessage: string;
   } | null;
-  errors: Record<string, string> | null; // field -> message
+  errors: Record<string, string> | null;
 }
 
 function respond(
@@ -138,12 +161,6 @@ function respond(
   return NextResponse.json(body, { status });
 }
 
-// ---------------------------------------------------------------------------
-// Validation
-// ---------------------------------------------------------------------------
-
-// Trim and drop control characters. HTML escaping happens in the template,
-// so we no longer need to strip characters like < and > from real messages.
 function clean(input: unknown): string {
   if (typeof input !== "string") return "";
   return input
@@ -178,18 +195,22 @@ function validate(
   return Object.keys(errors).length ? errors : null;
 }
 
-// ---------------------------------------------------------------------------
-// Handler
-// ---------------------------------------------------------------------------
+function logEvent(event: string, data: Record<string, unknown>) {
+  console.log(JSON.stringify({ event, timestamp: new Date().toISOString(), ...data }));
+}
 
 export async function POST(req: Request) {
   const requestId = randomUUID();
+  const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    req.headers.get("x-real-ip") ??
+    "unknown";
 
   try {
     let body: Record<string, unknown>;
     try {
       body = await req.json();
     } catch {
+      logEvent("contact_invalid_json", { requestId, ip: clientIp });
       return respond(requestId, 400, {
         success: false,
         code: "INVALID_JSON",
@@ -200,22 +221,26 @@ export async function POST(req: Request) {
     const name = clean(body?.name);
     const email = clean(body?.email).toLowerCase();
     const rawMessage = clean(body?.message);
+    const formLoadTime = Number(body?.formLoadTime) || 0;
 
-    // Company / phone / service can arrive as separate fields, or as
-    // "Company: ..." lines at the top of the message (what the website form
-    // sends today). Separate fields win if both are present.
     const parsed = parseContactMessage(rawMessage);
     const company = clean(body?.company) || parsed.fields.company || "";
     const phone = clean(body?.phone) || parsed.fields.phone || "";
     const service = clean(body?.service) || parsed.fields.service || "";
-    const message = parsed.body; // visitor's own text, without the header lines
+    const message = parsed.body;
 
+<<<<<<< HEAD
     const errors = validate(name, email, rawMessage, { company, phone, service }) ?? {};
     if (body?.consent !== true) {
       errors.consent =
         "Consent to the Privacy Policy and Terms & Conditions is required";
     }
     if (Object.keys(errors).length > 0) {
+=======
+    const errors = validate(name, email, rawMessage, { company, phone, service });
+    if (errors) {
+      logEvent("contact_validation_error", { requestId, ip: clientIp, email, errors });
+>>>>>>> 02709263b9d581e2c392ef9da9742878dc03d81c
       return respond(requestId, 400, {
         success: false,
         code: "VALIDATION_ERROR",
@@ -237,17 +262,37 @@ export async function POST(req: Request) {
       });
     }
 
-    const rateLimit = checkRateLimit(email);
-    if (!rateLimit.allowed) {
+    if (formLoadTime > 0 && Date.now() - formLoadTime < 3000) {
+      logEvent("contact_bot_timing_failed", { requestId, ip: clientIp, email, loadTime: formLoadTime });
+      return respond(requestId, 400, {
+        success: false,
+        code: "BOT_TIMING_FAILED",
+        message: "Submission too fast. Please take your time filling the form.",
+      });
+    }
+
+    const emailLimit = checkEmailRateLimit(email);
+    if (!emailLimit.allowed) {
+      logEvent("contact_rate_limited_email", { requestId, ip: clientIp, email, retryAfter: emailLimit.retryAfter });
       return respond(requestId, 429, {
         success: false,
         code: "RATE_LIMITED",
-        message: `Too many emails sent. Please try again in ${rateLimit.retryAfter} seconds.`,
+        message: `Too many emails from this address. Please try again in ${emailLimit.retryAfter} seconds.`,
+      });
+    }
+
+    const ipLimit = checkIpRateLimit(clientIp);
+    if (!ipLimit.allowed) {
+      logEvent("contact_rate_limited_ip", { requestId, ip: clientIp, email, retryAfter: ipLimit.retryAfter });
+      return respond(requestId, 429, {
+        success: false,
+        code: "RATE_LIMITED",
+        message: `Too many requests from this IP. Please try again in ${ipLimit.retryAfter} seconds.`,
       });
     }
 
     if (checkSpam(rawMessage)) {
-      console.warn(`[contact:${requestId}] Spam detected from ${email}`);
+      logEvent("contact_spam_detected", { requestId, ip: clientIp, email });
       return respond(requestId, 400, {
         success: false,
         code: "SPAM_DETECTED",
@@ -265,11 +310,10 @@ export async function POST(req: Request) {
       submittedAt: new Date(),
     });
 
-    // Resend does not throw on failure; it returns { data, error }.
     const { data, error } = await resend.emails.send({
       from: process.env.EMAIL_FROM,
       to: process.env.EMAIL_TO,
-      replyTo: email, // hitting "Reply" goes straight to the visitor
+      replyTo: email,
       subject,
       html,
       text,
@@ -277,12 +321,15 @@ export async function POST(req: Request) {
 
     if (error) {
       console.error(`[contact:${requestId}] Resend error:`, error);
+      logEvent("contact_email_provider_error", { requestId, ip: clientIp, email, error: String(error) });
       return respond(requestId, 502, {
         success: false,
         code: "EMAIL_PROVIDER_ERROR",
         message: "Failed to send email. Please try again later.",
       });
     }
+
+    logEvent("contact_form_submitted", { requestId, ip: clientIp, email, emailId: data?.id });
 
     return respond(requestId, 200, {
       success: true,
@@ -301,6 +348,7 @@ export async function POST(req: Request) {
     });
   } catch (err) {
     console.error(`[contact:${requestId}] Unexpected error:`, err);
+    logEvent("contact_internal_error", { requestId, ip: clientIp, error: String(err) });
     return respond(requestId, 500, {
       success: false,
       code: "INTERNAL_ERROR",
