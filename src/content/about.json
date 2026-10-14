@@ -15,16 +15,19 @@
       {
         "title": "Our Story",
         "text": "Techverzing began with a passion for blending creativity and data to craft impactful digital marketing strategies for brands worldwide.",
+        "image": "/Images/story.png",
         "cta": { "label": "About the team", "href": "/about" }
       },
       {
         "title": "Mission",
         "text": "Our mission is to deliver creative, data-driven marketing solutions that help brands grow, engage, and build meaningful connections with their audiences.",
+        "image": "/Images/mission.png",
         "cta": { "label": "See our services", "href": "/services" }
       },
       {
         "title": "Vision",
         "text": "We envision a future where every brand can harness the power of creativity and analytics to inspire, innovate, and lead in the digital space.",
+        "image": "/Images/vision.png",
         "cta": { "label": "Start a project", "href": "/contact" }
       }
     ]

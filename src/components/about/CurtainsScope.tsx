@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@iconify/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -164,6 +165,13 @@ export default function CurtainsScope() {
               backgroundColor: `${color.text}0d`,
             }}
           >
+            <Image
+              src={section.image}
+              alt={section.title}
+              fill
+              sizes="(min-width: 1024px) 50vw, 90vw"
+              className="object-cover"
+            />
             <div
               aria-hidden="true"
               className="absolute inset-0 opacity-[0.08]"
