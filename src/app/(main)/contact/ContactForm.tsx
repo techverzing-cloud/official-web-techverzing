@@ -296,6 +296,7 @@ export default function ContactForm() {
         data-cursor-hover
         className="group flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-impact px-6 py-3 font-nunito text-sm font-semibold text-black-slate transition-[background-color,color,transform] duration-200 hover:bg-black-slate hover:text-cream-white active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-impact focus-visible:ring-offset-2 focus-visible:ring-offset-white disabled:cursor-not-allowed disabled:opacity-70"
       >
+        //nothing to commit
         {status === "sending" ? "Sending…" : "Send enquiry"}
         <Icon
           icon="lucide:arrow-right"
