@@ -167,9 +167,7 @@
     }
   ],
   "team": [
-    { "name": "Ava Thomas", "title": "Founder & CEO", "img": "" },
-    { "name": "Noah Patel", "title": "Head of Technology", "img": "" },
-    { "name": "Maya Chen", "title": "Creative Director", "img": "" },
-    { "name": "Liam Rodriguez", "title": "Growth Marketing Lead", "img": "" }
+    { "name": "Er. Mukesh Soni", "title": "Founder, CIO & CTO", "img": "" },
+    { "name": "Ms. Priya Thakur", "title": "CEO & CMO", "img": "" }
   ]
 }
