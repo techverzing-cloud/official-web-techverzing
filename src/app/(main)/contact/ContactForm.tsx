@@ -298,7 +298,7 @@ export default function ContactForm() {
       >
         //nothing to commit
         //nothing to commit
-        //add
+        //add to commit
 
         {status === "sending" ? "Sending…" : "Send enquiry"}
         <Icon
